@@ -4,11 +4,11 @@ import argparse
 import time
 import socket
 import sys
-from gevent import joinall
+# from gevent import joinall
 
 from experiments_prop import *
 
-flink_home = "/mnt/e/DownloadFromBrowser/flink-1.16.0" # os.environ['FLINK_LOCAL_HOME']
+flink_home = "/root/flink-1.16.1" # os.environ['FLINK_LOCAL_HOME']
 flink_exe = flink_home + "/bin/flink"
 start_flink = flink_home + "/bin/start-cluster.sh"
 stop_flink = flink_home + "/bin/stop-cluster.sh"
@@ -48,12 +48,19 @@ def kill_task_slots(num=1):
         process = subprocess.Popen(cmd.split(), stdout=FNULL, stderr=subprocess.STDOUT)
         output, error = process.communicate()
 
+def kill_task_slots_all():
+    cmd = task_slots_flink + " stop-all"
+    process = subprocess.Popen(cmd.split(), stdout=FNULL, stderr=subprocess.STDOUT)
+    output, error = process.communicate()
+
 def kill_running_jobs():
     cmd = os.getcwd() + "/kill_running_jobs.sh"
     process = subprocess.Popen(cmd.split(), stdout=FNULL, stderr=subprocess.STDOUT)
     output, error = process.communicate()
 
 def run_flink_job(isLocal, jar_path, parallel):
+    restart_flink()
+
     flink = flink_exe
     if isLocal:
         flink = flink_exe
@@ -62,6 +69,8 @@ def run_flink_job(isLocal, jar_path, parallel):
         flink_command += " -p " + str(parallel)
         add_task_slots(parallel)
     
+    # flink_command += " -input /mnt/d/Knowledge_Base/flink-query/test.txt" 
+    # + " -output " + "/mnt/d/Knowledge_Base/flink-query/output.csv"
     print("")
     print(flink_command)
     print("")
@@ -83,7 +92,12 @@ def main():
     unique_exp_name = job_alias + "-" + exp_start_time
     parallel = args.Parallelism
 
+    kill_task_slots_all()
     run_local(args.jar_name, job_alias, unique_exp_name, parallel)
+
+    time.sleep(20)
+
+    kill_task_slots(1)
 
 if __name__ == "__main__":
     main()

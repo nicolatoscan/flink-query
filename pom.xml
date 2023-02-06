@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.toscan</groupId>
+  <groupId>org.apache.flink</groupId>
   <artifactId>flink-query</artifactId>
   <version>1.0-SNAPSHOT</version>
 
@@ -25,17 +25,78 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
+    <!-- <dependency>
       <groupId>org.apache.flink</groupId>
       <artifactId>flink-streaming-java_2.11</artifactId>
       <version>1.13.6</version>
       <scope>provided</scope>
+    </dependency> -->
+
+    <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-streaming-java -->
+<dependency>
+    <groupId>org.apache.flink</groupId>
+    <artifactId>flink-streaming-java</artifactId>
+    <version>1.16.0</version>
+    <!-- <scope>provided</scope> -->
+</dependency>
+
+    <dependency>
+        <groupId>org.apache.flink</groupId>
+        <artifactId>flink-clients</artifactId>
+        <version>1.16.0</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.flink</groupId>
-      <artifactId>flink-connector-kafka_2.11</artifactId>
-      <version>1.13.6</version>
-    </dependency>
+    <groupId>org.apache.flink</groupId>
+    <artifactId>flink-metrics-datadog</artifactId>
+    <version>1.11.2</version>
+</dependency>
+  <dependency>
+    <groupId>org.apache.flink</groupId>
+    <artifactId>flink-connector-kafka</artifactId>
+    <version>1.16.0</version>
+</dependency>
+    <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.7</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient</artifactId>
+            <version>0.16.0</version>
+        </dependency>
+
+        <!-- <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_flink</artifactId>
+            <version>0.16.0</version>
+        </dependency> -->
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-metrics-dropwizard</artifactId>
+            <version>1.16.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_httpserver</artifactId>
+            <version>0.16.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_pushgateway</artifactId>
+            <version>0.16.0</version>
+        </dependency>
+
+		<dependency>
+			<groupId>org.nanohttpd</groupId>
+			<artifactId>nanohttpd</artifactId>
+			<version>2.2.0</version>
+		</dependency>
   </dependencies>
 
   <build>
@@ -54,6 +115,10 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
+          <configuration>
+        <source>11</source>
+        <target>11</target>
+      </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>

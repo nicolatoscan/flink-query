@@ -1,0 +1,24 @@
+[1;34m[0m
+ [1;34m======================[1;32m SolarWinds Snap Agent Installer [1;34m=======================[0m
+[1;34m  This script will walk you through the installation of SolarWinds Snap Agent.[0m
+[1;34m[0m
+[1;34m  For detailed instructions, FAQ, and full documentation:[0m
+[1;33m   http://docs.appoptics.com[0m
+[1;34m[0m
+[1;34m  If you have any questions or problems, please contact us:[0m
+[1;33m   email: technicalsupport@solarwinds.com[0m
+[1;34m ===============================================================[0m
+
+[1;33mAre you ready to install SolarWinds Snap Agent? (Y/n)[0m
+ [1;34m======================[1;32m SolarWinds Snap Agent Install [1;34m=======================[0m
+[1;32m *  INFO[0m: Installing the SolarWinds Snap Agent package ...
+[1;33mWould you like to allow SolarWinds Snap Agent to bind privileged ports (1-1024). (y/N) (Default: N)[0m
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  solarwinds-snap-agent
+0 upgraded, 1 newly installed, 0 to remove and 44 not upgraded.
+Need to get 188 MB of archives.
+After this operation, 719 MB of additional disk space will be used.
+Get:1 https://packagecloud.io/solarwinds/swisnap/ubuntu jammy/main amd64 solarwinds-snap-agent amd64 4.5.0.1550 [188 MB]

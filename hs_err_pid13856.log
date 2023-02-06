@@ -1,0 +1,1528 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f9b90847658, pid=13856, tid=0x00007f9b913c0640
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_351-b10) (build 1.8.0_351-b10)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.351-b10 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# V  [libjvm.so+0x647658]  InstanceKlass::allocate_instance(Thread*)+0x158
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f9b8c00b000):  JavaThread "main" [_thread_in_vm, id=13861, stack(0x00007f9b912c1000,0x00007f9b913c1000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 2 (SEGV_ACCERR), si_addr: 0x00000000fd2a700c
+
+Registers:
+RAX=0x00007f9b911ce81a, RBX=0x00007f9b8c00b000, RCX=0x00000000fd2a6df2, RDX=0x00007f9b8c00bc20
+RSP=0x00007f9b913bce40, RBP=0x00007f9b913bcea0, RSI=0x00007f9b8c00b000, RDI=0x00000001000016d0
+R8 =0x0000000000000005, R9 =0x000000000000002f, R10=0x00007f9b7c569d0c, R11=0x00000000fdd3af68
+R12=0x00000001000016d0, R13=0x00007f9b911ce81b, R14=0x00000000fd2a7000, R15=0x0000000000000003
+RIP=0x00007f9b90847658, EFLAGS=0x0000000000010202, CSGSFS=0x00000053002b0033, ERR=0x0000000000000000
+  TRAPNO=0x0000000000000000
+
+Top of Stack: (sp=0x00007f9b913bce40)
+0x00007f9b913bce40:   0000000000000005 00007f9b8e03b1f0
+0x00007f9b913bce50:   00000003fd29d888 7ac8e74d00000000
+0x00007f9b913bce60:   00000000fd2a67c8 00007f9b74794630
+0x00007f9b913bce70:   0000000000000000 00007f9b8c00b000
+0x00007f9b913bce80:   0000000000000023 00007f9b911ce81b
+0x00007f9b913bce90:   0000000000000000 00007f9b8c00b000
+0x00007f9b913bcea0:   00007f9b913bced0 00007f9b9088df51
+0x00007f9b913bceb0:   00000000fdd5ab98 000000000000002e
+0x00007f9b913bcec0:   000000000000002e 0000000000000023
+0x00007f9b913bced0:   00007f9b913bcf30 00007f9b9088ea35
+0x00007f9b913bcee0:   00007f9b8c00b000 0000002f913bd378
+0x00007f9b913bcef0:   00007f9b913bd460 00007f9b8c00bc18
+0x00007f9b913bcf00:   00007f9b913bd460 00007f9b8c00b000
+0x00007f9b913bcf10:   00007f9b8c00b200 00007f9b913bcfc0
+0x00007f9b913bcf20:   00007f9b913bcfc8 00007f9b8c00b000
+0x00007f9b913bcf30:   00007f9b913bcfb0 00007f9b908fa011
+0x00007f9b913bcf40:   00007f9b913bd460 00007f9b8c00bb10
+0x00007f9b913bcf50:   00007f9b8c00bc10 00007f9b8c00bc10
+0x00007f9b913bcf60:   00007f9b8c00bb10 00007f9b8c00cb20
+0x00007f9b913bcf70:   00007f9b8c00cb30 00007f9b8c00cf08
+0x00007f9b913bcf80:   00000000000003d8 0000000000000002
+0x00007f9b913bcf90:   0000000000000020 0000000000000000
+0x00007f9b913bcfa0:   fffffffffffffff1 0000000000000002
+0x00007f9b913bcfb0:   00007f9b913bd000 00007f9b7c569d7c
+0x00007f9b913bcfc0:   00000000fdd5ab98 00000000fd2a6dc0
+0x00007f9b913bcfd0:   00007f9b913bd000 00007f9b913bd000
+0x00007f9b913bcfe0:   0000000000000000 00007f9b913bd128
+0x00007f9b913bcff0:   0000000000000000 ffffffff8ec47002
+0x00007f9b913bd000:   00007f9b913bd460 00007f9b7c5565e4
+0x00007f9b913bd010:   00007f9b913bd128 00000000fdd5ab98
+0x00007f9b913bd020:   00007f9b8d3d4ea0 0000000002642c3a
+0x00007f9b913bd030:   00007f9b913bd090 00007f9b90c4bb33 
+
+Instructions: (pc=0x00007f9b90847658)
+0x00007f9b90847638:   8b 43 08 48 85 c0 0f 85 2c 02 00 00 48 8d 05 cf
+0x00007f9b90847648:   71 98 00 80 38 00 0f 84 dc 01 00 00 49 83 ff 02
+0x00007f9b90847658:   41 c7 46 0c 00 00 00 00 74 13 4a 8d 14 fd f0 ff
+0x00007f9b90847668:   ff ff 49 8d 7e 10 31 f6 e8 9b 68 bb ff 48 83 7b 
+
+Register to memory mapping:
+
+RAX=0x00007f9b911ce81a: <offset 0xfce81a> in /home/fanshi/jdk/jre/lib/amd64/server/libjvm.so at 0x00007f9b90200000
+RBX=0x00007f9b8c00b000 is a thread
+RCX=0x00000000fd2a6df2 is pointing into object: 0x00000000fd228ed0
+
+[error occurred during error reporting (printing register info), id 0xb]
+
+Stack: [0x00007f9b912c1000,0x00007f9b913c1000],  sp=0x00007f9b913bce40,  free space=1007k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x647658]  InstanceKlass::allocate_instance(Thread*)+0x158
+V  [libjvm.so+0x68df51]  java_lang_String::basic_create(int, Thread*)+0x21
+V  [libjvm.so+0x68ea35]  java_lang_String::char_converter(Handle, unsigned short, unsigned short, Thread*)+0xe5
+V  [libjvm.so+0x6fa011]  JVM_FindLoadedClass+0xa1
+J 190  java.lang.ClassLoader.findLoadedClass0(Ljava/lang/String;)Ljava/lang/Class; (0 bytes) @ 0x00007f9b7c569d7c [0x00007f9b7c569cc0+0xbc]
+J 142 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x00007f9b7c5565e4 [0x00007f9b7c556040+0x5a4]
+J 1448 C1 org.apache.flink.core.classloading.ComponentClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (166 bytes) @ 0x00007f9b7c8727ac [0x00007f9b7c870700+0x20ac]
+J 402 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x00007f9b7c5cb504 [0x00007f9b7c5cb400+0x104]
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x68c57a]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0xe1a
+V  [libjvm.so+0x689c33]  JavaCalls::call_virtual(JavaValue*, KlassHandle, Symbol*, Symbol*, JavaCallArguments*, Thread*)+0x263
+V  [libjvm.so+0x68a284]  JavaCalls::call_virtual(JavaValue*, Handle, KlassHandle, Symbol*, Symbol*, Handle, Thread*)+0x64
+V  [libjvm.so+0xa53954]  SystemDictionary::load_instance_class(Symbol*, Handle, Thread*)+0x2e4
+V  [libjvm.so+0xa5231b]  SystemDictionary::resolve_instance_class_or_null(Symbol*, Handle, Handle, Thread*)+0x87b
+V  [libjvm.so+0xa54209]  SystemDictionary::resolve_or_fail(Symbol*, Handle, Handle, bool, Thread*)+0x49
+V  [libjvm.so+0x4d5668]  ConstantPool::klass_at_impl(constantPoolHandle, int, Thread*)+0x328
+V  [libjvm.so+0x679913]  InterpreterRuntime::_new(JavaThread*, ConstantPool*, int)+0xa3
+j  scala.collection.immutable.Set$Set1.$plus(Ljava/lang/Object;)Lscala/collection/immutable/Set;+10
+j  scala.collection.immutable.Set$Set1.$plus(Ljava/lang/Object;)Lscala/collection/Set;+2
+j  scala.collection.mutable.SetBuilder.$plus$eq(Ljava/lang/Object;)Lscala/collection/mutable/SetBuilder;+6
+j  scala.collection.mutable.SetBuilder.$plus$eq(Ljava/lang/Object;)Lscala/collection/generic/Growable;+2
+j  scala.collection.generic.Growable.$anonfun$$plus$plus$eq$1(Lscala/collection/generic/Growable;Ljava/lang/Object;)Lscala/collection/generic/Growable;+2
+j  scala.collection.generic.Growable$$Lambda$141.apply(Ljava/lang/Object;)Ljava/lang/Object;+5
+j  scala.collection.IndexedSeqOptimized.foreach(Lscala/Function1;)V+22
+j  scala.collection.IndexedSeqOptimized.foreach$(Lscala/collection/IndexedSeqOptimized;Lscala/Function1;)V+2
+j  scala.collection.mutable.WrappedArray.foreach(Lscala/Function1;)V+2
+j  scala.collection.generic.Growable.$plus$plus$eq(Lscala/collection/TraversableOnce;)Lscala/collection/generic/Growable;+27
+j  scala.collection.generic.Growable.$plus$plus$eq$(Lscala/collection/generic/Growable;Lscala/collection/TraversableOnce;)Lscala/collection/generic/Growable;+2
+j  scala.collection.mutable.SetBuilder.$plus$plus$eq(Lscala/collection/TraversableOnce;)Lscala/collection/generic/Growable;+2
+j  scala.collection.generic.GenericCompanion.apply(Lscala/collection/Seq;)Lscala/collection/GenTraversable;+21
+j  akka.util.ManifestInfo$.<init>()V+111
+j  akka.util.ManifestInfo$.<clinit>()V+3
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x68c57a]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0xe1a
+V  [libjvm.so+0x647a03]  InstanceKlass::call_class_initializer_impl(instanceKlassHandle, Thread*)+0x113
+V  [libjvm.so+0x647e27]  InstanceKlass::initialize_impl(instanceKlassHandle, Thread*)+0x387
+V  [libjvm.so+0x648071]  InstanceKlass::initialize(Thread*)+0x51
+V  [libjvm.so+0x7db6f9]  LinkResolver::resolve_field(fieldDescriptor&, KlassHandle, Symbol*, Symbol*, KlassHandle, Bytecodes::Code, bool, bool, Thread*)+0x259
+V  [libjvm.so+0x7dbcb9]  LinkResolver::resolve_field_access(fieldDescriptor&, constantPoolHandle, int, Bytecodes::Code, Thread*)+0x179
+V  [libjvm.so+0x67db3e]  InterpreterRuntime::resolve_get_put(JavaThread*, Bytecodes::Code)+0x24e
+j  akka.actor.ActorSystemImpl.liftedTree2$1()Lakka/actor/ActorSystemImpl;+79
+j  akka.actor.ActorSystemImpl._start$lzycompute()Lakka/actor/ActorSystemImpl;+13
+j  akka.actor.ActorSystemImpl._start()Lakka/actor/ActorSystemImpl;+8
+j  akka.actor.ActorSystemImpl.start()Lakka/actor/ActorSystemImpl;+1
+j  org.apache.flink.runtime.rpc.akka.RobustActorSystem.create(Ljava/lang/String;Lakka/actor/setup/ActorSystemSetup;Lscala/Option;)Lorg/apache/flink/runtime/rpc/akka/RobustActorSystem;+88
+j  org.apache.flink.runtime.rpc.akka.RobustActorSystem.create(Ljava/lang/String;Lcom/typesafe/config/Config;Ljava/lang/Thread$UncaughtExceptionHandler;)Lorg/apache/flink/runtime/rpc/akka/RobustActorSystem;+28
+j  org.apache.flink.runtime.rpc.akka.RobustActorSystem.create(Ljava/lang/String;Lcom/typesafe/config/Config;)Lorg/apache/flink/runtime/rpc/akka/RobustActorSystem;+5
+j  org.apache.flink.runtime.rpc.akka.AkkaUtils.createActorSystem(Ljava/lang/String;Lcom/typesafe/config/Config;)Lakka/actor/ActorSystem;+12
+j  org.apache.flink.runtime.rpc.akka.AkkaBootstrapTools.startActorSystem(Lcom/typesafe/config/Config;Ljava/lang/String;Lorg/slf4j/Logger;)Lakka/actor/ActorSystem;+11
+j  org.apache.flink.runtime.rpc.akka.AkkaBootstrapTools.startRemoteActorSystem(Lorg/apache/flink/configuration/Configuration;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;ILorg/slf4j/Logger;Lcom/typesafe/config/Config;Lcom/typesafe/config/Config;)Lakka/actor/ActorSystem;+78
+j  org.apache.flink.runtime.rpc.akka.AkkaBootstrapTools.startRemoteActorSystem(Lorg/apache/flink/configuration/Configuration;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Optional;Lorg/slf4j/Logger;Lcom/typesafe/config/Config;Lcom/typesafe/config/Config;)Lakka/actor/ActorSystem;+92
+j  org.apache.flink.runtime.rpc.akka.AkkaRpcServiceUtils$AkkaRpcServiceBuilder.createAndStart(Lorg/apache/flink/util/function/TriFunction;)Lorg/apache/flink/runtime/rpc/akka/AkkaRpcService;+108
+j  org.apache.flink.runtime.rpc.akka.AkkaRpcServiceUtils$AkkaRpcServiceBuilder.createAndStart()Lorg/apache/flink/runtime/rpc/akka/AkkaRpcService;+6
+j  org.apache.flink.runtime.rpc.akka.AkkaRpcServiceUtils$AkkaRpcServiceBuilder.createAndStart()Lorg/apache/flink/runtime/rpc/RpcService;+1
+j  org.apache.flink.runtime.rpc.RpcUtils.createRemoteRpcService(Lorg/apache/flink/runtime/rpc/RpcSystem;Lorg/apache/flink/configuration/Configuration;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Optional;)Lorg/apache/flink/runtime/rpc/RpcService;+57
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.createRpcService(Lorg/apache/flink/configuration/Configuration;Lorg/apache/flink/runtime/highavailability/HighAvailabilityServices;Lorg/apache/flink/runtime/rpc/RpcSystem;)Lorg/apache/flink/runtime/rpc/RpcService;+39
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.startTaskManagerRunnerServices()V+86
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.start()V+8
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.runTaskManager(Lorg/apache/flink/configuration/Configuration;Lorg/apache/flink/core/plugin/PluginManager;)I+16
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.lambda$runTaskManagerProcessSecurely$5(Lorg/apache/flink/configuration/Configuration;Lorg/apache/flink/core/plugin/PluginManager;)Ljava/lang/Integer;+2
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner$$Lambda$86.call()Ljava/lang/Object;+8
+j  org.apache.flink.runtime.security.contexts.NoOpSecurityContext.runSecured(Ljava/util/concurrent/Callable;)Ljava/lang/Object;+1
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.runTaskManagerProcessSecurely(Lorg/apache/flink/configuration/Configuration;)V+45
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.runTaskManagerProcessSecurely([Ljava/lang/String;)V+34
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.main([Ljava/lang/String;)V+64
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x68c57a]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0xe1a
+V  [libjvm.so+0x6d8ad0]  jni_invoke_static(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*) [clone .isra.98] [clone .constprop.118]+0x1f0
+V  [libjvm.so+0x6dadcb]  jni_CallStaticVoidMethod+0x15b
+C  [libjli.so+0x889c]  JavaMain+0xa3c
+C  [libc.so.6+0x94b43]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 190  java.lang.ClassLoader.findLoadedClass0(Ljava/lang/String;)Ljava/lang/Class; (0 bytes) @ 0x00007f9b7c569d0c [0x00007f9b7c569cc0+0x4c]
+J 142 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x00007f9b7c5565e4 [0x00007f9b7c556040+0x5a4]
+J 1448 C1 org.apache.flink.core.classloading.ComponentClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (166 bytes) @ 0x00007f9b7c8727ac [0x00007f9b7c870700+0x20ac]
+J 402 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x00007f9b7c5cb504 [0x00007f9b7c5cb400+0x104]
+v  ~StubRoutines::call_stub
+j  scala.collection.immutable.Set$Set1.$plus(Ljava/lang/Object;)Lscala/collection/immutable/Set;+10
+j  scala.collection.immutable.Set$Set1.$plus(Ljava/lang/Object;)Lscala/collection/Set;+2
+j  scala.collection.mutable.SetBuilder.$plus$eq(Ljava/lang/Object;)Lscala/collection/mutable/SetBuilder;+6
+j  scala.collection.mutable.SetBuilder.$plus$eq(Ljava/lang/Object;)Lscala/collection/generic/Growable;+2
+j  scala.collection.generic.Growable.$anonfun$$plus$plus$eq$1(Lscala/collection/generic/Growable;Ljava/lang/Object;)Lscala/collection/generic/Growable;+2
+j  scala.collection.generic.Growable$$Lambda$141.apply(Ljava/lang/Object;)Ljava/lang/Object;+5
+j  scala.collection.IndexedSeqOptimized.foreach(Lscala/Function1;)V+22
+j  scala.collection.IndexedSeqOptimized.foreach$(Lscala/collection/IndexedSeqOptimized;Lscala/Function1;)V+2
+j  scala.collection.mutable.WrappedArray.foreach(Lscala/Function1;)V+2
+j  scala.collection.generic.Growable.$plus$plus$eq(Lscala/collection/TraversableOnce;)Lscala/collection/generic/Growable;+27
+j  scala.collection.generic.Growable.$plus$plus$eq$(Lscala/collection/generic/Growable;Lscala/collection/TraversableOnce;)Lscala/collection/generic/Growable;+2
+j  scala.collection.mutable.SetBuilder.$plus$plus$eq(Lscala/collection/TraversableOnce;)Lscala/collection/generic/Growable;+2
+j  scala.collection.generic.GenericCompanion.apply(Lscala/collection/Seq;)Lscala/collection/GenTraversable;+21
+j  akka.util.ManifestInfo$.<init>()V+111
+j  akka.util.ManifestInfo$.<clinit>()V+3
+v  ~StubRoutines::call_stub
+j  akka.actor.ActorSystemImpl.liftedTree2$1()Lakka/actor/ActorSystemImpl;+79
+j  akka.actor.ActorSystemImpl._start$lzycompute()Lakka/actor/ActorSystemImpl;+13
+j  akka.actor.ActorSystemImpl._start()Lakka/actor/ActorSystemImpl;+8
+j  akka.actor.ActorSystemImpl.start()Lakka/actor/ActorSystemImpl;+1
+j  org.apache.flink.runtime.rpc.akka.RobustActorSystem.create(Ljava/lang/String;Lakka/actor/setup/ActorSystemSetup;Lscala/Option;)Lorg/apache/flink/runtime/rpc/akka/RobustActorSystem;+88
+j  org.apache.flink.runtime.rpc.akka.RobustActorSystem.create(Ljava/lang/String;Lcom/typesafe/config/Config;Ljava/lang/Thread$UncaughtExceptionHandler;)Lorg/apache/flink/runtime/rpc/akka/RobustActorSystem;+28
+j  org.apache.flink.runtime.rpc.akka.RobustActorSystem.create(Ljava/lang/String;Lcom/typesafe/config/Config;)Lorg/apache/flink/runtime/rpc/akka/RobustActorSystem;+5
+j  org.apache.flink.runtime.rpc.akka.AkkaUtils.createActorSystem(Ljava/lang/String;Lcom/typesafe/config/Config;)Lakka/actor/ActorSystem;+12
+j  org.apache.flink.runtime.rpc.akka.AkkaBootstrapTools.startActorSystem(Lcom/typesafe/config/Config;Ljava/lang/String;Lorg/slf4j/Logger;)Lakka/actor/ActorSystem;+11
+j  org.apache.flink.runtime.rpc.akka.AkkaBootstrapTools.startRemoteActorSystem(Lorg/apache/flink/configuration/Configuration;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;ILorg/slf4j/Logger;Lcom/typesafe/config/Config;Lcom/typesafe/config/Config;)Lakka/actor/ActorSystem;+78
+j  org.apache.flink.runtime.rpc.akka.AkkaBootstrapTools.startRemoteActorSystem(Lorg/apache/flink/configuration/Configuration;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Optional;Lorg/slf4j/Logger;Lcom/typesafe/config/Config;Lcom/typesafe/config/Config;)Lakka/actor/ActorSystem;+92
+j  org.apache.flink.runtime.rpc.akka.AkkaRpcServiceUtils$AkkaRpcServiceBuilder.createAndStart(Lorg/apache/flink/util/function/TriFunction;)Lorg/apache/flink/runtime/rpc/akka/AkkaRpcService;+108
+j  org.apache.flink.runtime.rpc.akka.AkkaRpcServiceUtils$AkkaRpcServiceBuilder.createAndStart()Lorg/apache/flink/runtime/rpc/akka/AkkaRpcService;+6
+j  org.apache.flink.runtime.rpc.akka.AkkaRpcServiceUtils$AkkaRpcServiceBuilder.createAndStart()Lorg/apache/flink/runtime/rpc/RpcService;+1
+j  org.apache.flink.runtime.rpc.RpcUtils.createRemoteRpcService(Lorg/apache/flink/runtime/rpc/RpcSystem;Lorg/apache/flink/configuration/Configuration;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Optional;)Lorg/apache/flink/runtime/rpc/RpcService;+57
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.createRpcService(Lorg/apache/flink/configuration/Configuration;Lorg/apache/flink/runtime/highavailability/HighAvailabilityServices;Lorg/apache/flink/runtime/rpc/RpcSystem;)Lorg/apache/flink/runtime/rpc/RpcService;+39
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.startTaskManagerRunnerServices()V+86
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.start()V+8
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.runTaskManager(Lorg/apache/flink/configuration/Configuration;Lorg/apache/flink/core/plugin/PluginManager;)I+16
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.lambda$runTaskManagerProcessSecurely$5(Lorg/apache/flink/configuration/Configuration;Lorg/apache/flink/core/plugin/PluginManager;)Ljava/lang/Integer;+2
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner$$Lambda$86.call()Ljava/lang/Object;+8
+j  org.apache.flink.runtime.security.contexts.NoOpSecurityContext.runSecured(Ljava/util/concurrent/Callable;)Ljava/lang/Object;+1
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.runTaskManagerProcessSecurely(Lorg/apache/flink/configuration/Configuration;)V+45
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.runTaskManagerProcessSecurely([Ljava/lang/String;)V+34
+j  org.apache.flink.runtime.taskexecutor.TaskManagerRunner.main([Ljava/lang/String;)V+64
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f9ac4006000 JavaThread "flink-akka.remote.default-remote-dispatcher-18" [_thread_blocked, id=14393, stack(0x00007f9af1d00000,0x00007f9af1e00000)]
+  0x00007f9ac4004800 JavaThread "flink-akka.remote.default-remote-dispatcher-17" [_thread_blocked, id=14392, stack(0x00007f9af1e00000,0x00007f9af1f00000)]
+  0x00007f9ad009c800 JavaThread "New I/O server boss #6" [_thread_in_native, id=14384, stack(0x00007f9af1f00000,0x00007f9af2000000)]
+  0x00007f9ad0099800 JavaThread "New I/O worker #5" [_thread_in_native, id=14382, stack(0x00007f9af2000000,0x00007f9af2100000)]
+  0x00007f9ad0099000 JavaThread "New I/O worker #4" [_thread_in_native, id=14380, stack(0x00007f9af2100000,0x00007f9af2200000)]
+  0x00007f9ad0091800 JavaThread "New I/O boss #3" [_thread_in_native, id=14378, stack(0x00007f9af2200000,0x00007f9af2300000)]
+  0x00007f9ad002d800 JavaThread "New I/O worker #2" [_thread_in_native, id=14377, stack(0x00007f9af2500000,0x00007f9af2600000)]
+  0x00007f9ad0030800 JavaThread "New I/O worker #1" [_thread_in_native, id=14376, stack(0x00007f9af2600000,0x00007f9af2700000)]
+  0x00007f9ae0008000 JavaThread "flink-akka.remote.default-remote-dispatcher-9" [_thread_blocked, id=14363, stack(0x00007f9af2700000,0x00007f9af2800000)]
+  0x00007f9ae0006800 JavaThread "flink-akka.remote.default-remote-dispatcher-8" [_thread_blocked, id=14359, stack(0x00007f9af2800000,0x00007f9af2900000)]
+  0x00007f9ae0004800 JavaThread "flink-akka.actor.default-dispatcher-7" [_thread_blocked, id=14348, stack(0x00007f9af2900000,0x00007f9af2a00000)]
+  0x00007f9ae8005000 JavaThread "flink-akka.actor.internal-dispatcher-6" [_thread_blocked, id=14341, stack(0x00007f9af2a00000,0x00007f9af2b00000)]
+  0x00007f9b8d262000 JavaThread "flink-akka.actor.internal-dispatcher-5" [_thread_blocked, id=14340, stack(0x00007f9af2b00000,0x00007f9af2c00000)]
+  0x00007f9adc001000 JavaThread "flink-akka.actor.internal-dispatcher-4" [_thread_blocked, id=14339, stack(0x00007f9af2c00000,0x00007f9af2d00000)]
+  0x00007f9b8d261000 JavaThread "flink-akka.actor.internal-dispatcher-3" [_thread_blocked, id=14338, stack(0x00007f9af2d00000,0x00007f9af2e00000)]
+  0x00007f9b8d25b800 JavaThread "flink-akka.actor.internal-dispatcher-2" [_thread_blocked, id=14332, stack(0x00007f9af2e00000,0x00007f9af2f00000)]
+  0x00007f9b8ccd8800 JavaThread "flink-scheduler-1" [_thread_blocked, id=14288, stack(0x00007f9af3100000,0x00007f9af3200000)]
+  0x00007f9b8cff4000 JavaThread "Log4j2-TF-6-Scheduled-2" daemon [_thread_blocked, id=14130, stack(0x00007f9af3f00000,0x00007f9af4000000)]
+  0x00007f9b8cdac800 JavaThread "Log4j2-TF-3-Scheduled-1" daemon [_thread_blocked, id=14063, stack(0x00007f9b28e90000,0x00007f9b28f90000)]
+  0x00007f9b8c2d1000 JavaThread "Service Thread" daemon [_thread_blocked, id=13920, stack(0x00007f9b295b0000,0x00007f9b296b0000)]
+  0x00007f9b8c2bc000 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=13919, stack(0x00007f9b296b1000,0x00007f9b297b1000)]
+  0x00007f9b8c2ba000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=13918, stack(0x00007f9b297c1000,0x00007f9b298c1000)]
+  0x00007f9b8c2b7800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=13917, stack(0x00007f9b298d1000,0x00007f9b299d1000)]
+  0x00007f9b8c2b5800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=13916, stack(0x00007f9b299e1000,0x00007f9b29ae1000)]
+  0x00007f9b8c2b3800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=13915, stack(0x00007f9b29af0000,0x00007f9b29bf0000)]
+  0x00007f9b8c2b2000 JavaThread "Surrogate Locker Thread (Concurrent GC)" daemon [_thread_blocked, id=13914, stack(0x00007f9b29bf0000,0x00007f9b29cf0000)]
+  0x00007f9b8c27c800 JavaThread "Finalizer" daemon [_thread_blocked, id=13903, stack(0x00007f9b29cf0000,0x00007f9b29df0000)]
+  0x00007f9b8c278000 JavaThread "Reference Handler" daemon [_thread_blocked, id=13902, stack(0x00007f9b29df0000,0x00007f9b29ef0000)]
+=>0x00007f9b8c00b000 JavaThread "main" [_thread_in_vm, id=13861, stack(0x00007f9b912c1000,0x00007f9b913c1000)]
+
+Other Threads:
+  0x00007f9b8c26e000 VMThread [stack: 0x00007f9b29ef1000,0x00007f9b29ff1000] [id=13899]
+  0x00007f9b8c2d4000 WatcherThread [stack: 0x00007f9b294a1000,0x00007f9b295a1000] [id=13921]
+
+VM state:synchronizing (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007f9b8c009580] Threads_lock - owner thread: 0x00007f9b8c26e000
+
+heap address: 0x00000000e0000000, size: 512 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ garbage-first heap   total 524288K, used 52386K [0x00000000e0000000, 0x00000000e0101000, 0x0000000100000000)
+  region size 1024K, 46 young (47104K), 5 survivors (5120K)
+ Metaspace       used 29837K, capacity 31182K, committed 31360K, reserved 1077248K
+  class space    used 4156K, capacity 4386K, committed 4480K, reserved 1048576K
+
+Heap Regions: (E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, TS=gc time stamp, PTAMS=previous top-at-mark-start, NTAMS=next top-at-mark-start)
+AC   0  F    TS     0 PTAMS 0x00000000e0000000 NTAMS 0x00000000e0000000 space 1024K,   0% used [0x00000000e0000000, 0x00000000e0100000)
+AC   0  O    TS     0 PTAMS 0x00000000e0200000 NTAMS 0x00000000e0200000 space 1024K, 100% used [0x00000000e0100000, 0x00000000e0200000)
+AC   0  O    TS     0 PTAMS 0x00000000e0300000 NTAMS 0x00000000e0300000 space 1024K, 100% used [0x00000000e0200000, 0x00000000e0300000)
+AC   0  O    TS     0 PTAMS 0x00000000e0400000 NTAMS 0x00000000e0400000 space 1024K, 100% used [0x00000000e0300000, 0x00000000e0400000)
+AC   0  O    TS     0 PTAMS 0x00000000e0500000 NTAMS 0x00000000e0500000 space 1024K, 100% used [0x00000000e0400000, 0x00000000e0500000)
+AC   0  O    TS     0 PTAMS 0x00000000e0600000 NTAMS 0x00000000e0600000 space 1024K, 100% used [0x00000000e0500000, 0x00000000e0600000)
+AC   0  O    TS     0 PTAMS 0x00000000e0700000 NTAMS 0x00000000e0700000 space 1024K, 100% used [0x00000000e0600000, 0x00000000e0700000)
+AC   0  O    TS     0 PTAMS 0x00000000e0728800 NTAMS 0x00000000e0728800 space 1024K,  15% used [0x00000000e0700000, 0x00000000e0800000)
+AC   0  F    TS     0 PTAMS 0x00000000e0800000 NTAMS 0x00000000e0800000 space 1024K,   0% used [0x00000000e0800000, 0x00000000e0900000)
+AC   0  F    TS     0 PTAMS 0x00000000e0900000 NTAMS 0x00000000e0900000 space 1024K,   0% used [0x00000000e0900000, 0x00000000e0a00000)
+AC   0  F    TS     0 PTAMS 0x00000000e0a00000 NTAMS 0x00000000e0a00000 space 1024K,   0% used [0x00000000e0a00000, 0x00000000e0b00000)
+AC   0  F    TS     0 PTAMS 0x00000000e0b00000 NTAMS 0x00000000e0b00000 space 1024K,   0% used [0x00000000e0b00000, 0x00000000e0c00000)
+AC   0  F    TS     0 PTAMS 0x00000000e0c00000 NTAMS 0x00000000e0c00000 space 1024K,   0% used [0x00000000e0c00000, 0x00000000e0d00000)
+AC   0  F    TS     0 PTAMS 0x00000000e0d00000 NTAMS 0x00000000e0d00000 space 1024K,   0% used [0x00000000e0d00000, 0x00000000e0e00000)
+AC   0  F    TS     0 PTAMS 0x00000000e0e00000 NTAMS 0x00000000e0e00000 space 1024K,   0% used [0x00000000e0e00000, 0x00000000e0f00000)
+AC   0  F    TS     0 PTAMS 0x00000000e0f00000 NTAMS 0x00000000e0f00000 space 1024K,   0% used [0x00000000e0f00000, 0x00000000e1000000)
+AC   0  F    TS     0 PTAMS 0x00000000e1000000 NTAMS 0x00000000e1000000 space 1024K,   0% used [0x00000000e1000000, 0x00000000e1100000)
+AC   0  F    TS     0 PTAMS 0x00000000e1100000 NTAMS 0x00000000e1100000 space 1024K,   0% used [0x00000000e1100000, 0x00000000e1200000)
+AC   0  F    TS     0 PTAMS 0x00000000e1200000 NTAMS 0x00000000e1200000 space 1024K,   0% used [0x00000000e1200000, 0x00000000e1300000)
+AC   0  F    TS     0 PTAMS 0x00000000e1300000 NTAMS 0x00000000e1300000 space 1024K,   0% used [0x00000000e1300000, 0x00000000e1400000)
+AC   0  F    TS     0 PTAMS 0x00000000e1400000 NTAMS 0x00000000e1400000 space 1024K,   0% used [0x00000000e1400000, 0x00000000e1500000)
+AC   0  F    TS     0 PTAMS 0x00000000e1500000 NTAMS 0x00000000e1500000 space 1024K,   0% used [0x00000000e1500000, 0x00000000e1600000)
+AC   0  F    TS     0 PTAMS 0x00000000e1600000 NTAMS 0x00000000e1600000 space 1024K,   0% used [0x00000000e1600000, 0x00000000e1700000)
+AC   0  F    TS     0 PTAMS 0x00000000e1700000 NTAMS 0x00000000e1700000 space 1024K,   0% used [0x00000000e1700000, 0x00000000e1800000)
+AC   0  F    TS     0 PTAMS 0x00000000e1800000 NTAMS 0x00000000e1800000 space 1024K,   0% used [0x00000000e1800000, 0x00000000e1900000)
+AC   0  F    TS     0 PTAMS 0x00000000e1900000 NTAMS 0x00000000e1900000 space 1024K,   0% used [0x00000000e1900000, 0x00000000e1a00000)
+AC   0  F    TS     0 PTAMS 0x00000000e1a00000 NTAMS 0x00000000e1a00000 space 1024K,   0% used [0x00000000e1a00000, 0x00000000e1b00000)
+AC   0  F    TS     0 PTAMS 0x00000000e1b00000 NTAMS 0x00000000e1b00000 space 1024K,   0% used [0x00000000e1b00000, 0x00000000e1c00000)
+AC   0  F    TS     0 PTAMS 0x00000000e1c00000 NTAMS 0x00000000e1c00000 space 1024K,   0% used [0x00000000e1c00000, 0x00000000e1d00000)
+AC   0  F    TS     0 PTAMS 0x00000000e1d00000 NTAMS 0x00000000e1d00000 space 1024K,   0% used [0x00000000e1d00000, 0x00000000e1e00000)
+AC   0  F    TS     0 PTAMS 0x00000000e1e00000 NTAMS 0x00000000e1e00000 space 1024K,   0% used [0x00000000e1e00000, 0x00000000e1f00000)
+AC   0  F    TS     0 PTAMS 0x00000000e1f00000 NTAMS 0x00000000e1f00000 space 1024K,   0% used [0x00000000e1f00000, 0x00000000e2000000)
+AC   0  F    TS     0 PTAMS 0x00000000e2000000 NTAMS 0x00000000e2000000 space 1024K,   0% used [0x00000000e2000000, 0x00000000e2100000)
+AC   0  F    TS     0 PTAMS 0x00000000e2100000 NTAMS 0x00000000e2100000 space 1024K,   0% used [0x00000000e2100000, 0x00000000e2200000)
+AC   0  F    TS     0 PTAMS 0x00000000e2200000 NTAMS 0x00000000e2200000 space 1024K,   0% used [0x00000000e2200000, 0x00000000e2300000)
+AC   0  F    TS     0 PTAMS 0x00000000e2300000 NTAMS 0x00000000e2300000 space 1024K,   0% used [0x00000000e2300000, 0x00000000e2400000)
+AC   0  F    TS     0 PTAMS 0x00000000e2400000 NTAMS 0x00000000e2400000 space 1024K,   0% used [0x00000000e2400000, 0x00000000e2500000)
+AC   0  F    TS     0 PTAMS 0x00000000e2500000 NTAMS 0x00000000e2500000 space 1024K,   0% used [0x00000000e2500000, 0x00000000e2600000)
+AC   0  F    TS     0 PTAMS 0x00000000e2600000 NTAMS 0x00000000e2600000 space 1024K,   0% used [0x00000000e2600000, 0x00000000e2700000)
+AC   0  F    TS     0 PTAMS 0x00000000e2700000 NTAMS 0x00000000e2700000 space 1024K,   0% used [0x00000000e2700000, 0x00000000e2800000)
+AC   0  F    TS     0 PTAMS 0x00000000e2800000 NTAMS 0x00000000e2800000 space 1024K,   0% used [0x00000000e2800000, 0x00000000e2900000)
+AC   0  F    TS     0 PTAMS 0x00000000e2900000 NTAMS 0x00000000e2900000 space 1024K,   0% used [0x00000000e2900000, 0x00000000e2a00000)
+AC   0  F    TS     0 PTAMS 0x00000000e2a00000 NTAMS 0x00000000e2a00000 space 1024K,   0% used [0x00000000e2a00000, 0x00000000e2b00000)
+AC   0  F    TS     0 PTAMS 0x00000000e2b00000 NTAMS 0x00000000e2b00000 space 1024K,   0% used [0x00000000e2b00000, 0x00000000e2c00000)
+AC   0  F    TS     0 PTAMS 0x00000000e2c00000 NTAMS 0x00000000e2c00000 space 1024K,   0% used [0x00000000e2c00000, 0x00000000e2d00000)
+AC   0  F    TS     0 PTAMS 0x00000000e2d00000 NTAMS 0x00000000e2d00000 space 1024K,   0% used [0x00000000e2d00000, 0x00000000e2e00000)
+AC   0  F    TS     0 PTAMS 0x00000000e2e00000 NTAMS 0x00000000e2e00000 space 1024K,   0% used [0x00000000e2e00000, 0x00000000e2f00000)
+AC   0  F    TS     0 PTAMS 0x00000000e2f00000 NTAMS 0x00000000e2f00000 space 1024K,   0% used [0x00000000e2f00000, 0x00000000e3000000)
+AC   0  F    TS     0 PTAMS 0x00000000e3000000 NTAMS 0x00000000e3000000 space 1024K,   0% used [0x00000000e3000000, 0x00000000e3100000)
+AC   0  F    TS     0 PTAMS 0x00000000e3100000 NTAMS 0x00000000e3100000 space 1024K,   0% used [0x00000000e3100000, 0x00000000e3200000)
+AC   0  F    TS     0 PTAMS 0x00000000e3200000 NTAMS 0x00000000e3200000 space 1024K,   0% used [0x00000000e3200000, 0x00000000e3300000)
+AC   0  F    TS     0 PTAMS 0x00000000e3300000 NTAMS 0x00000000e3300000 space 1024K,   0% used [0x00000000e3300000, 0x00000000e3400000)
+AC   0  F    TS     0 PTAMS 0x00000000e3400000 NTAMS 0x00000000e3400000 space 1024K,   0% used [0x00000000e3400000, 0x00000000e3500000)
+AC   0  F    TS     0 PTAMS 0x00000000e3500000 NTAMS 0x00000000e3500000 space 1024K,   0% used [0x00000000e3500000, 0x00000000e3600000)
+AC   0  F    TS     0 PTAMS 0x00000000e3600000 NTAMS 0x00000000e3600000 space 1024K,   0% used [0x00000000e3600000, 0x00000000e3700000)
+AC   0  F    TS     0 PTAMS 0x00000000e3700000 NTAMS 0x00000000e3700000 space 1024K,   0% used [0x00000000e3700000, 0x00000000e3800000)
+AC   0  F    TS     0 PTAMS 0x00000000e3800000 NTAMS 0x00000000e3800000 space 1024K,   0% used [0x00000000e3800000, 0x00000000e3900000)
+AC   0  F    TS     0 PTAMS 0x00000000e3900000 NTAMS 0x00000000e3900000 space 1024K,   0% used [0x00000000e3900000, 0x00000000e3a00000)
+AC   0  F    TS     0 PTAMS 0x00000000e3a00000 NTAMS 0x00000000e3a00000 space 1024K,   0% used [0x00000000e3a00000, 0x00000000e3b00000)
+AC   0  F    TS     0 PTAMS 0x00000000e3b00000 NTAMS 0x00000000e3b00000 space 1024K,   0% used [0x00000000e3b00000, 0x00000000e3c00000)
+AC   0  F    TS     0 PTAMS 0x00000000e3c00000 NTAMS 0x00000000e3c00000 space 1024K,   0% used [0x00000000e3c00000, 0x00000000e3d00000)
+AC   0  F    TS     0 PTAMS 0x00000000e3d00000 NTAMS 0x00000000e3d00000 space 1024K,   0% used [0x00000000e3d00000, 0x00000000e3e00000)
+AC   0  F    TS     0 PTAMS 0x00000000e3e00000 NTAMS 0x00000000e3e00000 space 1024K,   0% used [0x00000000e3e00000, 0x00000000e3f00000)
+AC   0  F    TS     0 PTAMS 0x00000000e3f00000 NTAMS 0x00000000e3f00000 space 1024K,   0% used [0x00000000e3f00000, 0x00000000e4000000)
+AC   0  F    TS     0 PTAMS 0x00000000e4000000 NTAMS 0x00000000e4000000 space 1024K,   0% used [0x00000000e4000000, 0x00000000e4100000)
+AC   0  F    TS     0 PTAMS 0x00000000e4100000 NTAMS 0x00000000e4100000 space 1024K,   0% used [0x00000000e4100000, 0x00000000e4200000)
+AC   0  F    TS     0 PTAMS 0x00000000e4200000 NTAMS 0x00000000e4200000 space 1024K,   0% used [0x00000000e4200000, 0x00000000e4300000)
+AC   0  F    TS     0 PTAMS 0x00000000e4300000 NTAMS 0x00000000e4300000 space 1024K,   0% used [0x00000000e4300000, 0x00000000e4400000)
+AC   0  F    TS     0 PTAMS 0x00000000e4400000 NTAMS 0x00000000e4400000 space 1024K,   0% used [0x00000000e4400000, 0x00000000e4500000)
+AC   0  F    TS     0 PTAMS 0x00000000e4500000 NTAMS 0x00000000e4500000 space 1024K,   0% used [0x00000000e4500000, 0x00000000e4600000)
+AC   0  F    TS     0 PTAMS 0x00000000e4600000 NTAMS 0x00000000e4600000 space 1024K,   0% used [0x00000000e4600000, 0x00000000e4700000)
+AC   0  F    TS     0 PTAMS 0x00000000e4700000 NTAMS 0x00000000e4700000 space 1024K,   0% used [0x00000000e4700000, 0x00000000e4800000)
+AC   0  F    TS     0 PTAMS 0x00000000e4800000 NTAMS 0x00000000e4800000 space 1024K,   0% used [0x00000000e4800000, 0x00000000e4900000)
+AC   0  F    TS     0 PTAMS 0x00000000e4900000 NTAMS 0x00000000e4900000 space 1024K,   0% used [0x00000000e4900000, 0x00000000e4a00000)
+AC   0  F    TS     0 PTAMS 0x00000000e4a00000 NTAMS 0x00000000e4a00000 space 1024K,   0% used [0x00000000e4a00000, 0x00000000e4b00000)
+AC   0  F    TS     0 PTAMS 0x00000000e4b00000 NTAMS 0x00000000e4b00000 space 1024K,   0% used [0x00000000e4b00000, 0x00000000e4c00000)
+AC   0  F    TS     0 PTAMS 0x00000000e4c00000 NTAMS 0x00000000e4c00000 space 1024K,   0% used [0x00000000e4c00000, 0x00000000e4d00000)
+AC   0  F    TS     0 PTAMS 0x00000000e4d00000 NTAMS 0x00000000e4d00000 space 1024K,   0% used [0x00000000e4d00000, 0x00000000e4e00000)
+AC   0  F    TS     0 PTAMS 0x00000000e4e00000 NTAMS 0x00000000e4e00000 space 1024K,   0% used [0x00000000e4e00000, 0x00000000e4f00000)
+AC   0  F    TS     0 PTAMS 0x00000000e4f00000 NTAMS 0x00000000e4f00000 space 1024K,   0% used [0x00000000e4f00000, 0x00000000e5000000)
+AC   0  F    TS     0 PTAMS 0x00000000e5000000 NTAMS 0x00000000e5000000 space 1024K,   0% used [0x00000000e5000000, 0x00000000e5100000)
+AC   0  F    TS     0 PTAMS 0x00000000e5100000 NTAMS 0x00000000e5100000 space 1024K,   0% used [0x00000000e5100000, 0x00000000e5200000)
+AC   0  F    TS     0 PTAMS 0x00000000e5200000 NTAMS 0x00000000e5200000 space 1024K,   0% used [0x00000000e5200000, 0x00000000e5300000)
+AC   0  F    TS     0 PTAMS 0x00000000e5300000 NTAMS 0x00000000e5300000 space 1024K,   0% used [0x00000000e5300000, 0x00000000e5400000)
+AC   0  F    TS     0 PTAMS 0x00000000e5400000 NTAMS 0x00000000e5400000 space 1024K,   0% used [0x00000000e5400000, 0x00000000e5500000)
+AC   0  F    TS     0 PTAMS 0x00000000e5500000 NTAMS 0x00000000e5500000 space 1024K,   0% used [0x00000000e5500000, 0x00000000e5600000)
+AC   0  F    TS     0 PTAMS 0x00000000e5600000 NTAMS 0x00000000e5600000 space 1024K,   0% used [0x00000000e5600000, 0x00000000e5700000)
+AC   0  F    TS     0 PTAMS 0x00000000e5700000 NTAMS 0x00000000e5700000 space 1024K,   0% used [0x00000000e5700000, 0x00000000e5800000)
+AC   0  F    TS     0 PTAMS 0x00000000e5800000 NTAMS 0x00000000e5800000 space 1024K,   0% used [0x00000000e5800000, 0x00000000e5900000)
+AC   0  F    TS     0 PTAMS 0x00000000e5900000 NTAMS 0x00000000e5900000 space 1024K,   0% used [0x00000000e5900000, 0x00000000e5a00000)
+AC   0  F    TS     0 PTAMS 0x00000000e5a00000 NTAMS 0x00000000e5a00000 space 1024K,   0% used [0x00000000e5a00000, 0x00000000e5b00000)
+AC   0  F    TS     0 PTAMS 0x00000000e5b00000 NTAMS 0x00000000e5b00000 space 1024K,   0% used [0x00000000e5b00000, 0x00000000e5c00000)
+AC   0  F    TS     0 PTAMS 0x00000000e5c00000 NTAMS 0x00000000e5c00000 space 1024K,   0% used [0x00000000e5c00000, 0x00000000e5d00000)
+AC   0  F    TS     0 PTAMS 0x00000000e5d00000 NTAMS 0x00000000e5d00000 space 1024K,   0% used [0x00000000e5d00000, 0x00000000e5e00000)
+AC   0  F    TS     0 PTAMS 0x00000000e5e00000 NTAMS 0x00000000e5e00000 space 1024K,   0% used [0x00000000e5e00000, 0x00000000e5f00000)
+AC   0  F    TS     0 PTAMS 0x00000000e5f00000 NTAMS 0x00000000e5f00000 space 1024K,   0% used [0x00000000e5f00000, 0x00000000e6000000)
+AC   0  F    TS     0 PTAMS 0x00000000e6000000 NTAMS 0x00000000e6000000 space 1024K,   0% used [0x00000000e6000000, 0x00000000e6100000)
+AC   0  F    TS     0 PTAMS 0x00000000e6100000 NTAMS 0x00000000e6100000 space 1024K,   0% used [0x00000000e6100000, 0x00000000e6200000)
+AC   0  F    TS     0 PTAMS 0x00000000e6200000 NTAMS 0x00000000e6200000 space 1024K,   0% used [0x00000000e6200000, 0x00000000e6300000)
+AC   0  F    TS     0 PTAMS 0x00000000e6300000 NTAMS 0x00000000e6300000 space 1024K,   0% used [0x00000000e6300000, 0x00000000e6400000)
+AC   0  F    TS     0 PTAMS 0x00000000e6400000 NTAMS 0x00000000e6400000 space 1024K,   0% used [0x00000000e6400000, 0x00000000e6500000)
+AC   0  F    TS     0 PTAMS 0x00000000e6500000 NTAMS 0x00000000e6500000 space 1024K,   0% used [0x00000000e6500000, 0x00000000e6600000)
+AC   0  F    TS     0 PTAMS 0x00000000e6600000 NTAMS 0x00000000e6600000 space 1024K,   0% used [0x00000000e6600000, 0x00000000e6700000)
+AC   0  F    TS     0 PTAMS 0x00000000e6700000 NTAMS 0x00000000e6700000 space 1024K,   0% used [0x00000000e6700000, 0x00000000e6800000)
+AC   0  F    TS     0 PTAMS 0x00000000e6800000 NTAMS 0x00000000e6800000 space 1024K,   0% used [0x00000000e6800000, 0x00000000e6900000)
+AC   0  F    TS     0 PTAMS 0x00000000e6900000 NTAMS 0x00000000e6900000 space 1024K,   0% used [0x00000000e6900000, 0x00000000e6a00000)
+AC   0  F    TS     0 PTAMS 0x00000000e6a00000 NTAMS 0x00000000e6a00000 space 1024K,   0% used [0x00000000e6a00000, 0x00000000e6b00000)
+AC   0  F    TS     0 PTAMS 0x00000000e6b00000 NTAMS 0x00000000e6b00000 space 1024K,   0% used [0x00000000e6b00000, 0x00000000e6c00000)
+AC   0  F    TS     0 PTAMS 0x00000000e6c00000 NTAMS 0x00000000e6c00000 space 1024K,   0% used [0x00000000e6c00000, 0x00000000e6d00000)
+AC   0  F    TS     0 PTAMS 0x00000000e6d00000 NTAMS 0x00000000e6d00000 space 1024K,   0% used [0x00000000e6d00000, 0x00000000e6e00000)
+AC   0  F    TS     0 PTAMS 0x00000000e6e00000 NTAMS 0x00000000e6e00000 space 1024K,   0% used [0x00000000e6e00000, 0x00000000e6f00000)
+AC   0  F    TS     0 PTAMS 0x00000000e6f00000 NTAMS 0x00000000e6f00000 space 1024K,   0% used [0x00000000e6f00000, 0x00000000e7000000)
+AC   0  F    TS     0 PTAMS 0x00000000e7000000 NTAMS 0x00000000e7000000 space 1024K,   0% used [0x00000000e7000000, 0x00000000e7100000)
+AC   0  F    TS     0 PTAMS 0x00000000e7100000 NTAMS 0x00000000e7100000 space 1024K,   0% used [0x00000000e7100000, 0x00000000e7200000)
+AC   0  F    TS     0 PTAMS 0x00000000e7200000 NTAMS 0x00000000e7200000 space 1024K,   0% used [0x00000000e7200000, 0x00000000e7300000)
+AC   0  F    TS     0 PTAMS 0x00000000e7300000 NTAMS 0x00000000e7300000 space 1024K,   0% used [0x00000000e7300000, 0x00000000e7400000)
+AC   0  F    TS     0 PTAMS 0x00000000e7400000 NTAMS 0x00000000e7400000 space 1024K,   0% used [0x00000000e7400000, 0x00000000e7500000)
+AC   0  F    TS     0 PTAMS 0x00000000e7500000 NTAMS 0x00000000e7500000 space 1024K,   0% used [0x00000000e7500000, 0x00000000e7600000)
+AC   0  F    TS     0 PTAMS 0x00000000e7600000 NTAMS 0x00000000e7600000 space 1024K,   0% used [0x00000000e7600000, 0x00000000e7700000)
+AC   0  F    TS     0 PTAMS 0x00000000e7700000 NTAMS 0x00000000e7700000 space 1024K,   0% used [0x00000000e7700000, 0x00000000e7800000)
+AC   0  F    TS     0 PTAMS 0x00000000e7800000 NTAMS 0x00000000e7800000 space 1024K,   0% used [0x00000000e7800000, 0x00000000e7900000)
+AC   0  F    TS     0 PTAMS 0x00000000e7900000 NTAMS 0x00000000e7900000 space 1024K,   0% used [0x00000000e7900000, 0x00000000e7a00000)
+AC   0  F    TS     0 PTAMS 0x00000000e7a00000 NTAMS 0x00000000e7a00000 space 1024K,   0% used [0x00000000e7a00000, 0x00000000e7b00000)
+AC   0  F    TS     0 PTAMS 0x00000000e7b00000 NTAMS 0x00000000e7b00000 space 1024K,   0% used [0x00000000e7b00000, 0x00000000e7c00000)
+AC   0  F    TS     0 PTAMS 0x00000000e7c00000 NTAMS 0x00000000e7c00000 space 1024K,   0% used [0x00000000e7c00000, 0x00000000e7d00000)
+AC   0  F    TS     0 PTAMS 0x00000000e7d00000 NTAMS 0x00000000e7d00000 space 1024K,   0% used [0x00000000e7d00000, 0x00000000e7e00000)
+AC   0  F    TS     0 PTAMS 0x00000000e7e00000 NTAMS 0x00000000e7e00000 space 1024K,   0% used [0x00000000e7e00000, 0x00000000e7f00000)
+AC   0  F    TS     0 PTAMS 0x00000000e7f00000 NTAMS 0x00000000e7f00000 space 1024K,   0% used [0x00000000e7f00000, 0x00000000e8000000)
+AC   0  F    TS     0 PTAMS 0x00000000e8000000 NTAMS 0x00000000e8000000 space 1024K,   0% used [0x00000000e8000000, 0x00000000e8100000)
+AC   0  F    TS     0 PTAMS 0x00000000e8100000 NTAMS 0x00000000e8100000 space 1024K,   0% used [0x00000000e8100000, 0x00000000e8200000)
+AC   0  F    TS     0 PTAMS 0x00000000e8200000 NTAMS 0x00000000e8200000 space 1024K,   0% used [0x00000000e8200000, 0x00000000e8300000)
+AC   0  F    TS     0 PTAMS 0x00000000e8300000 NTAMS 0x00000000e8300000 space 1024K,   0% used [0x00000000e8300000, 0x00000000e8400000)
+AC   0  F    TS     0 PTAMS 0x00000000e8400000 NTAMS 0x00000000e8400000 space 1024K,   0% used [0x00000000e8400000, 0x00000000e8500000)
+AC   0  F    TS     0 PTAMS 0x00000000e8500000 NTAMS 0x00000000e8500000 space 1024K,   0% used [0x00000000e8500000, 0x00000000e8600000)
+AC   0  F    TS     0 PTAMS 0x00000000e8600000 NTAMS 0x00000000e8600000 space 1024K,   0% used [0x00000000e8600000, 0x00000000e8700000)
+AC   0  F    TS     0 PTAMS 0x00000000e8700000 NTAMS 0x00000000e8700000 space 1024K,   0% used [0x00000000e8700000, 0x00000000e8800000)
+AC   0  F    TS     0 PTAMS 0x00000000e8800000 NTAMS 0x00000000e8800000 space 1024K,   0% used [0x00000000e8800000, 0x00000000e8900000)
+AC   0  F    TS     0 PTAMS 0x00000000e8900000 NTAMS 0x00000000e8900000 space 1024K,   0% used [0x00000000e8900000, 0x00000000e8a00000)
+AC   0  F    TS     0 PTAMS 0x00000000e8a00000 NTAMS 0x00000000e8a00000 space 1024K,   0% used [0x00000000e8a00000, 0x00000000e8b00000)
+AC   0  F    TS     0 PTAMS 0x00000000e8b00000 NTAMS 0x00000000e8b00000 space 1024K,   0% used [0x00000000e8b00000, 0x00000000e8c00000)
+AC   0  F    TS     0 PTAMS 0x00000000e8c00000 NTAMS 0x00000000e8c00000 space 1024K,   0% used [0x00000000e8c00000, 0x00000000e8d00000)
+AC   0  F    TS     0 PTAMS 0x00000000e8d00000 NTAMS 0x00000000e8d00000 space 1024K,   0% used [0x00000000e8d00000, 0x00000000e8e00000)
+AC   0  F    TS     0 PTAMS 0x00000000e8e00000 NTAMS 0x00000000e8e00000 space 1024K,   0% used [0x00000000e8e00000, 0x00000000e8f00000)
+AC   0  F    TS     0 PTAMS 0x00000000e8f00000 NTAMS 0x00000000e8f00000 space 1024K,   0% used [0x00000000e8f00000, 0x00000000e9000000)
+AC   0  F    TS     0 PTAMS 0x00000000e9000000 NTAMS 0x00000000e9000000 space 1024K,   0% used [0x00000000e9000000, 0x00000000e9100000)
+AC   0  F    TS     0 PTAMS 0x00000000e9100000 NTAMS 0x00000000e9100000 space 1024K,   0% used [0x00000000e9100000, 0x00000000e9200000)
+AC   0  F    TS     0 PTAMS 0x00000000e9200000 NTAMS 0x00000000e9200000 space 1024K,   0% used [0x00000000e9200000, 0x00000000e9300000)
+AC   0  F    TS     0 PTAMS 0x00000000e9300000 NTAMS 0x00000000e9300000 space 1024K,   0% used [0x00000000e9300000, 0x00000000e9400000)
+AC   0  F    TS     0 PTAMS 0x00000000e9400000 NTAMS 0x00000000e9400000 space 1024K,   0% used [0x00000000e9400000, 0x00000000e9500000)
+AC   0  F    TS     0 PTAMS 0x00000000e9500000 NTAMS 0x00000000e9500000 space 1024K,   0% used [0x00000000e9500000, 0x00000000e9600000)
+AC   0  F    TS     0 PTAMS 0x00000000e9600000 NTAMS 0x00000000e9600000 space 1024K,   0% used [0x00000000e9600000, 0x00000000e9700000)
+AC   0  F    TS     0 PTAMS 0x00000000e9700000 NTAMS 0x00000000e9700000 space 1024K,   0% used [0x00000000e9700000, 0x00000000e9800000)
+AC   0  F    TS     0 PTAMS 0x00000000e9800000 NTAMS 0x00000000e9800000 space 1024K,   0% used [0x00000000e9800000, 0x00000000e9900000)
+AC   0  F    TS     0 PTAMS 0x00000000e9900000 NTAMS 0x00000000e9900000 space 1024K,   0% used [0x00000000e9900000, 0x00000000e9a00000)
+AC   0  F    TS     0 PTAMS 0x00000000e9a00000 NTAMS 0x00000000e9a00000 space 1024K,   0% used [0x00000000e9a00000, 0x00000000e9b00000)
+AC   0  F    TS     0 PTAMS 0x00000000e9b00000 NTAMS 0x00000000e9b00000 space 1024K,   0% used [0x00000000e9b00000, 0x00000000e9c00000)
+AC   0  F    TS     0 PTAMS 0x00000000e9c00000 NTAMS 0x00000000e9c00000 space 1024K,   0% used [0x00000000e9c00000, 0x00000000e9d00000)
+AC   0  F    TS     0 PTAMS 0x00000000e9d00000 NTAMS 0x00000000e9d00000 space 1024K,   0% used [0x00000000e9d00000, 0x00000000e9e00000)
+AC   0  F    TS     0 PTAMS 0x00000000e9e00000 NTAMS 0x00000000e9e00000 space 1024K,   0% used [0x00000000e9e00000, 0x00000000e9f00000)
+AC   0  F    TS     0 PTAMS 0x00000000e9f00000 NTAMS 0x00000000e9f00000 space 1024K,   0% used [0x00000000e9f00000, 0x00000000ea000000)
+AC   0  F    TS     0 PTAMS 0x00000000ea000000 NTAMS 0x00000000ea000000 space 1024K,   0% used [0x00000000ea000000, 0x00000000ea100000)
+AC   0  F    TS     0 PTAMS 0x00000000ea100000 NTAMS 0x00000000ea100000 space 1024K,   0% used [0x00000000ea100000, 0x00000000ea200000)
+AC   0  F    TS     0 PTAMS 0x00000000ea200000 NTAMS 0x00000000ea200000 space 1024K,   0% used [0x00000000ea200000, 0x00000000ea300000)
+AC   0  F    TS     0 PTAMS 0x00000000ea300000 NTAMS 0x00000000ea300000 space 1024K,   0% used [0x00000000ea300000, 0x00000000ea400000)
+AC   0  F    TS     0 PTAMS 0x00000000ea400000 NTAMS 0x00000000ea400000 space 1024K,   0% used [0x00000000ea400000, 0x00000000ea500000)
+AC   0  F    TS     0 PTAMS 0x00000000ea500000 NTAMS 0x00000000ea500000 space 1024K,   0% used [0x00000000ea500000, 0x00000000ea600000)
+AC   0  F    TS     0 PTAMS 0x00000000ea600000 NTAMS 0x00000000ea600000 space 1024K,   0% used [0x00000000ea600000, 0x00000000ea700000)
+AC   0  F    TS     0 PTAMS 0x00000000ea700000 NTAMS 0x00000000ea700000 space 1024K,   0% used [0x00000000ea700000, 0x00000000ea800000)
+AC   0  F    TS     0 PTAMS 0x00000000ea800000 NTAMS 0x00000000ea800000 space 1024K,   0% used [0x00000000ea800000, 0x00000000ea900000)
+AC   0  F    TS     0 PTAMS 0x00000000ea900000 NTAMS 0x00000000ea900000 space 1024K,   0% used [0x00000000ea900000, 0x00000000eaa00000)
+AC   0  F    TS     0 PTAMS 0x00000000eaa00000 NTAMS 0x00000000eaa00000 space 1024K,   0% used [0x00000000eaa00000, 0x00000000eab00000)
+AC   0  F    TS     0 PTAMS 0x00000000eab00000 NTAMS 0x00000000eab00000 space 1024K,   0% used [0x00000000eab00000, 0x00000000eac00000)
+AC   0  F    TS     0 PTAMS 0x00000000eac00000 NTAMS 0x00000000eac00000 space 1024K,   0% used [0x00000000eac00000, 0x00000000ead00000)
+AC   0  F    TS     0 PTAMS 0x00000000ead00000 NTAMS 0x00000000ead00000 space 1024K,   0% used [0x00000000ead00000, 0x00000000eae00000)
+AC   0  F    TS     0 PTAMS 0x00000000eae00000 NTAMS 0x00000000eae00000 space 1024K,   0% used [0x00000000eae00000, 0x00000000eaf00000)
+AC   0  F    TS     0 PTAMS 0x00000000eaf00000 NTAMS 0x00000000eaf00000 space 1024K,   0% used [0x00000000eaf00000, 0x00000000eb000000)
+AC   0  F    TS     0 PTAMS 0x00000000eb000000 NTAMS 0x00000000eb000000 space 1024K,   0% used [0x00000000eb000000, 0x00000000eb100000)
+AC   0  F    TS     0 PTAMS 0x00000000eb100000 NTAMS 0x00000000eb100000 space 1024K,   0% used [0x00000000eb100000, 0x00000000eb200000)
+AC   0  F    TS     0 PTAMS 0x00000000eb200000 NTAMS 0x00000000eb200000 space 1024K,   0% used [0x00000000eb200000, 0x00000000eb300000)
+AC   0  F    TS     0 PTAMS 0x00000000eb300000 NTAMS 0x00000000eb300000 space 1024K,   0% used [0x00000000eb300000, 0x00000000eb400000)
+AC   0  F    TS     0 PTAMS 0x00000000eb400000 NTAMS 0x00000000eb400000 space 1024K,   0% used [0x00000000eb400000, 0x00000000eb500000)
+AC   0  F    TS     0 PTAMS 0x00000000eb500000 NTAMS 0x00000000eb500000 space 1024K,   0% used [0x00000000eb500000, 0x00000000eb600000)
+AC   0  F    TS     0 PTAMS 0x00000000eb600000 NTAMS 0x00000000eb600000 space 1024K,   0% used [0x00000000eb600000, 0x00000000eb700000)
+AC   0  F    TS     0 PTAMS 0x00000000eb700000 NTAMS 0x00000000eb700000 space 1024K,   0% used [0x00000000eb700000, 0x00000000eb800000)
+AC   0  F    TS     0 PTAMS 0x00000000eb800000 NTAMS 0x00000000eb800000 space 1024K,   0% used [0x00000000eb800000, 0x00000000eb900000)
+AC   0  F    TS     0 PTAMS 0x00000000eb900000 NTAMS 0x00000000eb900000 space 1024K,   0% used [0x00000000eb900000, 0x00000000eba00000)
+AC   0  F    TS     0 PTAMS 0x00000000eba00000 NTAMS 0x00000000eba00000 space 1024K,   0% used [0x00000000eba00000, 0x00000000ebb00000)
+AC   0  F    TS     0 PTAMS 0x00000000ebb00000 NTAMS 0x00000000ebb00000 space 1024K,   0% used [0x00000000ebb00000, 0x00000000ebc00000)
+AC   0  F    TS     0 PTAMS 0x00000000ebc00000 NTAMS 0x00000000ebc00000 space 1024K,   0% used [0x00000000ebc00000, 0x00000000ebd00000)
+AC   0  F    TS     0 PTAMS 0x00000000ebd00000 NTAMS 0x00000000ebd00000 space 1024K,   0% used [0x00000000ebd00000, 0x00000000ebe00000)
+AC   0  F    TS     0 PTAMS 0x00000000ebe00000 NTAMS 0x00000000ebe00000 space 1024K,   0% used [0x00000000ebe00000, 0x00000000ebf00000)
+AC   0  F    TS     0 PTAMS 0x00000000ebf00000 NTAMS 0x00000000ebf00000 space 1024K,   0% used [0x00000000ebf00000, 0x00000000ec000000)
+AC   0  F    TS     0 PTAMS 0x00000000ec000000 NTAMS 0x00000000ec000000 space 1024K,   0% used [0x00000000ec000000, 0x00000000ec100000)
+AC   0  F    TS     0 PTAMS 0x00000000ec100000 NTAMS 0x00000000ec100000 space 1024K,   0% used [0x00000000ec100000, 0x00000000ec200000)
+AC   0  F    TS     0 PTAMS 0x00000000ec200000 NTAMS 0x00000000ec200000 space 1024K,   0% used [0x00000000ec200000, 0x00000000ec300000)
+AC   0  F    TS     0 PTAMS 0x00000000ec300000 NTAMS 0x00000000ec300000 space 1024K,   0% used [0x00000000ec300000, 0x00000000ec400000)
+AC   0  F    TS     0 PTAMS 0x00000000ec400000 NTAMS 0x00000000ec400000 space 1024K,   0% used [0x00000000ec400000, 0x00000000ec500000)
+AC   0  F    TS     0 PTAMS 0x00000000ec500000 NTAMS 0x00000000ec500000 space 1024K,   0% used [0x00000000ec500000, 0x00000000ec600000)
+AC   0  F    TS     0 PTAMS 0x00000000ec600000 NTAMS 0x00000000ec600000 space 1024K,   0% used [0x00000000ec600000, 0x00000000ec700000)
+AC   0  F    TS     0 PTAMS 0x00000000ec700000 NTAMS 0x00000000ec700000 space 1024K,   0% used [0x00000000ec700000, 0x00000000ec800000)
+AC   0  F    TS     0 PTAMS 0x00000000ec800000 NTAMS 0x00000000ec800000 space 1024K,   0% used [0x00000000ec800000, 0x00000000ec900000)
+AC   0  F    TS     0 PTAMS 0x00000000ec900000 NTAMS 0x00000000ec900000 space 1024K,   0% used [0x00000000ec900000, 0x00000000eca00000)
+AC   0  F    TS     0 PTAMS 0x00000000eca00000 NTAMS 0x00000000eca00000 space 1024K,   0% used [0x00000000eca00000, 0x00000000ecb00000)
+AC   0  F    TS     0 PTAMS 0x00000000ecb00000 NTAMS 0x00000000ecb00000 space 1024K,   0% used [0x00000000ecb00000, 0x00000000ecc00000)
+AC   0  F    TS     0 PTAMS 0x00000000ecc00000 NTAMS 0x00000000ecc00000 space 1024K,   0% used [0x00000000ecc00000, 0x00000000ecd00000)
+AC   0  F    TS     0 PTAMS 0x00000000ecd00000 NTAMS 0x00000000ecd00000 space 1024K,   0% used [0x00000000ecd00000, 0x00000000ece00000)
+AC   0  F    TS     0 PTAMS 0x00000000ece00000 NTAMS 0x00000000ece00000 space 1024K,   0% used [0x00000000ece00000, 0x00000000ecf00000)
+AC   0  F    TS     0 PTAMS 0x00000000ecf00000 NTAMS 0x00000000ecf00000 space 1024K,   0% used [0x00000000ecf00000, 0x00000000ed000000)
+AC   0  F    TS     0 PTAMS 0x00000000ed000000 NTAMS 0x00000000ed000000 space 1024K,   0% used [0x00000000ed000000, 0x00000000ed100000)
+AC   0  F    TS     0 PTAMS 0x00000000ed100000 NTAMS 0x00000000ed100000 space 1024K,   0% used [0x00000000ed100000, 0x00000000ed200000)
+AC   0  F    TS     0 PTAMS 0x00000000ed200000 NTAMS 0x00000000ed200000 space 1024K,   0% used [0x00000000ed200000, 0x00000000ed300000)
+AC   0  F    TS     0 PTAMS 0x00000000ed300000 NTAMS 0x00000000ed300000 space 1024K,   0% used [0x00000000ed300000, 0x00000000ed400000)
+AC   0  F    TS     0 PTAMS 0x00000000ed400000 NTAMS 0x00000000ed400000 space 1024K,   0% used [0x00000000ed400000, 0x00000000ed500000)
+AC   0  F    TS     0 PTAMS 0x00000000ed500000 NTAMS 0x00000000ed500000 space 1024K,   0% used [0x00000000ed500000, 0x00000000ed600000)
+AC   0  F    TS     0 PTAMS 0x00000000ed600000 NTAMS 0x00000000ed600000 space 1024K,   0% used [0x00000000ed600000, 0x00000000ed700000)
+AC   0  F    TS     0 PTAMS 0x00000000ed700000 NTAMS 0x00000000ed700000 space 1024K,   0% used [0x00000000ed700000, 0x00000000ed800000)
+AC   0  F    TS     0 PTAMS 0x00000000ed800000 NTAMS 0x00000000ed800000 space 1024K,   0% used [0x00000000ed800000, 0x00000000ed900000)
+AC   0  F    TS     0 PTAMS 0x00000000ed900000 NTAMS 0x00000000ed900000 space 1024K,   0% used [0x00000000ed900000, 0x00000000eda00000)
+AC   0  F    TS     0 PTAMS 0x00000000eda00000 NTAMS 0x00000000eda00000 space 1024K,   0% used [0x00000000eda00000, 0x00000000edb00000)
+AC   0  F    TS     0 PTAMS 0x00000000edb00000 NTAMS 0x00000000edb00000 space 1024K,   0% used [0x00000000edb00000, 0x00000000edc00000)
+AC   0  F    TS     0 PTAMS 0x00000000edc00000 NTAMS 0x00000000edc00000 space 1024K,   0% used [0x00000000edc00000, 0x00000000edd00000)
+AC   0  F    TS     0 PTAMS 0x00000000edd00000 NTAMS 0x00000000edd00000 space 1024K,   0% used [0x00000000edd00000, 0x00000000ede00000)
+AC   0  F    TS     0 PTAMS 0x00000000ede00000 NTAMS 0x00000000ede00000 space 1024K,   0% used [0x00000000ede00000, 0x00000000edf00000)
+AC   0  F    TS     0 PTAMS 0x00000000edf00000 NTAMS 0x00000000edf00000 space 1024K,   0% used [0x00000000edf00000, 0x00000000ee000000)
+AC   0  F    TS     0 PTAMS 0x00000000ee000000 NTAMS 0x00000000ee000000 space 1024K,   0% used [0x00000000ee000000, 0x00000000ee100000)
+AC   0  F    TS     0 PTAMS 0x00000000ee100000 NTAMS 0x00000000ee100000 space 1024K,   0% used [0x00000000ee100000, 0x00000000ee200000)
+AC   0  F    TS     0 PTAMS 0x00000000ee200000 NTAMS 0x00000000ee200000 space 1024K,   0% used [0x00000000ee200000, 0x00000000ee300000)
+AC   0  F    TS     0 PTAMS 0x00000000ee300000 NTAMS 0x00000000ee300000 space 1024K,   0% used [0x00000000ee300000, 0x00000000ee400000)
+AC   0  F    TS     0 PTAMS 0x00000000ee400000 NTAMS 0x00000000ee400000 space 1024K,   0% used [0x00000000ee400000, 0x00000000ee500000)
+AC   0  F    TS     0 PTAMS 0x00000000ee500000 NTAMS 0x00000000ee500000 space 1024K,   0% used [0x00000000ee500000, 0x00000000ee600000)
+AC   0  F    TS     0 PTAMS 0x00000000ee600000 NTAMS 0x00000000ee600000 space 1024K,   0% used [0x00000000ee600000, 0x00000000ee700000)
+AC   0  F    TS     0 PTAMS 0x00000000ee700000 NTAMS 0x00000000ee700000 space 1024K,   0% used [0x00000000ee700000, 0x00000000ee800000)
+AC   0  F    TS     0 PTAMS 0x00000000ee800000 NTAMS 0x00000000ee800000 space 1024K,   0% used [0x00000000ee800000, 0x00000000ee900000)
+AC   0  F    TS     0 PTAMS 0x00000000ee900000 NTAMS 0x00000000ee900000 space 1024K,   0% used [0x00000000ee900000, 0x00000000eea00000)
+AC   0  F    TS     0 PTAMS 0x00000000eea00000 NTAMS 0x00000000eea00000 space 1024K,   0% used [0x00000000eea00000, 0x00000000eeb00000)
+AC   0  F    TS     0 PTAMS 0x00000000eeb00000 NTAMS 0x00000000eeb00000 space 1024K,   0% used [0x00000000eeb00000, 0x00000000eec00000)
+AC   0  F    TS     0 PTAMS 0x00000000eec00000 NTAMS 0x00000000eec00000 space 1024K,   0% used [0x00000000eec00000, 0x00000000eed00000)
+AC   0  F    TS     0 PTAMS 0x00000000eed00000 NTAMS 0x00000000eed00000 space 1024K,   0% used [0x00000000eed00000, 0x00000000eee00000)
+AC   0  F    TS     0 PTAMS 0x00000000eee00000 NTAMS 0x00000000eee00000 space 1024K,   0% used [0x00000000eee00000, 0x00000000eef00000)
+AC   0  F    TS     0 PTAMS 0x00000000eef00000 NTAMS 0x00000000eef00000 space 1024K,   0% used [0x00000000eef00000, 0x00000000ef000000)
+AC   0  F    TS     0 PTAMS 0x00000000ef000000 NTAMS 0x00000000ef000000 space 1024K,   0% used [0x00000000ef000000, 0x00000000ef100000)
+AC   0  F    TS     0 PTAMS 0x00000000ef100000 NTAMS 0x00000000ef100000 space 1024K,   0% used [0x00000000ef100000, 0x00000000ef200000)
+AC   0  F    TS     0 PTAMS 0x00000000ef200000 NTAMS 0x00000000ef200000 space 1024K,   0% used [0x00000000ef200000, 0x00000000ef300000)
+AC   0  F    TS     0 PTAMS 0x00000000ef300000 NTAMS 0x00000000ef300000 space 1024K,   0% used [0x00000000ef300000, 0x00000000ef400000)
+AC   0  F    TS     0 PTAMS 0x00000000ef400000 NTAMS 0x00000000ef400000 space 1024K,   0% used [0x00000000ef400000, 0x00000000ef500000)
+AC   0  F    TS     0 PTAMS 0x00000000ef500000 NTAMS 0x00000000ef500000 space 1024K,   0% used [0x00000000ef500000, 0x00000000ef600000)
+AC   0  F    TS     0 PTAMS 0x00000000ef600000 NTAMS 0x00000000ef600000 space 1024K,   0% used [0x00000000ef600000, 0x00000000ef700000)
+AC   0  F    TS     0 PTAMS 0x00000000ef700000 NTAMS 0x00000000ef700000 space 1024K,   0% used [0x00000000ef700000, 0x00000000ef800000)
+AC   0  F    TS     0 PTAMS 0x00000000ef800000 NTAMS 0x00000000ef800000 space 1024K,   0% used [0x00000000ef800000, 0x00000000ef900000)
+AC   0  F    TS     0 PTAMS 0x00000000ef900000 NTAMS 0x00000000ef900000 space 1024K,   0% used [0x00000000ef900000, 0x00000000efa00000)
+AC   0  F    TS     0 PTAMS 0x00000000efa00000 NTAMS 0x00000000efa00000 space 1024K,   0% used [0x00000000efa00000, 0x00000000efb00000)
+AC   0  F    TS     0 PTAMS 0x00000000efb00000 NTAMS 0x00000000efb00000 space 1024K,   0% used [0x00000000efb00000, 0x00000000efc00000)
+AC   0  F    TS     0 PTAMS 0x00000000efc00000 NTAMS 0x00000000efc00000 space 1024K,   0% used [0x00000000efc00000, 0x00000000efd00000)
+AC   0  F    TS     0 PTAMS 0x00000000efd00000 NTAMS 0x00000000efd00000 space 1024K,   0% used [0x00000000efd00000, 0x00000000efe00000)
+AC   0  F    TS     0 PTAMS 0x00000000efe00000 NTAMS 0x00000000efe00000 space 1024K,   0% used [0x00000000efe00000, 0x00000000eff00000)
+AC   0  F    TS     0 PTAMS 0x00000000eff00000 NTAMS 0x00000000eff00000 space 1024K,   0% used [0x00000000eff00000, 0x00000000f0000000)
+AC   0  F    TS     0 PTAMS 0x00000000f0000000 NTAMS 0x00000000f0000000 space 1024K,   0% used [0x00000000f0000000, 0x00000000f0100000)
+AC   0  F    TS     0 PTAMS 0x00000000f0100000 NTAMS 0x00000000f0100000 space 1024K,   0% used [0x00000000f0100000, 0x00000000f0200000)
+AC   0  F    TS     0 PTAMS 0x00000000f0200000 NTAMS 0x00000000f0200000 space 1024K,   0% used [0x00000000f0200000, 0x00000000f0300000)
+AC   0  F    TS     0 PTAMS 0x00000000f0300000 NTAMS 0x00000000f0300000 space 1024K,   0% used [0x00000000f0300000, 0x00000000f0400000)
+AC   0  F    TS     0 PTAMS 0x00000000f0400000 NTAMS 0x00000000f0400000 space 1024K,   0% used [0x00000000f0400000, 0x00000000f0500000)
+AC   0  F    TS     0 PTAMS 0x00000000f0500000 NTAMS 0x00000000f0500000 space 1024K,   0% used [0x00000000f0500000, 0x00000000f0600000)
+AC   0  F    TS     0 PTAMS 0x00000000f0600000 NTAMS 0x00000000f0600000 space 1024K,   0% used [0x00000000f0600000, 0x00000000f0700000)
+AC   0  F    TS     0 PTAMS 0x00000000f0700000 NTAMS 0x00000000f0700000 space 1024K,   0% used [0x00000000f0700000, 0x00000000f0800000)
+AC   0  F    TS     0 PTAMS 0x00000000f0800000 NTAMS 0x00000000f0800000 space 1024K,   0% used [0x00000000f0800000, 0x00000000f0900000)
+AC   0  F    TS     0 PTAMS 0x00000000f0900000 NTAMS 0x00000000f0900000 space 1024K,   0% used [0x00000000f0900000, 0x00000000f0a00000)
+AC   0  F    TS     0 PTAMS 0x00000000f0a00000 NTAMS 0x00000000f0a00000 space 1024K,   0% used [0x00000000f0a00000, 0x00000000f0b00000)
+AC   0  F    TS     0 PTAMS 0x00000000f0b00000 NTAMS 0x00000000f0b00000 space 1024K,   0% used [0x00000000f0b00000, 0x00000000f0c00000)
+AC   0  F    TS     0 PTAMS 0x00000000f0c00000 NTAMS 0x00000000f0c00000 space 1024K,   0% used [0x00000000f0c00000, 0x00000000f0d00000)
+AC   0  F    TS     0 PTAMS 0x00000000f0d00000 NTAMS 0x00000000f0d00000 space 1024K,   0% used [0x00000000f0d00000, 0x00000000f0e00000)
+AC   0  F    TS     0 PTAMS 0x00000000f0e00000 NTAMS 0x00000000f0e00000 space 1024K,   0% used [0x00000000f0e00000, 0x00000000f0f00000)
+AC   0  F    TS     0 PTAMS 0x00000000f0f00000 NTAMS 0x00000000f0f00000 space 1024K,   0% used [0x00000000f0f00000, 0x00000000f1000000)
+AC   0  F    TS     0 PTAMS 0x00000000f1000000 NTAMS 0x00000000f1000000 space 1024K,   0% used [0x00000000f1000000, 0x00000000f1100000)
+AC   0  F    TS     0 PTAMS 0x00000000f1100000 NTAMS 0x00000000f1100000 space 1024K,   0% used [0x00000000f1100000, 0x00000000f1200000)
+AC   0  F    TS     0 PTAMS 0x00000000f1200000 NTAMS 0x00000000f1200000 space 1024K,   0% used [0x00000000f1200000, 0x00000000f1300000)
+AC   0  F    TS     0 PTAMS 0x00000000f1300000 NTAMS 0x00000000f1300000 space 1024K,   0% used [0x00000000f1300000, 0x00000000f1400000)
+AC   0  F    TS     0 PTAMS 0x00000000f1400000 NTAMS 0x00000000f1400000 space 1024K,   0% used [0x00000000f1400000, 0x00000000f1500000)
+AC   0  F    TS     0 PTAMS 0x00000000f1500000 NTAMS 0x00000000f1500000 space 1024K,   0% used [0x00000000f1500000, 0x00000000f1600000)
+AC   0  F    TS     0 PTAMS 0x00000000f1600000 NTAMS 0x00000000f1600000 space 1024K,   0% used [0x00000000f1600000, 0x00000000f1700000)
+AC   0  F    TS     0 PTAMS 0x00000000f1700000 NTAMS 0x00000000f1700000 space 1024K,   0% used [0x00000000f1700000, 0x00000000f1800000)
+AC   0  F    TS     0 PTAMS 0x00000000f1800000 NTAMS 0x00000000f1800000 space 1024K,   0% used [0x00000000f1800000, 0x00000000f1900000)
+AC   0  F    TS     0 PTAMS 0x00000000f1900000 NTAMS 0x00000000f1900000 space 1024K,   0% used [0x00000000f1900000, 0x00000000f1a00000)
+AC   0  F    TS     0 PTAMS 0x00000000f1a00000 NTAMS 0x00000000f1a00000 space 1024K,   0% used [0x00000000f1a00000, 0x00000000f1b00000)
+AC   0  F    TS     0 PTAMS 0x00000000f1b00000 NTAMS 0x00000000f1b00000 space 1024K,   0% used [0x00000000f1b00000, 0x00000000f1c00000)
+AC   0  F    TS     0 PTAMS 0x00000000f1c00000 NTAMS 0x00000000f1c00000 space 1024K,   0% used [0x00000000f1c00000, 0x00000000f1d00000)
+AC   0  F    TS     0 PTAMS 0x00000000f1d00000 NTAMS 0x00000000f1d00000 space 1024K,   0% used [0x00000000f1d00000, 0x00000000f1e00000)
+AC   0  F    TS     0 PTAMS 0x00000000f1e00000 NTAMS 0x00000000f1e00000 space 1024K,   0% used [0x00000000f1e00000, 0x00000000f1f00000)
+AC   0  F    TS     0 PTAMS 0x00000000f1f00000 NTAMS 0x00000000f1f00000 space 1024K,   0% used [0x00000000f1f00000, 0x00000000f2000000)
+AC   0  F    TS     0 PTAMS 0x00000000f2000000 NTAMS 0x00000000f2000000 space 1024K,   0% used [0x00000000f2000000, 0x00000000f2100000)
+AC   0  F    TS     0 PTAMS 0x00000000f2100000 NTAMS 0x00000000f2100000 space 1024K,   0% used [0x00000000f2100000, 0x00000000f2200000)
+AC   0  F    TS     0 PTAMS 0x00000000f2200000 NTAMS 0x00000000f2200000 space 1024K,   0% used [0x00000000f2200000, 0x00000000f2300000)
+AC   0  F    TS     0 PTAMS 0x00000000f2300000 NTAMS 0x00000000f2300000 space 1024K,   0% used [0x00000000f2300000, 0x00000000f2400000)
+AC   0  F    TS     0 PTAMS 0x00000000f2400000 NTAMS 0x00000000f2400000 space 1024K,   0% used [0x00000000f2400000, 0x00000000f2500000)
+AC   0  F    TS     0 PTAMS 0x00000000f2500000 NTAMS 0x00000000f2500000 space 1024K,   0% used [0x00000000f2500000, 0x00000000f2600000)
+AC   0  F    TS     0 PTAMS 0x00000000f2600000 NTAMS 0x00000000f2600000 space 1024K,   0% used [0x00000000f2600000, 0x00000000f2700000)
+AC   0  F    TS     0 PTAMS 0x00000000f2700000 NTAMS 0x00000000f2700000 space 1024K,   0% used [0x00000000f2700000, 0x00000000f2800000)
+AC   0  F    TS     0 PTAMS 0x00000000f2800000 NTAMS 0x00000000f2800000 space 1024K,   0% used [0x00000000f2800000, 0x00000000f2900000)
+AC   0  F    TS     0 PTAMS 0x00000000f2900000 NTAMS 0x00000000f2900000 space 1024K,   0% used [0x00000000f2900000, 0x00000000f2a00000)
+AC   0  F    TS     0 PTAMS 0x00000000f2a00000 NTAMS 0x00000000f2a00000 space 1024K,   0% used [0x00000000f2a00000, 0x00000000f2b00000)
+AC   0  F    TS     0 PTAMS 0x00000000f2b00000 NTAMS 0x00000000f2b00000 space 1024K,   0% used [0x00000000f2b00000, 0x00000000f2c00000)
+AC   0  F    TS     0 PTAMS 0x00000000f2c00000 NTAMS 0x00000000f2c00000 space 1024K,   0% used [0x00000000f2c00000, 0x00000000f2d00000)
+AC   0  F    TS     0 PTAMS 0x00000000f2d00000 NTAMS 0x00000000f2d00000 space 1024K,   0% used [0x00000000f2d00000, 0x00000000f2e00000)
+AC   0  F    TS     0 PTAMS 0x00000000f2e00000 NTAMS 0x00000000f2e00000 space 1024K,   0% used [0x00000000f2e00000, 0x00000000f2f00000)
+AC   0  F    TS     0 PTAMS 0x00000000f2f00000 NTAMS 0x00000000f2f00000 space 1024K,   0% used [0x00000000f2f00000, 0x00000000f3000000)
+AC   0  F    TS     0 PTAMS 0x00000000f3000000 NTAMS 0x00000000f3000000 space 1024K,   0% used [0x00000000f3000000, 0x00000000f3100000)
+AC   0  F    TS     0 PTAMS 0x00000000f3100000 NTAMS 0x00000000f3100000 space 1024K,   0% used [0x00000000f3100000, 0x00000000f3200000)
+AC   0  F    TS     0 PTAMS 0x00000000f3200000 NTAMS 0x00000000f3200000 space 1024K,   0% used [0x00000000f3200000, 0x00000000f3300000)
+AC   0  F    TS     0 PTAMS 0x00000000f3300000 NTAMS 0x00000000f3300000 space 1024K,   0% used [0x00000000f3300000, 0x00000000f3400000)
+AC   0  F    TS     0 PTAMS 0x00000000f3400000 NTAMS 0x00000000f3400000 space 1024K,   0% used [0x00000000f3400000, 0x00000000f3500000)
+AC   0  F    TS     0 PTAMS 0x00000000f3500000 NTAMS 0x00000000f3500000 space 1024K,   0% used [0x00000000f3500000, 0x00000000f3600000)
+AC   0  F    TS     0 PTAMS 0x00000000f3600000 NTAMS 0x00000000f3600000 space 1024K,   0% used [0x00000000f3600000, 0x00000000f3700000)
+AC   0  F    TS     0 PTAMS 0x00000000f3700000 NTAMS 0x00000000f3700000 space 1024K,   0% used [0x00000000f3700000, 0x00000000f3800000)
+AC   0  F    TS     0 PTAMS 0x00000000f3800000 NTAMS 0x00000000f3800000 space 1024K,   0% used [0x00000000f3800000, 0x00000000f3900000)
+AC   0  F    TS     0 PTAMS 0x00000000f3900000 NTAMS 0x00000000f3900000 space 1024K,   0% used [0x00000000f3900000, 0x00000000f3a00000)
+AC   0  F    TS     0 PTAMS 0x00000000f3a00000 NTAMS 0x00000000f3a00000 space 1024K,   0% used [0x00000000f3a00000, 0x00000000f3b00000)
+AC   0  F    TS     0 PTAMS 0x00000000f3b00000 NTAMS 0x00000000f3b00000 space 1024K,   0% used [0x00000000f3b00000, 0x00000000f3c00000)
+AC   0  F    TS     0 PTAMS 0x00000000f3c00000 NTAMS 0x00000000f3c00000 space 1024K,   0% used [0x00000000f3c00000, 0x00000000f3d00000)
+AC   0  F    TS     0 PTAMS 0x00000000f3d00000 NTAMS 0x00000000f3d00000 space 1024K,   0% used [0x00000000f3d00000, 0x00000000f3e00000)
+AC   0  F    TS     0 PTAMS 0x00000000f3e00000 NTAMS 0x00000000f3e00000 space 1024K,   0% used [0x00000000f3e00000, 0x00000000f3f00000)
+AC   0  F    TS     0 PTAMS 0x00000000f3f00000 NTAMS 0x00000000f3f00000 space 1024K,   0% used [0x00000000f3f00000, 0x00000000f4000000)
+AC   0  F    TS     0 PTAMS 0x00000000f4000000 NTAMS 0x00000000f4000000 space 1024K,   0% used [0x00000000f4000000, 0x00000000f4100000)
+AC   0  F    TS     0 PTAMS 0x00000000f4100000 NTAMS 0x00000000f4100000 space 1024K,   0% used [0x00000000f4100000, 0x00000000f4200000)
+AC   0  F    TS     0 PTAMS 0x00000000f4200000 NTAMS 0x00000000f4200000 space 1024K,   0% used [0x00000000f4200000, 0x00000000f4300000)
+AC   0  F    TS     0 PTAMS 0x00000000f4300000 NTAMS 0x00000000f4300000 space 1024K,   0% used [0x00000000f4300000, 0x00000000f4400000)
+AC   0  F    TS     0 PTAMS 0x00000000f4400000 NTAMS 0x00000000f4400000 space 1024K,   0% used [0x00000000f4400000, 0x00000000f4500000)
+AC   0  F    TS     0 PTAMS 0x00000000f4500000 NTAMS 0x00000000f4500000 space 1024K,   0% used [0x00000000f4500000, 0x00000000f4600000)
+AC   0  F    TS     0 PTAMS 0x00000000f4600000 NTAMS 0x00000000f4600000 space 1024K,   0% used [0x00000000f4600000, 0x00000000f4700000)
+AC   0  F    TS     0 PTAMS 0x00000000f4700000 NTAMS 0x00000000f4700000 space 1024K,   0% used [0x00000000f4700000, 0x00000000f4800000)
+AC   0  F    TS     0 PTAMS 0x00000000f4800000 NTAMS 0x00000000f4800000 space 1024K,   0% used [0x00000000f4800000, 0x00000000f4900000)
+AC   0  F    TS     0 PTAMS 0x00000000f4900000 NTAMS 0x00000000f4900000 space 1024K,   0% used [0x00000000f4900000, 0x00000000f4a00000)
+AC   0  F    TS     0 PTAMS 0x00000000f4a00000 NTAMS 0x00000000f4a00000 space 1024K,   0% used [0x00000000f4a00000, 0x00000000f4b00000)
+AC   0  F    TS     0 PTAMS 0x00000000f4b00000 NTAMS 0x00000000f4b00000 space 1024K,   0% used [0x00000000f4b00000, 0x00000000f4c00000)
+AC   0  F    TS     0 PTAMS 0x00000000f4c00000 NTAMS 0x00000000f4c00000 space 1024K,   0% used [0x00000000f4c00000, 0x00000000f4d00000)
+AC   0  F    TS     0 PTAMS 0x00000000f4d00000 NTAMS 0x00000000f4d00000 space 1024K,   0% used [0x00000000f4d00000, 0x00000000f4e00000)
+AC   0  F    TS     0 PTAMS 0x00000000f4e00000 NTAMS 0x00000000f4e00000 space 1024K,   0% used [0x00000000f4e00000, 0x00000000f4f00000)
+AC   0  F    TS     0 PTAMS 0x00000000f4f00000 NTAMS 0x00000000f4f00000 space 1024K,   0% used [0x00000000f4f00000, 0x00000000f5000000)
+AC   0  F    TS     0 PTAMS 0x00000000f5000000 NTAMS 0x00000000f5000000 space 1024K,   0% used [0x00000000f5000000, 0x00000000f5100000)
+AC   0  F    TS     0 PTAMS 0x00000000f5100000 NTAMS 0x00000000f5100000 space 1024K,   0% used [0x00000000f5100000, 0x00000000f5200000)
+AC   0  F    TS     0 PTAMS 0x00000000f5200000 NTAMS 0x00000000f5200000 space 1024K,   0% used [0x00000000f5200000, 0x00000000f5300000)
+AC   0  F    TS     0 PTAMS 0x00000000f5300000 NTAMS 0x00000000f5300000 space 1024K,   0% used [0x00000000f5300000, 0x00000000f5400000)
+AC   0  F    TS     0 PTAMS 0x00000000f5400000 NTAMS 0x00000000f5400000 space 1024K,   0% used [0x00000000f5400000, 0x00000000f5500000)
+AC   0  F    TS     0 PTAMS 0x00000000f5500000 NTAMS 0x00000000f5500000 space 1024K,   0% used [0x00000000f5500000, 0x00000000f5600000)
+AC   0  F    TS     0 PTAMS 0x00000000f5600000 NTAMS 0x00000000f5600000 space 1024K,   0% used [0x00000000f5600000, 0x00000000f5700000)
+AC   0  F    TS     0 PTAMS 0x00000000f5700000 NTAMS 0x00000000f5700000 space 1024K,   0% used [0x00000000f5700000, 0x00000000f5800000)
+AC   0  F    TS     0 PTAMS 0x00000000f5800000 NTAMS 0x00000000f5800000 space 1024K,   0% used [0x00000000f5800000, 0x00000000f5900000)
+AC   0  F    TS     0 PTAMS 0x00000000f5900000 NTAMS 0x00000000f5900000 space 1024K,   0% used [0x00000000f5900000, 0x00000000f5a00000)
+AC   0  F    TS     0 PTAMS 0x00000000f5a00000 NTAMS 0x00000000f5a00000 space 1024K,   0% used [0x00000000f5a00000, 0x00000000f5b00000)
+AC   0  F    TS     0 PTAMS 0x00000000f5b00000 NTAMS 0x00000000f5b00000 space 1024K,   0% used [0x00000000f5b00000, 0x00000000f5c00000)
+AC   0  F    TS     0 PTAMS 0x00000000f5c00000 NTAMS 0x00000000f5c00000 space 1024K,   0% used [0x00000000f5c00000, 0x00000000f5d00000)
+AC   0  F    TS     0 PTAMS 0x00000000f5d00000 NTAMS 0x00000000f5d00000 space 1024K,   0% used [0x00000000f5d00000, 0x00000000f5e00000)
+AC   0  F    TS     0 PTAMS 0x00000000f5e00000 NTAMS 0x00000000f5e00000 space 1024K,   0% used [0x00000000f5e00000, 0x00000000f5f00000)
+AC   0  F    TS     0 PTAMS 0x00000000f5f00000 NTAMS 0x00000000f5f00000 space 1024K,   0% used [0x00000000f5f00000, 0x00000000f6000000)
+AC   0  F    TS     0 PTAMS 0x00000000f6000000 NTAMS 0x00000000f6000000 space 1024K,   0% used [0x00000000f6000000, 0x00000000f6100000)
+AC   0  F    TS     0 PTAMS 0x00000000f6100000 NTAMS 0x00000000f6100000 space 1024K,   0% used [0x00000000f6100000, 0x00000000f6200000)
+AC   0  F    TS     0 PTAMS 0x00000000f6200000 NTAMS 0x00000000f6200000 space 1024K,   0% used [0x00000000f6200000, 0x00000000f6300000)
+AC   0  F    TS     0 PTAMS 0x00000000f6300000 NTAMS 0x00000000f6300000 space 1024K,   0% used [0x00000000f6300000, 0x00000000f6400000)
+AC   0  F    TS     0 PTAMS 0x00000000f6400000 NTAMS 0x00000000f6400000 space 1024K,   0% used [0x00000000f6400000, 0x00000000f6500000)
+AC   0  F    TS     0 PTAMS 0x00000000f6500000 NTAMS 0x00000000f6500000 space 1024K,   0% used [0x00000000f6500000, 0x00000000f6600000)
+AC   0  F    TS     0 PTAMS 0x00000000f6600000 NTAMS 0x00000000f6600000 space 1024K,   0% used [0x00000000f6600000, 0x00000000f6700000)
+AC   0  F    TS     0 PTAMS 0x00000000f6700000 NTAMS 0x00000000f6700000 space 1024K,   0% used [0x00000000f6700000, 0x00000000f6800000)
+AC   0  F    TS     0 PTAMS 0x00000000f6800000 NTAMS 0x00000000f6800000 space 1024K,   0% used [0x00000000f6800000, 0x00000000f6900000)
+AC   0  F    TS     0 PTAMS 0x00000000f6900000 NTAMS 0x00000000f6900000 space 1024K,   0% used [0x00000000f6900000, 0x00000000f6a00000)
+AC   0  F    TS     0 PTAMS 0x00000000f6a00000 NTAMS 0x00000000f6a00000 space 1024K,   0% used [0x00000000f6a00000, 0x00000000f6b00000)
+AC   0  F    TS     0 PTAMS 0x00000000f6b00000 NTAMS 0x00000000f6b00000 space 1024K,   0% used [0x00000000f6b00000, 0x00000000f6c00000)
+AC   0  F    TS     0 PTAMS 0x00000000f6c00000 NTAMS 0x00000000f6c00000 space 1024K,   0% used [0x00000000f6c00000, 0x00000000f6d00000)
+AC   0  F    TS     0 PTAMS 0x00000000f6d00000 NTAMS 0x00000000f6d00000 space 1024K,   0% used [0x00000000f6d00000, 0x00000000f6e00000)
+AC   0  F    TS     0 PTAMS 0x00000000f6e00000 NTAMS 0x00000000f6e00000 space 1024K,   0% used [0x00000000f6e00000, 0x00000000f6f00000)
+AC   0  F    TS     0 PTAMS 0x00000000f6f00000 NTAMS 0x00000000f6f00000 space 1024K,   0% used [0x00000000f6f00000, 0x00000000f7000000)
+AC   0  F    TS     0 PTAMS 0x00000000f7000000 NTAMS 0x00000000f7000000 space 1024K,   0% used [0x00000000f7000000, 0x00000000f7100000)
+AC   0  F    TS     0 PTAMS 0x00000000f7100000 NTAMS 0x00000000f7100000 space 1024K,   0% used [0x00000000f7100000, 0x00000000f7200000)
+AC   0  F    TS     0 PTAMS 0x00000000f7200000 NTAMS 0x00000000f7200000 space 1024K,   0% used [0x00000000f7200000, 0x00000000f7300000)
+AC   0  F    TS     0 PTAMS 0x00000000f7300000 NTAMS 0x00000000f7300000 space 1024K,   0% used [0x00000000f7300000, 0x00000000f7400000)
+AC   0  F    TS     0 PTAMS 0x00000000f7400000 NTAMS 0x00000000f7400000 space 1024K,   0% used [0x00000000f7400000, 0x00000000f7500000)
+AC   0  F    TS     0 PTAMS 0x00000000f7500000 NTAMS 0x00000000f7500000 space 1024K,   0% used [0x00000000f7500000, 0x00000000f7600000)
+AC   0  F    TS     0 PTAMS 0x00000000f7600000 NTAMS 0x00000000f7600000 space 1024K,   0% used [0x00000000f7600000, 0x00000000f7700000)
+AC   0  F    TS     0 PTAMS 0x00000000f7700000 NTAMS 0x00000000f7700000 space 1024K,   0% used [0x00000000f7700000, 0x00000000f7800000)
+AC   0  F    TS     0 PTAMS 0x00000000f7800000 NTAMS 0x00000000f7800000 space 1024K,   0% used [0x00000000f7800000, 0x00000000f7900000)
+AC   0  F    TS     0 PTAMS 0x00000000f7900000 NTAMS 0x00000000f7900000 space 1024K,   0% used [0x00000000f7900000, 0x00000000f7a00000)
+AC   0  F    TS     0 PTAMS 0x00000000f7a00000 NTAMS 0x00000000f7a00000 space 1024K,   0% used [0x00000000f7a00000, 0x00000000f7b00000)
+AC   0  F    TS     0 PTAMS 0x00000000f7b00000 NTAMS 0x00000000f7b00000 space 1024K,   0% used [0x00000000f7b00000, 0x00000000f7c00000)
+AC   0  F    TS     0 PTAMS 0x00000000f7c00000 NTAMS 0x00000000f7c00000 space 1024K,   0% used [0x00000000f7c00000, 0x00000000f7d00000)
+AC   0  F    TS     0 PTAMS 0x00000000f7d00000 NTAMS 0x00000000f7d00000 space 1024K,   0% used [0x00000000f7d00000, 0x00000000f7e00000)
+AC   0  F    TS     0 PTAMS 0x00000000f7e00000 NTAMS 0x00000000f7e00000 space 1024K,   0% used [0x00000000f7e00000, 0x00000000f7f00000)
+AC   0  F    TS     0 PTAMS 0x00000000f7f00000 NTAMS 0x00000000f7f00000 space 1024K,   0% used [0x00000000f7f00000, 0x00000000f8000000)
+AC   0  F    TS     0 PTAMS 0x00000000f8000000 NTAMS 0x00000000f8000000 space 1024K,   0% used [0x00000000f8000000, 0x00000000f8100000)
+AC   0  F    TS     0 PTAMS 0x00000000f8100000 NTAMS 0x00000000f8100000 space 1024K,   0% used [0x00000000f8100000, 0x00000000f8200000)
+AC   0  F    TS     0 PTAMS 0x00000000f8200000 NTAMS 0x00000000f8200000 space 1024K,   0% used [0x00000000f8200000, 0x00000000f8300000)
+AC   0  F    TS     0 PTAMS 0x00000000f8300000 NTAMS 0x00000000f8300000 space 1024K,   0% used [0x00000000f8300000, 0x00000000f8400000)
+AC   0  F    TS     0 PTAMS 0x00000000f8400000 NTAMS 0x00000000f8400000 space 1024K,   0% used [0x00000000f8400000, 0x00000000f8500000)
+AC   0  F    TS     0 PTAMS 0x00000000f8500000 NTAMS 0x00000000f8500000 space 1024K,   0% used [0x00000000f8500000, 0x00000000f8600000)
+AC   0  F    TS     0 PTAMS 0x00000000f8600000 NTAMS 0x00000000f8600000 space 1024K,   0% used [0x00000000f8600000, 0x00000000f8700000)
+AC   0  F    TS     0 PTAMS 0x00000000f8700000 NTAMS 0x00000000f8700000 space 1024K,   0% used [0x00000000f8700000, 0x00000000f8800000)
+AC   0  F    TS     0 PTAMS 0x00000000f8800000 NTAMS 0x00000000f8800000 space 1024K,   0% used [0x00000000f8800000, 0x00000000f8900000)
+AC   0  F    TS     0 PTAMS 0x00000000f8900000 NTAMS 0x00000000f8900000 space 1024K,   0% used [0x00000000f8900000, 0x00000000f8a00000)
+AC   0  F    TS     0 PTAMS 0x00000000f8a00000 NTAMS 0x00000000f8a00000 space 1024K,   0% used [0x00000000f8a00000, 0x00000000f8b00000)
+AC   0  F    TS     0 PTAMS 0x00000000f8b00000 NTAMS 0x00000000f8b00000 space 1024K,   0% used [0x00000000f8b00000, 0x00000000f8c00000)
+AC   0  F    TS     0 PTAMS 0x00000000f8c00000 NTAMS 0x00000000f8c00000 space 1024K,   0% used [0x00000000f8c00000, 0x00000000f8d00000)
+AC   0  F    TS     0 PTAMS 0x00000000f8d00000 NTAMS 0x00000000f8d00000 space 1024K,   0% used [0x00000000f8d00000, 0x00000000f8e00000)
+AC   0  F    TS     0 PTAMS 0x00000000f8e00000 NTAMS 0x00000000f8e00000 space 1024K,   0% used [0x00000000f8e00000, 0x00000000f8f00000)
+AC   0  F    TS     0 PTAMS 0x00000000f8f00000 NTAMS 0x00000000f8f00000 space 1024K,   0% used [0x00000000f8f00000, 0x00000000f9000000)
+AC   0  F    TS     0 PTAMS 0x00000000f9000000 NTAMS 0x00000000f9000000 space 1024K,   0% used [0x00000000f9000000, 0x00000000f9100000)
+AC   0  F    TS     0 PTAMS 0x00000000f9100000 NTAMS 0x00000000f9100000 space 1024K,   0% used [0x00000000f9100000, 0x00000000f9200000)
+AC   0  F    TS     0 PTAMS 0x00000000f9200000 NTAMS 0x00000000f9200000 space 1024K,   0% used [0x00000000f9200000, 0x00000000f9300000)
+AC   0  F    TS     0 PTAMS 0x00000000f9300000 NTAMS 0x00000000f9300000 space 1024K,   0% used [0x00000000f9300000, 0x00000000f9400000)
+AC   0  F    TS     0 PTAMS 0x00000000f9400000 NTAMS 0x00000000f9400000 space 1024K,   0% used [0x00000000f9400000, 0x00000000f9500000)
+AC   0  F    TS     0 PTAMS 0x00000000f9500000 NTAMS 0x00000000f9500000 space 1024K,   0% used [0x00000000f9500000, 0x00000000f9600000)
+AC   0  F    TS     0 PTAMS 0x00000000f9600000 NTAMS 0x00000000f9600000 space 1024K,   0% used [0x00000000f9600000, 0x00000000f9700000)
+AC   0  F    TS     0 PTAMS 0x00000000f9700000 NTAMS 0x00000000f9700000 space 1024K,   0% used [0x00000000f9700000, 0x00000000f9800000)
+AC   0  F    TS     0 PTAMS 0x00000000f9800000 NTAMS 0x00000000f9800000 space 1024K,   0% used [0x00000000f9800000, 0x00000000f9900000)
+AC   0  F    TS     0 PTAMS 0x00000000f9900000 NTAMS 0x00000000f9900000 space 1024K,   0% used [0x00000000f9900000, 0x00000000f9a00000)
+AC   0  F    TS     0 PTAMS 0x00000000f9a00000 NTAMS 0x00000000f9a00000 space 1024K,   0% used [0x00000000f9a00000, 0x00000000f9b00000)
+AC   0  F    TS     0 PTAMS 0x00000000f9b00000 NTAMS 0x00000000f9b00000 space 1024K,   0% used [0x00000000f9b00000, 0x00000000f9c00000)
+AC   0  F    TS     0 PTAMS 0x00000000f9c00000 NTAMS 0x00000000f9c00000 space 1024K,   0% used [0x00000000f9c00000, 0x00000000f9d00000)
+AC   0  F    TS     0 PTAMS 0x00000000f9d00000 NTAMS 0x00000000f9d00000 space 1024K,   0% used [0x00000000f9d00000, 0x00000000f9e00000)
+AC   0  F    TS     0 PTAMS 0x00000000f9e00000 NTAMS 0x00000000f9e00000 space 1024K,   0% used [0x00000000f9e00000, 0x00000000f9f00000)
+AC   0  F    TS     0 PTAMS 0x00000000f9f00000 NTAMS 0x00000000f9f00000 space 1024K,   0% used [0x00000000f9f00000, 0x00000000fa000000)
+AC   0  F    TS     0 PTAMS 0x00000000fa000000 NTAMS 0x00000000fa000000 space 1024K,   0% used [0x00000000fa000000, 0x00000000fa100000)
+AC   0  F    TS     0 PTAMS 0x00000000fa100000 NTAMS 0x00000000fa100000 space 1024K,   0% used [0x00000000fa100000, 0x00000000fa200000)
+AC   0  F    TS     0 PTAMS 0x00000000fa200000 NTAMS 0x00000000fa200000 space 1024K,   0% used [0x00000000fa200000, 0x00000000fa300000)
+AC   0  F    TS     0 PTAMS 0x00000000fa300000 NTAMS 0x00000000fa300000 space 1024K,   0% used [0x00000000fa300000, 0x00000000fa400000)
+AC   0  F    TS     0 PTAMS 0x00000000fa400000 NTAMS 0x00000000fa400000 space 1024K,   0% used [0x00000000fa400000, 0x00000000fa500000)
+AC   0  F    TS     0 PTAMS 0x00000000fa500000 NTAMS 0x00000000fa500000 space 1024K,   0% used [0x00000000fa500000, 0x00000000fa600000)
+AC   0  F    TS     0 PTAMS 0x00000000fa600000 NTAMS 0x00000000fa600000 space 1024K,   0% used [0x00000000fa600000, 0x00000000fa700000)
+AC   0  F    TS     0 PTAMS 0x00000000fa700000 NTAMS 0x00000000fa700000 space 1024K,   0% used [0x00000000fa700000, 0x00000000fa800000)
+AC   0  F    TS     0 PTAMS 0x00000000fa800000 NTAMS 0x00000000fa800000 space 1024K,   0% used [0x00000000fa800000, 0x00000000fa900000)
+AC   0  F    TS     0 PTAMS 0x00000000fa900000 NTAMS 0x00000000fa900000 space 1024K,   0% used [0x00000000fa900000, 0x00000000faa00000)
+AC   0  F    TS     0 PTAMS 0x00000000faa00000 NTAMS 0x00000000faa00000 space 1024K,   0% used [0x00000000faa00000, 0x00000000fab00000)
+AC   0  F    TS     0 PTAMS 0x00000000fab00000 NTAMS 0x00000000fab00000 space 1024K,   0% used [0x00000000fab00000, 0x00000000fac00000)
+AC   0  F    TS     0 PTAMS 0x00000000fac00000 NTAMS 0x00000000fac00000 space 1024K,   0% used [0x00000000fac00000, 0x00000000fad00000)
+AC   0  F    TS     0 PTAMS 0x00000000fad00000 NTAMS 0x00000000fad00000 space 1024K,   0% used [0x00000000fad00000, 0x00000000fae00000)
+AC   0  F    TS     0 PTAMS 0x00000000fae00000 NTAMS 0x00000000fae00000 space 1024K,   0% used [0x00000000fae00000, 0x00000000faf00000)
+AC   0  F    TS     0 PTAMS 0x00000000faf00000 NTAMS 0x00000000faf00000 space 1024K,   0% used [0x00000000faf00000, 0x00000000fb000000)
+AC   0  F    TS     0 PTAMS 0x00000000fb000000 NTAMS 0x00000000fb000000 space 1024K,   0% used [0x00000000fb000000, 0x00000000fb100000)
+AC   0  F    TS     0 PTAMS 0x00000000fb100000 NTAMS 0x00000000fb100000 space 1024K,   0% used [0x00000000fb100000, 0x00000000fb200000)
+AC   0  F    TS     0 PTAMS 0x00000000fb200000 NTAMS 0x00000000fb200000 space 1024K,   0% used [0x00000000fb200000, 0x00000000fb300000)
+AC   0  F    TS     0 PTAMS 0x00000000fb300000 NTAMS 0x00000000fb300000 space 1024K,   0% used [0x00000000fb300000, 0x00000000fb400000)
+AC   0  F    TS     0 PTAMS 0x00000000fb400000 NTAMS 0x00000000fb400000 space 1024K,   0% used [0x00000000fb400000, 0x00000000fb500000)
+AC   0  F    TS     0 PTAMS 0x00000000fb500000 NTAMS 0x00000000fb500000 space 1024K,   0% used [0x00000000fb500000, 0x00000000fb600000)
+AC   0  F    TS     0 PTAMS 0x00000000fb600000 NTAMS 0x00000000fb600000 space 1024K,   0% used [0x00000000fb600000, 0x00000000fb700000)
+AC   0  F    TS     0 PTAMS 0x00000000fb700000 NTAMS 0x00000000fb700000 space 1024K,   0% used [0x00000000fb700000, 0x00000000fb800000)
+AC   0  F    TS     0 PTAMS 0x00000000fb800000 NTAMS 0x00000000fb800000 space 1024K,   0% used [0x00000000fb800000, 0x00000000fb900000)
+AC   0  F    TS     0 PTAMS 0x00000000fb900000 NTAMS 0x00000000fb900000 space 1024K,   0% used [0x00000000fb900000, 0x00000000fba00000)
+AC   0  F    TS     0 PTAMS 0x00000000fba00000 NTAMS 0x00000000fba00000 space 1024K,   0% used [0x00000000fba00000, 0x00000000fbb00000)
+AC   0  F    TS     0 PTAMS 0x00000000fbb00000 NTAMS 0x00000000fbb00000 space 1024K,   0% used [0x00000000fbb00000, 0x00000000fbc00000)
+AC   0  F    TS     0 PTAMS 0x00000000fbc00000 NTAMS 0x00000000fbc00000 space 1024K,   0% used [0x00000000fbc00000, 0x00000000fbd00000)
+AC   0  F    TS     0 PTAMS 0x00000000fbd00000 NTAMS 0x00000000fbd00000 space 1024K,   0% used [0x00000000fbd00000, 0x00000000fbe00000)
+AC   0  F    TS     0 PTAMS 0x00000000fbe00000 NTAMS 0x00000000fbe00000 space 1024K,   0% used [0x00000000fbe00000, 0x00000000fbf00000)
+AC   0  F    TS     0 PTAMS 0x00000000fbf00000 NTAMS 0x00000000fbf00000 space 1024K,   0% used [0x00000000fbf00000, 0x00000000fc000000)
+AC   0  F    TS     0 PTAMS 0x00000000fc000000 NTAMS 0x00000000fc000000 space 1024K,   0% used [0x00000000fc000000, 0x00000000fc100000)
+AC   0  F    TS     0 PTAMS 0x00000000fc100000 NTAMS 0x00000000fc100000 space 1024K,   0% used [0x00000000fc100000, 0x00000000fc200000)
+AC   0  F    TS     0 PTAMS 0x00000000fc200000 NTAMS 0x00000000fc200000 space 1024K,   0% used [0x00000000fc200000, 0x00000000fc300000)
+AC   0  F    TS     0 PTAMS 0x00000000fc300000 NTAMS 0x00000000fc300000 space 1024K,   0% used [0x00000000fc300000, 0x00000000fc400000)
+AC   0  F    TS     0 PTAMS 0x00000000fc400000 NTAMS 0x00000000fc400000 space 1024K,   0% used [0x00000000fc400000, 0x00000000fc500000)
+AC   0  F    TS     0 PTAMS 0x00000000fc500000 NTAMS 0x00000000fc500000 space 1024K,   0% used [0x00000000fc500000, 0x00000000fc600000)
+AC   0  F    TS     0 PTAMS 0x00000000fc600000 NTAMS 0x00000000fc600000 space 1024K,   0% used [0x00000000fc600000, 0x00000000fc700000)
+AC   0  F    TS     0 PTAMS 0x00000000fc700000 NTAMS 0x00000000fc700000 space 1024K,   0% used [0x00000000fc700000, 0x00000000fc800000)
+AC   0  F    TS     0 PTAMS 0x00000000fc800000 NTAMS 0x00000000fc800000 space 1024K,   0% used [0x00000000fc800000, 0x00000000fc900000)
+AC   0  F    TS     0 PTAMS 0x00000000fc900000 NTAMS 0x00000000fc900000 space 1024K,   0% used [0x00000000fc900000, 0x00000000fca00000)
+AC   0  F    TS     0 PTAMS 0x00000000fca00000 NTAMS 0x00000000fca00000 space 1024K,   0% used [0x00000000fca00000, 0x00000000fcb00000)
+AC   0  F    TS     0 PTAMS 0x00000000fcb00000 NTAMS 0x00000000fcb00000 space 1024K,   0% used [0x00000000fcb00000, 0x00000000fcc00000)
+AC   0  F    TS     0 PTAMS 0x00000000fcc00000 NTAMS 0x00000000fcc00000 space 1024K,   0% used [0x00000000fcc00000, 0x00000000fcd00000)
+AC   0  F    TS     0 PTAMS 0x00000000fcd00000 NTAMS 0x00000000fcd00000 space 1024K,   0% used [0x00000000fcd00000, 0x00000000fce00000)
+AC   0  F    TS     0 PTAMS 0x00000000fce00000 NTAMS 0x00000000fce00000 space 1024K,   0% used [0x00000000fce00000, 0x00000000fcf00000)
+AC   0  F    TS     0 PTAMS 0x00000000fcf00000 NTAMS 0x00000000fcf00000 space 1024K,   0% used [0x00000000fcf00000, 0x00000000fd000000)
+AC   0  F    TS     0 PTAMS 0x00000000fd000000 NTAMS 0x00000000fd000000 space 1024K,   0% used [0x00000000fd000000, 0x00000000fd100000)
+AC   0  F    TS     0 PTAMS 0x00000000fd100000 NTAMS 0x00000000fd100000 space 1024K,   0% used [0x00000000fd100000, 0x00000000fd200000)
+AC   0  E    TS     0 PTAMS 0x00000000fd200000 NTAMS 0x00000000fd200000 space 1024K, 100% used [0x00000000fd200000, 0x00000000fd300000)
+AC   0  E CS TS     0 PTAMS 0x00000000fd300000 NTAMS 0x00000000fd300000 space 1024K, 100% used [0x00000000fd300000, 0x00000000fd400000)
+AC   0  E CS TS     0 PTAMS 0x00000000fd400000 NTAMS 0x00000000fd400000 space 1024K, 100% used [0x00000000fd400000, 0x00000000fd500000)
+AC   0  E CS TS     0 PTAMS 0x00000000fd500000 NTAMS 0x00000000fd500000 space 1024K, 100% used [0x00000000fd500000, 0x00000000fd600000)
+AC   0  E CS TS     0 PTAMS 0x00000000fd600000 NTAMS 0x00000000fd600000 space 1024K, 100% used [0x00000000fd600000, 0x00000000fd700000)
+AC   0  E CS TS     0 PTAMS 0x00000000fd700000 NTAMS 0x00000000fd700000 space 1024K, 100% used [0x00000000fd700000, 0x00000000fd800000)
+AC   0  E CS TS     0 PTAMS 0x00000000fd800000 NTAMS 0x00000000fd800000 space 1024K, 100% used [0x00000000fd800000, 0x00000000fd900000)
+AC   0  S CS TS     0 PTAMS 0x00000000fd900000 NTAMS 0x00000000fd900000 space 1024K, 100% used [0x00000000fd900000, 0x00000000fda00000)
+AC   0  S CS TS     0 PTAMS 0x00000000fda00000 NTAMS 0x00000000fda00000 space 1024K, 100% used [0x00000000fda00000, 0x00000000fdb00000)
+AC   0  S CS TS     0 PTAMS 0x00000000fdb00000 NTAMS 0x00000000fdb00000 space 1024K, 100% used [0x00000000fdb00000, 0x00000000fdc00000)
+AC   0  S CS TS     0 PTAMS 0x00000000fdc00000 NTAMS 0x00000000fdc00000 space 1024K, 100% used [0x00000000fdc00000, 0x00000000fdd00000)
+AC   0  S CS TS     0 PTAMS 0x00000000fdd00000 NTAMS 0x00000000fdd00000 space 1024K, 100% used [0x00000000fdd00000, 0x00000000fde00000)
+AC   0  E CS TS     0 PTAMS 0x00000000fde00000 NTAMS 0x00000000fde00000 space 1024K, 100% used [0x00000000fde00000, 0x00000000fdf00000)
+AC   0  E CS TS     0 PTAMS 0x00000000fdf00000 NTAMS 0x00000000fdf00000 space 1024K, 100% used [0x00000000fdf00000, 0x00000000fe000000)
+AC   0  E CS TS     0 PTAMS 0x00000000fe000000 NTAMS 0x00000000fe000000 space 1024K, 100% used [0x00000000fe000000, 0x00000000fe100000)
+AC   0  E CS TS     0 PTAMS 0x00000000fe100000 NTAMS 0x00000000fe100000 space 1024K, 100% used [0x00000000fe100000, 0x00000000fe200000)
+AC   0  E CS TS     0 PTAMS 0x00000000fe200000 NTAMS 0x00000000fe200000 space 1024K, 100% used [0x00000000fe200000, 0x00000000fe300000)
+AC   0  E CS TS     0 PTAMS 0x00000000fe300000 NTAMS 0x00000000fe300000 space 1024K, 100% used [0x00000000fe300000, 0x00000000fe400000)
+AC   0  E CS TS     0 PTAMS 0x00000000fe400000 NTAMS 0x00000000fe400000 space 1024K, 100% used [0x00000000fe400000, 0x00000000fe500000)
+AC   0  E CS TS     0 PTAMS 0x00000000fe500000 NTAMS 0x00000000fe500000 space 1024K, 100% used [0x00000000fe500000, 0x00000000fe600000)
+AC   0  E CS TS     0 PTAMS 0x00000000fe600000 NTAMS 0x00000000fe600000 space 1024K, 100% used [0x00000000fe600000, 0x00000000fe700000)
+AC   0  E CS TS     0 PTAMS 0x00000000fe700000 NTAMS 0x00000000fe700000 space 1024K, 100% used [0x00000000fe700000, 0x00000000fe800000)
+AC   0  E CS TS     0 PTAMS 0x00000000fe800000 NTAMS 0x00000000fe800000 space 1024K, 100% used [0x00000000fe800000, 0x00000000fe900000)
+AC   0  E CS TS     0 PTAMS 0x00000000fe900000 NTAMS 0x00000000fe900000 space 1024K, 100% used [0x00000000fe900000, 0x00000000fea00000)
+AC   0  E CS TS     0 PTAMS 0x00000000fea00000 NTAMS 0x00000000fea00000 space 1024K, 100% used [0x00000000fea00000, 0x00000000feb00000)
+AC   0  E CS TS     0 PTAMS 0x00000000feb00000 NTAMS 0x00000000feb00000 space 1024K, 100% used [0x00000000feb00000, 0x00000000fec00000)
+AC   0  E CS TS     0 PTAMS 0x00000000fec00000 NTAMS 0x00000000fec00000 space 1024K, 100% used [0x00000000fec00000, 0x00000000fed00000)
+AC   0  E CS TS     0 PTAMS 0x00000000fed00000 NTAMS 0x00000000fed00000 space 1024K, 100% used [0x00000000fed00000, 0x00000000fee00000)
+AC   0  E CS TS     0 PTAMS 0x00000000fee00000 NTAMS 0x00000000fee00000 space 1024K, 100% used [0x00000000fee00000, 0x00000000fef00000)
+AC   0  E CS TS     0 PTAMS 0x00000000fef00000 NTAMS 0x00000000fef00000 space 1024K, 100% used [0x00000000fef00000, 0x00000000ff000000)
+AC   0  E CS TS     0 PTAMS 0x00000000ff000000 NTAMS 0x00000000ff000000 space 1024K, 100% used [0x00000000ff000000, 0x00000000ff100000)
+AC   0  E CS TS     0 PTAMS 0x00000000ff100000 NTAMS 0x00000000ff100000 space 1024K, 100% used [0x00000000ff100000, 0x00000000ff200000)
+AC   0  E CS TS     0 PTAMS 0x00000000ff200000 NTAMS 0x00000000ff200000 space 1024K, 100% used [0x00000000ff200000, 0x00000000ff300000)
+AC   0  E CS TS     0 PTAMS 0x00000000ff300000 NTAMS 0x00000000ff300000 space 1024K, 100% used [0x00000000ff300000, 0x00000000ff400000)
+AC   0  E CS TS     0 PTAMS 0x00000000ff400000 NTAMS 0x00000000ff400000 space 1024K, 100% used [0x00000000ff400000, 0x00000000ff500000)
+AC   0  E CS TS     0 PTAMS 0x00000000ff500000 NTAMS 0x00000000ff500000 space 1024K, 100% used [0x00000000ff500000, 0x00000000ff600000)
+AC   0  E CS TS     0 PTAMS 0x00000000ff600000 NTAMS 0x00000000ff600000 space 1024K, 100% used [0x00000000ff600000, 0x00000000ff700000)
+AC   0  E CS TS     0 PTAMS 0x00000000ff700000 NTAMS 0x00000000ff700000 space 1024K, 100% used [0x00000000ff700000, 0x00000000ff800000)
+AC   0  E CS TS     0 PTAMS 0x00000000ff800000 NTAMS 0x00000000ff800000 space 1024K, 100% used [0x00000000ff800000, 0x00000000ff900000)
+AC   0  E CS TS     0 PTAMS 0x00000000ff900000 NTAMS 0x00000000ff900000 space 1024K, 100% used [0x00000000ff900000, 0x00000000ffa00000)
+AC   0  E CS TS     0 PTAMS 0x00000000ffa00000 NTAMS 0x00000000ffa00000 space 1024K, 100% used [0x00000000ffa00000, 0x00000000ffb00000)
+AC   0  E CS TS     0 PTAMS 0x00000000ffb00000 NTAMS 0x00000000ffb00000 space 1024K, 100% used [0x00000000ffb00000, 0x00000000ffc00000)
+AC   0  E CS TS     0 PTAMS 0x00000000ffc00000 NTAMS 0x00000000ffc00000 space 1024K, 100% used [0x00000000ffc00000, 0x00000000ffd00000)
+AC   0  E CS TS     0 PTAMS 0x00000000ffd00000 NTAMS 0x00000000ffd00000 space 1024K, 100% used [0x00000000ffd00000, 0x00000000ffe00000)
+AC   0  E CS TS     0 PTAMS 0x00000000ffe00000 NTAMS 0x00000000ffe00000 space 1024K, 100% used [0x00000000ffe00000, 0x00000000fff00000)
+AC   0  E CS TS     0 PTAMS 0x00000000fff00000 NTAMS 0x00000000fff00000 space 1024K, 100% used [0x00000000fff00000, 0x0000000100000000)
+
+Card table byte_map: [0x00007f9b766b0000,0x00007f9b767b0000] byte_map_base: 0x00007f9b75fb0000
+
+Marking Bits (Prev, Next): (CMBitMap*) 0x00007f9b8c04b920, (CMBitMap*) 0x00007f9b8c04b8c8
+ Prev Bits: [0x00007f9b755b0000, 0x00007f9b75db0000)
+ Next Bits: [0x00007f9b75db0000, 0x00007f9b765b0000)
+
+Polling page: 0x00007f9b91880000
+
+CodeCache: size=245760Kb used=6052Kb max_used=6052Kb free=239707Kb
+ bounds [0x00007f9b7c400000, 0x00007f9b7c9f0000, 0x00007f9b8b400000]
+ total_blobs=2452 nmethods=1969 adapters=396
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 6.883 Thread 0x00007f9b8c2bc000 nmethod 1966 0x00007f9b7c9eb350 code [0x00007f9b7c9eb4a0, 0x00007f9b7c9eb5b0]
+Event: 6.884 Thread 0x00007f9b8c2bc000 1967       3       scala.collection.GenTraversableOnce::$init$ (1 bytes)
+Event: 6.884 Thread 0x00007f9b8c2bc000 nmethod 1967 0x00007f9b7c9eb610 code [0x00007f9b7c9eb760, 0x00007f9b7c9eb890]
+Event: 6.884 Thread 0x00007f9b8c2bc000 1968       3       scala.collection.TraversableOnce::$init$ (1 bytes)
+Event: 6.884 Thread 0x00007f9b8c2bc000 nmethod 1968 0x00007f9b7c9eb910 code [0x00007f9b7c9eba60, 0x00007f9b7c9ebb90]
+Event: 6.906 Thread 0x00007f9b8c2b7800 1969       4       java.lang.ref.Finalizer::register (10 bytes)
+Event: 6.907 Thread 0x00007f9b8c2bc000 1970       1       akka.dispatch.Mailbox::actor (5 bytes)
+Event: 6.907 Thread 0x00007f9b8c2bc000 nmethod 1970 0x00007f9b7c9ebc10 code [0x00007f9b7c9ebd60, 0x00007f9b7c9ebe70]
+Event: 6.907 Thread 0x00007f9b8c2ba000 1971       4       java.util.stream.ReferencePipeline::forEachWithCancel (20 bytes)
+Event: 6.913 Thread 0x00007f9b8c2bc000 1972   !   3       java.lang.invoke.LambdaForm::compileToBytecode (103 bytes)
+
+GC Heap History (4 events):
+Event: 2.067 GC heap before
+{Heap before GC invocations=0 (full 0):
+ garbage-first heap   total 524288K, used 25600K [0x00000000e0000000, 0x00000000e0101000, 0x0000000100000000)
+  region size 1024K, 25 young (25600K), 0 survivors (0K)
+ Metaspace       used 10502K, capacity 10744K, committed 10880K, reserved 1058816K
+  class space    used 1265K, capacity 1361K, committed 1408K, reserved 1048576K
+Event: 2.098 GC heap after
+Heap after GC invocations=1 (full 0):
+ garbage-first heap   total 524288K, used 5809K [0x00000000e0000000, 0x00000000e0101000, 0x0000000100000000)
+  region size 1024K, 4 young (4096K), 4 survivors (4096K)
+ Metaspace       used 10502K, capacity 10744K, committed 10880K, reserved 1058816K
+  class space    used 1265K, capacity 1361K, committed 1408K, reserved 1048576K
+}
+Event: 4.890 GC heap before
+{Heap before GC invocations=1 (full 0):
+ garbage-first heap   total 524288K, used 35505K [0x00000000e0000000, 0x00000000e0101000, 0x0000000100000000)
+  region size 1024K, 34 young (34816K), 4 survivors (4096K)
+ Metaspace       used 20598K, capacity 21160K, committed 21296K, reserved 1067008K
+  class space    used 2674K, capacity 2853K, committed 2944K, reserved 1048576K
+Event: 4.955 GC heap after
+Heap after GC invocations=2 (full 0):
+ garbage-first heap   total 524288K, used 12450K [0x00000000e0000000, 0x00000000e0101000, 0x0000000100000000)
+  region size 1024K, 5 young (5120K), 5 survivors (5120K)
+ Metaspace       used 20598K, capacity 21160K, committed 21296K, reserved 1067008K
+  class space    used 2674K, capacity 2853K, committed 2944K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 4.220 Thread 0x00007f9b8c00b000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f9b7c6c7390 method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+Event: 4.220 Thread 0x00007f9b8c00b000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f9b7c62b490 method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+Event: 5.162 Thread 0x00007f9b8c00b000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f9b7c73cacc method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 203
+Event: 5.162 Thread 0x00007f9b8c00b000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f9b7c73cacc method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 203
+Event: 5.162 Thread 0x00007f9b8c00b000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f9b7c73cacc method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 203
+Event: 5.163 Thread 0x00007f9b8c00b000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f9b7c73cacc method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 203
+Event: 5.173 Thread 0x00007f9b8c00b000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f9b7c7ea6fc method=java.io.FilterInputStream.read([B)I @ 5
+Event: 5.174 Thread 0x00007f9b8c00b000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f9b7c7ea6fc method=java.io.FilterInputStream.read([B)I @ 5
+Event: 5.255 Thread 0x00007f9b8c00b000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f9b7c8a643c method=com.typesafe.config.impl.Tokenizer$TokenIterator.startOfComment(I)Z @ 25
+Event: 6.266 Thread 0x00007f9b8d25b800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f9b7c7e1cc8 method=java.lang.ThreadLocal.get()Ljava/lang/Object; @ 11
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 6.771 Thread 0x00007f9ae0006800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$recover$1(Lscala/PartialFunction;Lscala/util/Try;)Lscala/util/Try;> (0x00000000fd402c38) thrown at [/scratch/jenkins/workspace/8-2-build-linux-x64/jdk8u351/2908/hotspot/src/share/vm/int
+Event: 6.812 Thread 0x00007f9ac4004800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$foreach$1$adapted(Lscala/Function1;Lscala/util/Try;)Ljava/lang/Object;> (0x00000000fd587730) thrown at [/scratch/jenkins/workspace/8-2-build-linux-x64/jdk8u351/2908/hotspot/src/share/vm
+Event: 6.833 Thread 0x00007f9adc001000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$addString$1(Lscala/collection/mutable/StringBuilder;Ljava/lang/String;Lscala/runtime/BooleanRef;Ljava/lang/Object;)Ljava/lang/Object;> (0x00000000fd33a5b8) thrown at [/scratch/jenkins/w
+Event: 6.851 Thread 0x00007f9adc001000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$mapTo$1(Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object;> (0x00000000fd397d30) thrown at [/scratch/jenkins/workspace/8-2-build-linux-x64/jdk8u351/2908/hotspot/src/share/vm/interpr
+Event: 6.860 Thread 0x00007f9ac4004800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$reduceLeft$1$adapted(Lscala/Function2;Lscala/runtime/BooleanRef;Lscala/runtime/ObjectRef;Ljava/lang/Object;)Ljava/lang/Object;> (0x00000000fd4adef0) thrown at [/scratch/jenkins/workspac
+Event: 6.868 Thread 0x00007f9ac4004800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$andThen$2(Lscala/util/Try;)Lscala/util/Try;> (0x00000000fd4ccd10) thrown at [/scratch/jenkins/workspace/8-2-build-linux-x64/jdk8u351/2908/hotspot/src/share/vm/interpreter/linkResolver.c
+Event: 6.871 Thread 0x00007f9ac4004800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$groupBy$1(Lscala/collection/TraversableLike;Lscala/Function1;Lscala/collection/mutable/Map;Ljava/lang/Object;)Lscala/collection/mutable/Builder;> (0x00000000fd4d5400) thrown at [/scratc
+Event: 6.873 Thread 0x00007f9ac4004800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$groupBy$2(Lscala/collection/TraversableLike;)Lscala/collection/mutable/Builder;> (0x00000000fd4db6e0) thrown at [/scratch/jenkins/workspace/8-2-build-linux-x64/jdk8u351/2908/hotspot/src
+Event: 6.874 Thread 0x00007f9ac4004800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$groupBy$3$adapted(Lscala/Tuple2;)Ljava/lang/Object;> (0x00000000fd4e0418) thrown at [/scratch/jenkins/workspace/8-2-build-linux-x64/jdk8u351/2908/hotspot/src/share/vm/interpreter/linkRe
+Event: 6.875 Thread 0x00007f9ac4004800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$groupBy$4(Lscala/collection/mutable/Builder;Lscala/Tuple2;)Lscala/collection/mutable/Builder;> (0x00000000fd4e3f00) thrown at [/scratch/jenkins/workspace/8-2-build-linux-x64/jdk8u351/29
+
+Events (10 events):
+Event: 6.912 loading class akka/event/EventStreamUnsubscriber$$anonfun$receive$1 done
+Event: 6.912 loading class akka/remote/RemoteWatcher$HeartbeatRsp
+Event: 6.912 loading class akka/remote/RemoteWatcher$HeartbeatRsp done
+Event: 6.913 loading class akka/event/EventStream
+Event: 6.913 loading class akka/event/EventStream done
+Event: 6.913 loading class akka/actor/ActorRef
+Event: 6.913 loading class akka/actor/ActorRef done
+Event: 6.913 loading class akka/event/EventStream
+Event: 6.913 loading class akka/event/EventStream done
+Event: 6.913 Executing VM operation: RevokeBias
+
+
+Dynamic libraries:
+e0000000-100460000 rw-p 00000000 00:00 0
+100460000-140000000 ---p 00000000 00:00 0
+7f9aa4000000-7f9aa4021000 rw-p 00000000 00:00 0
+7f9aa4021000-7f9aa8000000 ---p 00000000 00:00 0
+7f9aac000000-7f9aac021000 rw-p 00000000 00:00 0
+7f9aac021000-7f9ab0000000 ---p 00000000 00:00 0
+7f9ab0000000-7f9ab002c000 rw-p 00000000 00:00 0
+7f9ab002c000-7f9ab4000000 ---p 00000000 00:00 0
+7f9ab4000000-7f9ab4021000 rw-p 00000000 00:00 0
+7f9ab4021000-7f9ab8000000 ---p 00000000 00:00 0
+7f9ab8000000-7f9ab8021000 rw-p 00000000 00:00 0
+7f9ab8021000-7f9abc000000 ---p 00000000 00:00 0
+7f9abc000000-7f9abc021000 rw-p 00000000 00:00 0
+7f9abc021000-7f9ac0000000 ---p 00000000 00:00 0
+7f9ac0000000-7f9ac0021000 rw-p 00000000 00:00 0
+7f9ac0021000-7f9ac4000000 ---p 00000000 00:00 0
+7f9ac4000000-7f9ac4021000 rw-p 00000000 00:00 0
+7f9ac4021000-7f9ac8000000 ---p 00000000 00:00 0
+7f9ac8000000-7f9ac8021000 rw-p 00000000 00:00 0
+7f9ac8021000-7f9acc000000 ---p 00000000 00:00 0
+7f9acc000000-7f9acc021000 rw-p 00000000 00:00 0
+7f9acc021000-7f9ad0000000 ---p 00000000 00:00 0
+7f9ad0000000-7f9ad0199000 rw-p 00000000 00:00 0
+7f9ad0199000-7f9ad4000000 ---p 00000000 00:00 0
+7f9ad4000000-7f9ad4021000 rw-p 00000000 00:00 0
+7f9ad4021000-7f9ad8000000 ---p 00000000 00:00 0
+7f9ad8000000-7f9ad8021000 rw-p 00000000 00:00 0
+7f9ad8021000-7f9adc000000 ---p 00000000 00:00 0
+7f9adc000000-7f9adc021000 rw-p 00000000 00:00 0
+7f9adc021000-7f9ae0000000 ---p 00000000 00:00 0
+7f9ae0000000-7f9ae0027000 rw-p 00000000 00:00 0
+7f9ae0027000-7f9ae4000000 ---p 00000000 00:00 0
+7f9ae4000000-7f9ae4021000 rw-p 00000000 00:00 0
+7f9ae4021000-7f9ae8000000 ---p 00000000 00:00 0
+7f9ae8000000-7f9ae8021000 rw-p 00000000 00:00 0
+7f9ae8021000-7f9aec000000 ---p 00000000 00:00 0
+7f9aec000000-7f9aec021000 rw-p 00000000 00:00 0
+7f9aec021000-7f9af0000000 ---p 00000000 00:00 0
+7f9af1b00000-7f9af1b40000 rw-p 00000000 00:00 0
+7f9af1b40000-7f9af1d03000 ---p 00000000 00:00 0
+7f9af1d03000-7f9af1e00000 rw-p 00000000 00:00 0
+7f9af1e00000-7f9af1e03000 ---p 00000000 00:00 0
+7f9af1e03000-7f9af1f00000 rw-p 00000000 00:00 0
+7f9af1f00000-7f9af1f03000 ---p 00000000 00:00 0
+7f9af1f03000-7f9af2000000 rw-p 00000000 00:00 0
+7f9af2000000-7f9af2003000 ---p 00000000 00:00 0
+7f9af2003000-7f9af2100000 rw-p 00000000 00:00 0
+7f9af2100000-7f9af2103000 ---p 00000000 00:00 0
+7f9af2103000-7f9af2200000 rw-p 00000000 00:00 0
+7f9af2200000-7f9af2203000 ---p 00000000 00:00 0
+7f9af2203000-7f9af2500000 rw-p 00000000 00:00 0
+7f9af2500000-7f9af2503000 ---p 00000000 00:00 0
+7f9af2503000-7f9af2600000 rw-p 00000000 00:00 0
+7f9af2600000-7f9af2603000 ---p 00000000 00:00 0
+7f9af2603000-7f9af2700000 rw-p 00000000 00:00 0
+7f9af2700000-7f9af2703000 ---p 00000000 00:00 0
+7f9af2703000-7f9af2800000 rw-p 00000000 00:00 0
+7f9af2800000-7f9af2803000 ---p 00000000 00:00 0
+7f9af2803000-7f9af2900000 rw-p 00000000 00:00 0
+7f9af2900000-7f9af2903000 ---p 00000000 00:00 0
+7f9af2903000-7f9af2a00000 rw-p 00000000 00:00 0
+7f9af2a00000-7f9af2a03000 ---p 00000000 00:00 0
+7f9af2a03000-7f9af2b00000 rw-p 00000000 00:00 0
+7f9af2b00000-7f9af2b03000 ---p 00000000 00:00 0
+7f9af2b03000-7f9af2c00000 rw-p 00000000 00:00 0
+7f9af2c00000-7f9af2c03000 ---p 00000000 00:00 0
+7f9af2c03000-7f9af2d00000 rw-p 00000000 00:00 0
+7f9af2d00000-7f9af2d03000 ---p 00000000 00:00 0
+7f9af2d03000-7f9af2e00000 rw-p 00000000 00:00 0
+7f9af2e00000-7f9af2e03000 ---p 00000000 00:00 0
+7f9af2e03000-7f9af3100000 rw-p 00000000 00:00 0
+7f9af3100000-7f9af3103000 ---p 00000000 00:00 0
+7f9af3103000-7f9af3c00000 rw-p 00000000 00:00 0
+7f9af3c00000-7f9af3c11000 r-xp 00000000 00:00 167928             /home/fanshi/jdk/jre/lib/amd64/libnio.so
+7f9af3c11000-7f9af3c17000 ---p 00011000 00:00 167928             /home/fanshi/jdk/jre/lib/amd64/libnio.so
+7f9af3c17000-7f9af3e10000 ---p 00017000 00:00 167928             /home/fanshi/jdk/jre/lib/amd64/libnio.so
+7f9af3e10000-7f9af3e11000 r--p 00010000 00:00 167928             /home/fanshi/jdk/jre/lib/amd64/libnio.so
+7f9af3e11000-7f9af3e12000 rw-p 00011000 00:00 167928             /home/fanshi/jdk/jre/lib/amd64/libnio.so
+7f9af3f00000-7f9af3f03000 ---p 00000000 00:00 0
+7f9af3f03000-7f9af4021000 rw-p 00000000 00:00 0
+7f9af4021000-7f9af8000000 ---p 00000000 00:00 0
+7f9af8000000-7f9af8021000 rw-p 00000000 00:00 0
+7f9af8021000-7f9afc000000 ---p 00000000 00:00 0
+7f9afc000000-7f9afc299000 rw-p 00000000 00:00 0
+7f9afc299000-7f9b00000000 ---p 00000000 00:00 0
+7f9b00000000-7f9b00021000 rw-p 00000000 00:00 0
+7f9b00021000-7f9b04000000 ---p 00000000 00:00 0
+7f9b04000000-7f9b043a8000 rw-p 00000000 00:00 0
+7f9b043a8000-7f9b08000000 ---p 00000000 00:00 0
+7f9b08000000-7f9b082d0000 rw-p 00000000 00:00 0
+7f9b082d0000-7f9b0c000000 ---p 00000000 00:00 0
+7f9b0c000000-7f9b0c021000 rw-p 00000000 00:00 0
+7f9b0c021000-7f9b10000000 ---p 00000000 00:00 0
+7f9b10000000-7f9b103af000 rw-p 00000000 00:00 0
+7f9b103af000-7f9b14000000 ---p 00000000 00:00 0
+7f9b14000000-7f9b14021000 rw-p 00000000 00:00 0
+7f9b14021000-7f9b18000000 ---p 00000000 00:00 0
+7f9b18000000-7f9b18021000 rw-p 00000000 00:00 0
+7f9b18021000-7f9b1c000000 ---p 00000000 00:00 0
+7f9b1c000000-7f9b1c021000 rw-p 00000000 00:00 0
+7f9b1c021000-7f9b20000000 ---p 00000000 00:00 0
+7f9b20000000-7f9b20021000 rw-p 00000000 00:00 0
+7f9b20021000-7f9b24000000 ---p 00000000 00:00 0
+7f9b24000000-7f9b24021000 rw-p 00000000 00:00 0
+7f9b24021000-7f9b28000000 ---p 00000000 00:00 0
+7f9b280f0000-7f9b287f1000 rw-p 00000000 00:00 0
+7f9b28800000-7f9b28816000 r-xp 00000000 00:00 167667             /home/fanshi/jdk/jre/lib/amd64/libnet.so
+7f9b28816000-7f9b2881c000 ---p 00016000 00:00 167667             /home/fanshi/jdk/jre/lib/amd64/libnet.so
+7f9b2881c000-7f9b28a15000 ---p 0001c000 00:00 167667             /home/fanshi/jdk/jre/lib/amd64/libnet.so
+7f9b28a15000-7f9b28a16000 r--p 00015000 00:00 167667             /home/fanshi/jdk/jre/lib/amd64/libnet.so
+7f9b28a16000-7f9b28a17000 rw-p 00016000 00:00 167667             /home/fanshi/jdk/jre/lib/amd64/libnet.so
+7f9b28a89000-7f9b28c00000 r--s 02138000 00:00 693466             /tmp/flink-rpc-akka_21b59864-fe5a-49c6-bfa0-a6d2276bdff0.jar
+7f9b28c00000-7f9b28c09000 r-xp 00000000 00:00 167692             /home/fanshi/jdk/jre/lib/amd64/libmanagement.so
+7f9b28c09000-7f9b28c0d000 ---p 00009000 00:00 167692             /home/fanshi/jdk/jre/lib/amd64/libmanagement.so
+7f9b28c0d000-7f9b28e08000 ---p 0000d000 00:00 167692             /home/fanshi/jdk/jre/lib/amd64/libmanagement.so
+7f9b28e08000-7f9b28e09000 r--p 00008000 00:00 167692             /home/fanshi/jdk/jre/lib/amd64/libmanagement.so
+7f9b28e09000-7f9b28e0a000 rw-p 00009000 00:00 167692             /home/fanshi/jdk/jre/lib/amd64/libmanagement.so
+7f9b28e90000-7f9b28e93000 ---p 00000000 00:00 0
+7f9b28e93000-7f9b28ff5000 rw-p 00000000 00:00 0
+7f9b28ffd000-7f9b292f4000 r--s 06cb7000 00:00 451964             /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-dist-1.16.0.jar
+7f9b292f4000-7f9b293ae000 r--s 00dee000 00:00 451971             /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-table-api-java-uber-1.16.0.jar
+7f9b293ae000-7f9b294a0000 r--s 0094c000 00:00 451962             /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-shaded-zookeeper-3.5.9.jar
+7f9b294a0000-7f9b294a1000 ---p 00000000 00:00 0
+7f9b294a1000-7f9b295a1000 rw-p 00000000 00:00 0
+7f9b295b0000-7f9b295b3000 ---p 00000000 00:00 0
+7f9b295b3000-7f9b296b0000 rw-p 00000000 00:00 0
+7f9b296b0000-7f9b296b4000 ---p 00000000 00:00 0
+7f9b296b4000-7f9b297b1000 rw-p 00000000 00:00 0
+7f9b297c0000-7f9b297c4000 ---p 00000000 00:00 0
+7f9b297c4000-7f9b298c1000 rw-p 00000000 00:00 0
+7f9b298d0000-7f9b298d4000 ---p 00000000 00:00 0
+7f9b298d4000-7f9b299d1000 rw-p 00000000 00:00 0
+7f9b299e0000-7f9b299e4000 ---p 00000000 00:00 0
+7f9b299e4000-7f9b29ae1000 rw-p 00000000 00:00 0
+7f9b29af0000-7f9b29af3000 ---p 00000000 00:00 0
+7f9b29af3000-7f9b29bf0000 rw-p 00000000 00:00 0
+7f9b29bf0000-7f9b29bf3000 ---p 00000000 00:00 0
+7f9b29bf3000-7f9b29cf0000 rw-p 00000000 00:00 0
+7f9b29cf0000-7f9b29cf3000 ---p 00000000 00:00 0
+7f9b29cf3000-7f9b29df0000 rw-p 00000000 00:00 0
+7f9b29df0000-7f9b29df3000 ---p 00000000 00:00 0
+7f9b29df3000-7f9b29ef0000 rw-p 00000000 00:00 0
+7f9b29ef0000-7f9b29ef1000 ---p 00000000 00:00 0
+7f9b29ef1000-7f9b29ff1000 rw-p 00000000 00:00 0
+7f9b2a000000-7f9b2c021000 rw-p 00000000 00:00 0
+7f9b2c021000-7f9b30000000 ---p 00000000 00:00 0
+7f9b30000000-7f9b30021000 rw-p 00000000 00:00 0
+7f9b30021000-7f9b34000000 ---p 00000000 00:00 0
+7f9b34000000-7f9b34021000 rw-p 00000000 00:00 0
+7f9b34021000-7f9b38000000 ---p 00000000 00:00 0
+7f9b38000000-7f9b38021000 rw-p 00000000 00:00 0
+7f9b38021000-7f9b3c000000 ---p 00000000 00:00 0
+7f9b3c000000-7f9b3c021000 rw-p 00000000 00:00 0
+7f9b3c021000-7f9b40000000 ---p 00000000 00:00 0
+7f9b40000000-7f9b40021000 rw-p 00000000 00:00 0
+7f9b40021000-7f9b44000000 ---p 00000000 00:00 0
+7f9b44000000-7f9b44021000 rw-p 00000000 00:00 0
+7f9b44021000-7f9b48000000 ---p 00000000 00:00 0
+7f9b48000000-7f9b48021000 rw-p 00000000 00:00 0
+7f9b48021000-7f9b4c000000 ---p 00000000 00:00 0
+7f9b4c000000-7f9b4c021000 rw-p 00000000 00:00 0
+7f9b4c021000-7f9b50000000 ---p 00000000 00:00 0
+7f9b50000000-7f9b50021000 rw-p 00000000 00:00 0
+7f9b50021000-7f9b54000000 ---p 00000000 00:00 0
+7f9b54000000-7f9b54021000 rw-p 00000000 00:00 0
+7f9b54021000-7f9b58000000 ---p 00000000 00:00 0
+7f9b58000000-7f9b58021000 rw-p 00000000 00:00 0
+7f9b58021000-7f9b5c000000 ---p 00000000 00:00 0
+7f9b5c000000-7f9b5c021000 rw-p 00000000 00:00 0
+7f9b5c021000-7f9b60000000 ---p 00000000 00:00 0
+7f9b60000000-7f9b60021000 rw-p 00000000 00:00 0
+7f9b60021000-7f9b64000000 ---p 00000000 00:00 0
+7f9b64000000-7f9b64021000 rw-p 00000000 00:00 0
+7f9b64021000-7f9b68000000 ---p 00000000 00:00 0
+7f9b68000000-7f9b68021000 rw-p 00000000 00:00 0
+7f9b68021000-7f9b6c000000 ---p 00000000 00:00 0
+7f9b6c000000-7f9b6c021000 rw-p 00000000 00:00 0
+7f9b6c021000-7f9b70000000 ---p 00000000 00:00 0
+7f9b70000000-7f9b70021000 rw-p 00000000 00:00 0
+7f9b70021000-7f9b74000000 ---p 00000000 00:00 0
+7f9b74004000-7f9b7401f000 r--s 001d6000 00:00 169373             /home/fanshi/jdk/jre/lib/ext/nashorn.jar
+7f9b7401f000-7f9b74200000 r--s 03ea9000 00:00 169548             /home/fanshi/jdk/jre/lib/rt.jar
+7f9b74200000-7f9b74b01000 rw-p 00000000 00:00 0
+7f9b74b10000-7f9b74c11000 rw-p 00000000 00:00 0
+7f9b74c20000-7f9b74d21000 rw-p 00000000 00:00 0
+7f9b74d30000-7f9b74e31000 rw-p 00000000 00:00 0
+7f9b74e40000-7f9b74f41000 rw-p 00000000 00:00 0
+7f9b74f50000-7f9b75051000 rw-p 00000000 00:00 0
+7f9b75060000-7f9b75161000 rw-p 00000000 00:00 0
+7f9b75170000-7f9b75271000 rw-p 00000000 00:00 0
+7f9b75280000-7f9b75281000 ---p 00000000 00:00 0
+7f9b75281000-7f9b75381000 rw-p 00000000 00:00 0
+7f9b75390000-7f9b75391000 ---p 00000000 00:00 0
+7f9b75391000-7f9b75491000 rw-p 00000000 00:00 0
+7f9b754a0000-7f9b754a1000 ---p 00000000 00:00 0
+7f9b754a1000-7f9b755a1000 rw-p 00000000 00:00 0
+7f9b755b0000-7f9b767b0000 rw-p 00000000 00:00 0
+7f9b767b0000-7f9b768b0000 ---p 00000000 00:00 0
+7f9b768b0000-7f9b769b0000 rw-p 00000000 00:00 0
+7f9b769b0000-7f9b769b1000 ---p 00000000 00:00 0
+7f9b769b1000-7f9b76ab1000 rw-p 00000000 00:00 0
+7f9b76ac0000-7f9b76ac1000 ---p 00000000 00:00 0
+7f9b76ac1000-7f9b76bc1000 rw-p 00000000 00:00 0
+7f9b76bd0000-7f9b76bd1000 ---p 00000000 00:00 0
+7f9b76bd1000-7f9b76cd1000 rw-p 00000000 00:00 0
+7f9b76ce0000-7f9b76ce1000 ---p 00000000 00:00 0
+7f9b76ce1000-7f9b76de1000 rw-p 00000000 00:00 0
+7f9b76df0000-7f9b76df1000 ---p 00000000 00:00 0
+7f9b76df1000-7f9b76ef1000 rw-p 00000000 00:00 0
+7f9b76f00000-7f9b76f01000 ---p 00000000 00:00 0
+7f9b76f01000-7f9b77001000 rw-p 00000000 00:00 0
+7f9b77010000-7f9b77011000 ---p 00000000 00:00 0
+7f9b77011000-7f9b77111000 rw-p 00000000 00:00 0
+7f9b77120000-7f9b77121000 ---p 00000000 00:00 0
+7f9b77121000-7f9b77221000 rw-p 00000000 00:00 0
+7f9b77230000-7f9b77231000 ---p 00000000 00:00 0
+7f9b77231000-7f9b77331000 rw-p 00000000 00:00 0
+7f9b77340000-7f9b77441000 rw-p 00000000 00:00 0
+7f9b77450000-7f9b77551000 rw-p 00000000 00:00 0
+7f9b77560000-7f9b77661000 rw-p 00000000 00:00 0
+7f9b77670000-7f9b77771000 rw-p 00000000 00:00 0
+7f9b77780000-7f9b77881000 rw-p 00000000 00:00 0
+7f9b77890000-7f9b77991000 rw-p 00000000 00:00 0
+7f9b779a0000-7f9b77aa1000 rw-p 00000000 00:00 0
+7f9b77ab0000-7f9b77bb1000 rw-p 00000000 00:00 0
+7f9b77bc0000-7f9b77bc1000 ---p 00000000 00:00 0
+7f9b77bc1000-7f9b77cc1000 rw-p 00000000 00:00 0
+7f9b77cd0000-7f9b77cd1000 ---p 00000000 00:00 0
+7f9b77cd1000-7f9b77dd1000 rw-p 00000000 00:00 0
+7f9b77de0000-7f9b77de1000 ---p 00000000 00:00 0
+7f9b77de1000-7f9b77ee1000 rw-p 00000000 00:00 0
+7f9b77ef0000-7f9b77ef1000 ---p 00000000 00:00 0
+7f9b77ef1000-7f9b77ff1000 rw-p 00000000 00:00 0
+7f9b78000000-7f9b78021000 rw-p 00000000 00:00 0
+7f9b78021000-7f9b7c000000 ---p 00000000 00:00 0
+7f9b7c007000-7f9b7c040000 r--s 002c5000 00:00 451975             /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-table-runtime-1.16.0.jar
+7f9b7c040000-7f9b7c058000 rw-p 00000000 00:00 0
+7f9b7c058000-7f9b7c400000 ---p 00000000 00:00 0
+7f9b7c400000-7f9b7c9f0000 rwxp 00000000 00:00 0
+7f9b7c9f0000-7f9b8b400000 ---p 00000000 00:00 0
+7f9b8b400000-7f9b8b41b000 r-xp 00000000 00:00 167675             /home/fanshi/jdk/jre/lib/amd64/libzip.so
+7f9b8b41b000-7f9b8b420000 ---p 0001b000 00:00 167675             /home/fanshi/jdk/jre/lib/amd64/libzip.so
+7f9b8b420000-7f9b8b61a000 ---p 00020000 00:00 167675             /home/fanshi/jdk/jre/lib/amd64/libzip.so
+7f9b8b61a000-7f9b8b61b000 r--p 0001a000 00:00 167675             /home/fanshi/jdk/jre/lib/amd64/libzip.so
+7f9b8b61b000-7f9b8b61c000 rw-p 0001b000 00:00 167675             /home/fanshi/jdk/jre/lib/amd64/libzip.so
+7f9b8b636000-7f9b8b6f0000 r--s 0135a000 00:00 451972             /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-scala_2.12-1.16.0.jar
+7f9b8b6f0000-7f9b8b6f1000 ---p 00000000 00:00 0
+7f9b8b6f1000-7f9b8b7f1000 rw-p 00000000 00:00 0
+7f9b8b800000-7f9b8b82d000 r-xp 00000000 00:00 167665             /home/fanshi/jdk/jre/lib/amd64/libjava.so
+7f9b8b82d000-7f9b8b839000 ---p 0002d000 00:00 167665             /home/fanshi/jdk/jre/lib/amd64/libjava.so
+7f9b8b839000-7f9b8ba2c000 ---p 00039000 00:00 167665             /home/fanshi/jdk/jre/lib/amd64/libjava.so
+7f9b8ba2c000-7f9b8ba2d000 r--p 0002c000 00:00 167665             /home/fanshi/jdk/jre/lib/amd64/libjava.so
+7f9b8ba2d000-7f9b8ba2f000 rw-p 0002d000 00:00 167665             /home/fanshi/jdk/jre/lib/amd64/libjava.so
+7f9b8ba38000-7f9b8ba49000 r--s 001c9000 00:00 169531             /home/fanshi/jdk/jre/lib/jsse.jar
+7f9b8ba49000-7f9b8baa0000 r--p 00000000 00:00 561771             /usr/lib/locale/C.utf8/LC_CTYPE
+7f9b8baa0000-7f9b8baf0000 rw-p 00000000 00:00 0
+7f9b8baf0000-7f9b8baf1000 ---p 00000000 00:00 0
+7f9b8baf1000-7f9b8bbf1000 rw-p 00000000 00:00 0
+7f9b8bc00000-7f9b8bc0d000 r-xp 00000000 00:00 167609             /home/fanshi/jdk/jre/lib/amd64/libverify.so
+7f9b8bc0d000-7f9b8bc11000 ---p 0000d000 00:00 167609             /home/fanshi/jdk/jre/lib/amd64/libverify.so
+7f9b8bc11000-7f9b8be0c000 ---p 00011000 00:00 167609             /home/fanshi/jdk/jre/lib/amd64/libverify.so
+7f9b8be0c000-7f9b8be0e000 r--p 0000c000 00:00 167609             /home/fanshi/jdk/jre/lib/amd64/libverify.so
+7f9b8be0e000-7f9b8be0f000 rw-p 0000e000 00:00 167609             /home/fanshi/jdk/jre/lib/amd64/libverify.so
+7f9b8be10000-7f9b8be86000 rw-p 00000000 00:00 0
+7f9b8be90000-7f9b8beeb000 rw-p 00000000 00:00 0
+7f9b8bef0000-7f9b8bef1000 ---p 00000000 00:00 0
+7f9b8bef1000-7f9b8bff1000 rw-p 00000000 00:00 0
+7f9b8c000000-7f9b8e289000 rw-p 00000000 00:00 0
+7f9b8e289000-7f9b90000000 ---p 00000000 00:00 0
+7f9b90000000-7f9b90028000 rw-p 00000000 00:00 0
+7f9b90030000-7f9b90051000 rw-p 00000000 00:00 0
+7f9b90060000-7f9b90081000 rw-p 00000000 00:00 0
+7f9b90090000-7f9b900b1000 rw-p 00000000 00:00 0
+7f9b900c0000-7f9b900e1000 rw-p 00000000 00:00 0
+7f9b900f0000-7f9b900f1000 ---p 00000000 00:00 0
+7f9b900f1000-7f9b901f1000 rw-p 00000000 00:00 0
+7f9b90200000-7f9b90ef8000 r-xp 00000000 00:00 167482             /home/fanshi/jdk/jre/lib/amd64/server/libjvm.so
+7f9b90ef8000-7f9b910f8000 ---p 00cf8000 00:00 167482             /home/fanshi/jdk/jre/lib/amd64/server/libjvm.so
+7f9b910f8000-7f9b9118e000 r--p 00cf8000 00:00 167482             /home/fanshi/jdk/jre/lib/amd64/server/libjvm.so
+7f9b9118e000-7f9b911bf000 rw-p 00d8e000 00:00 167482             /home/fanshi/jdk/jre/lib/amd64/server/libjvm.so
+7f9b911bf000-7f9b911fa000 rw-p 00000000 00:00 0
+7f9b91200000-7f9b91221000 rw-p 00000000 00:00 0
+7f9b91230000-7f9b91251000 rw-p 00000000 00:00 0
+7f9b91260000-7f9b91281000 rw-p 00000000 00:00 0
+7f9b91290000-7f9b912b1000 rw-p 00000000 00:00 0
+7f9b912c0000-7f9b912c4000 ---p 00000000 00:00 0
+7f9b912c4000-7f9b913c1000 rw-p 00000000 00:00 0
+7f9b913d0000-7f9b913f8000 r--p 00000000 00:00 595542             /usr/lib/x86_64-linux-gnu/libc.so.6
+7f9b913f8000-7f9b9158d000 r-xp 00028000 00:00 595542             /usr/lib/x86_64-linux-gnu/libc.so.6
+7f9b9158d000-7f9b915e5000 r--p 001bd000 00:00 595542             /usr/lib/x86_64-linux-gnu/libc.so.6
+7f9b915e5000-7f9b915e9000 r--p 00214000 00:00 595542             /usr/lib/x86_64-linux-gnu/libc.so.6
+7f9b915e9000-7f9b915eb000 rw-p 00218000 00:00 595542             /usr/lib/x86_64-linux-gnu/libc.so.6
+7f9b915eb000-7f9b915f8000 rw-p 00000000 00:00 0
+7f9b91600000-7f9b91617000 r-xp 00000000 00:00 177890             /home/fanshi/jdk/lib/amd64/jli/libjli.so
+7f9b91617000-7f9b9161b000 ---p 00017000 00:00 177890             /home/fanshi/jdk/lib/amd64/jli/libjli.so
+7f9b9161b000-7f9b91816000 ---p 0001b000 00:00 177890             /home/fanshi/jdk/lib/amd64/jli/libjli.so
+7f9b91816000-7f9b91817000 r--p 00016000 00:00 177890             /home/fanshi/jdk/lib/amd64/jli/libjli.so
+7f9b91817000-7f9b91818000 rw-p 00017000 00:00 177890             /home/fanshi/jdk/lib/amd64/jli/libjli.so
+7f9b9181d000-7f9b91840000 r--s 00193000 00:00 451968             /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/log4j-core-2.17.1.jar
+7f9b91840000-7f9b91861000 rw-p 00000000 00:00 0
+7f9b91870000-7f9b91871000 rw-p 00000000 00:00 0
+7f9b91880000-7f9b91881000 ---p 00000000 00:00 0
+7f9b91886000-7f9b9188c000 r--s 00044000 00:00 451963             /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/log4j-api-2.17.1.jar
+7f9b9188c000-7f9b91890000 r--s 0002f000 00:00 451967             /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/log4j-1.2-api-2.17.1.jar
+7f9b91890000-7f9b91891000 r--p 00000000 00:00 599906             /usr/lib/x86_64-linux-gnu/librt.so.1
+7f9b91891000-7f9b91892000 r-xp 00001000 00:00 599906             /usr/lib/x86_64-linux-gnu/librt.so.1
+7f9b91892000-7f9b91893000 r--p 00002000 00:00 599906             /usr/lib/x86_64-linux-gnu/librt.so.1
+7f9b91893000-7f9b91894000 r--p 00002000 00:00 599906             /usr/lib/x86_64-linux-gnu/librt.so.1
+7f9b91894000-7f9b91895000 rw-p 00003000 00:00 599906             /usr/lib/x86_64-linux-gnu/librt.so.1
+7f9b91895000-7f9b918a0000 r--s 00073000 00:00 451974             /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-connector-files-1.16.0.jar
+7f9b918a0000-7f9b918ae000 r--p 00000000 00:00 598659             /usr/lib/x86_64-linux-gnu/libm.so.6
+7f9b918ae000-7f9b9192a000 r-xp 0000e000 00:00 598659             /usr/lib/x86_64-linux-gnu/libm.so.6
+7f9b9192a000-7f9b91985000 r--p 0008a000 00:00 598659             /usr/lib/x86_64-linux-gnu/libm.so.6
+7f9b91985000-7f9b91986000 r--p 000e4000 00:00 598659             /usr/lib/x86_64-linux-gnu/libm.so.6
+7f9b91986000-7f9b91987000 rw-p 000e5000 00:00 598659             /usr/lib/x86_64-linux-gnu/libm.so.6
+7f9b91987000-7f9b91988000 r--s 00005000 00:00 451969             /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/log4j-slf4j-impl-2.17.1.jar
+7f9b91988000-7f9b9198d000 r--s 00028000 00:00 451965             /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-json-1.16.0.jar
+7f9b9198d000-7f9b91990000 r--s 00017000 00:00 451970             /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-csv-1.16.0.jar
+7f9b91990000-7f9b91992000 rw-p 00000000 00:00 0
+7f9b91992000-7f9b91994000 r--s 0228e000 00:00 451966             /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-table-planner-loader-1.16.0.jar
+7f9b91994000-7f9b91999000 r--s 0002c000 00:00 451973             /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-cep-1.16.0.jar
+7f9b91999000-7f9b919a0000 r--s 00000000 00:00 588138             /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f9b919a0000-7f9b919a1000 r--p 00000000 00:00 595948             /usr/lib/x86_64-linux-gnu/libdl.so.2
+7f9b919a1000-7f9b919a2000 r-xp 00001000 00:00 595948             /usr/lib/x86_64-linux-gnu/libdl.so.2
+7f9b919a2000-7f9b919a3000 r--p 00002000 00:00 595948             /usr/lib/x86_64-linux-gnu/libdl.so.2
+7f9b919a3000-7f9b919a4000 r--p 00002000 00:00 595948             /usr/lib/x86_64-linux-gnu/libdl.so.2
+7f9b919a4000-7f9b919a5000 rw-p 00003000 00:00 595948             /usr/lib/x86_64-linux-gnu/libdl.so.2
+7f9b919a5000-7f9b919a6000 r--p 00000000 00:00 561778             /usr/lib/locale/C.utf8/LC_NUMERIC
+7f9b919a6000-7f9b919a7000 r--p 00000000 00:00 561781             /usr/lib/locale/C.utf8/LC_TIME
+7f9b919a7000-7f9b919a8000 r--p 00000000 00:00 561770             /usr/lib/locale/C.utf8/LC_COLLATE
+7f9b919a8000-7f9b919a9000 r--p 00000000 00:00 561776             /usr/lib/locale/C.utf8/LC_MONETARY
+7f9b919a9000-7f9b919aa000 r--p 00000000 00:00 561775             /usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+7f9b919aa000-7f9b919ab000 r--p 00000000 00:00 561779             /usr/lib/locale/C.utf8/LC_PAPER
+7f9b919ab000-7f9b919ac000 r--p 00000000 00:00 599900             /usr/lib/x86_64-linux-gnu/libpthread.so.0
+7f9b919ac000-7f9b919ad000 r-xp 00001000 00:00 599900             /usr/lib/x86_64-linux-gnu/libpthread.so.0
+7f9b919ad000-7f9b919ae000 r--p 00002000 00:00 599900             /usr/lib/x86_64-linux-gnu/libpthread.so.0
+7f9b919ae000-7f9b919af000 r--p 00002000 00:00 599900             /usr/lib/x86_64-linux-gnu/libpthread.so.0
+7f9b919af000-7f9b919b0000 rw-p 00003000 00:00 599900             /usr/lib/x86_64-linux-gnu/libpthread.so.0
+7f9b919b0000-7f9b919b1000 r--p 00000000 00:00 588544             /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f9b919b1000-7f9b919b2000 r--p 00001000 00:00 588544             /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f9b919b2000-7f9b919db000 r-xp 00002000 00:00 588544             /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f9b919db000-7f9b919dc000 r-xp 0002b000 00:00 588544             /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f9b919dc000-7f9b919e6000 r--p 0002c000 00:00 588544             /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f9b919e6000-7f9b919e7000 r--p 00036000 00:00 588544             /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f9b919e7000-7f9b919e8000 r--p 00000000 00:00 561777             /usr/lib/locale/C.utf8/LC_NAME
+7f9b919e8000-7f9b919ea000 r--p 00037000 00:00 588544             /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f9b919ea000-7f9b919ec000 rw-p 00039000 00:00 588544             /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f9b919ec000-7f9b919ed000 r--p 00000000 00:00 561769             /usr/lib/locale/C.utf8/LC_ADDRESS
+7f9b919ed000-7f9b919ee000 r--p 00000000 00:00 561780             /usr/lib/locale/C.utf8/LC_TELEPHONE
+7f9b919ee000-7f9b919ef000 r--p 00000000 00:00 561773             /usr/lib/locale/C.utf8/LC_MEASUREMENT
+7f9b919ef000-7f9b919f0000 r--p 00000000 00:00 561772             /usr/lib/locale/C.utf8/LC_IDENTIFICATION
+7f9b919f0000-7f9b919f2000 rw-p 00000000 00:00 0
+7f9b919f2000-7f9b919fa000 rw-s 00000000 00:00 2499               /tmp/hsperfdata_fanshi/13856
+7f9b91a00000-7f9b91a01000 r-xp 00000000 00:00 167013             /home/fanshi/jdk/bin/java
+7f9b91c00000-7f9b91c01000 r--p 00000000 00:00 167013             /home/fanshi/jdk/bin/java
+7f9b91c01000-7f9b91c02000 rw-p 00001000 00:00 167013             /home/fanshi/jdk/bin/java
+7fffcfcc3000-7fffcfce4000 rw-p 00000000 00:00 0                  [heap]
+7fffd6b84000-7fffd7384000 rw-p 00000000 00:00 0                  [stack]
+7fffd765f000-7fffd7660000 r-xp 00000000 00:00 0                  [vdso]
+
+VM Arguments:
+jvm_args: -XX:+UseG1GC -Xmx536870902 -Xms536870902 -XX:MaxDirectMemorySize=268435458 -XX:MaxMetaspaceSize=268435456 -Dlog.file=/mnt/e/DownloadFromBrowser/flink-1.16.0/log/flink-fanshi-taskexecutor-13-DESKTOP-276TNP6.log -Dlog4j.configuration=file:/mnt/e/DownloadFromBrowser/flink-1.16.0/conf/log4j.properties -Dlog4j.configurationFile=file:/mnt/e/DownloadFromBrowser/flink-1.16.0/conf/log4j.properties -Dlogback.configurationFile=file:/mnt/e/DownloadFromBrowser/flink-1.16.0/conf/logback.xml 
+java_command: org.apache.flink.runtime.taskexecutor.TaskManagerRunner --configDir /mnt/e/DownloadFromBrowser/flink-1.16.0/conf -D taskmanager.memory.network.min=134217730b -D taskmanager.cpu.cores=1.0 -D taskmanager.memory.task.off-heap.size=0b -D taskmanager.memory.jvm-metaspace.size=268435456b -D external-resources=none -D taskmanager.memory.jvm-overhead.min=201326592b -D taskmanager.memory.framework.off-heap.size=134217728b -D taskmanager.memory.network.max=134217730b -D taskmanager.memory.framework.heap.size=134217728b -D taskmanager.memory.managed.size=536870920b -D taskmanager.memory.task.heap.size=402653174b -D taskmanager.numberOfTaskSlots=1 -D taskmanager.memory.jvm-overhead.max=201326592b
+java_class_path (initial): /mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-cep-1.16.0.jar:/mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-connector-files-1.16.0.jar:/mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-csv-1.16.0.jar:/mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-json-1.16.0.jar:/mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-scala_2.12-1.16.0.jar:/mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-shaded-zookeeper-3.5.9.jar:/mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-table-api-java-uber-1.16.0.jar:/mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-table-planner-loader-1.16.0.jar:/mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-table-runtime-1.16.0.jar:/mnt/e/DownloadFromBrowser/flink-1.16.0/lib/log4j-1.2-api-2.17.1.jar:/mnt/e/DownloadFromBrowser/flink-1.16.0/lib/log4j-api-2.17.1.jar:/mnt/e/DownloadFromBrowser/flink-1.16.0/lib/log4j-core-2.17.1.jar:/mnt/e/DownloadFromBrowser/flink-1.16.0/lib/log4j-slf4j-impl-2.17.1.jar:/mnt/e/DownloadFromBrowser/flink-1.16.0/lib/flink-dist-1.16.0.jar::::
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/home/fanshi/jdk
+JRE_HOME=/home/fanshi/jdk/jre
+CLASSPATH=.:/home/fanshi/jdk/lib:/home/fanshi/jdk/jre/lib
+PATH=/mnt/d/Maven/apache-maven-3.6.3-bin/apache-maven-3.6.3/bin:/home/fanshi/jdk/bin:/home/fanshi/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/bin/remote-cli:/mnt/d/Maven/apache-maven-3.6.3-bin/apache-maven-3.6.3/bin:/home/fanshi/jdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/d/Git/cmd:/mnt/d/software/anaconda/home:/mnt/d/software/anaconda/home/Scripts:/mnt/d/software/anaconda/home/Library/bin:/mnt/d/software/anaconda/home/Library/mingw-w64/bin:/home/fanshi/jdk/bin:/home/fanshi/jdk/jre/bin:/mnt/d/gradle-6.8.3/bin:/mnt/d/node/:/mnt/d/Straberry_Perl/c/bin:/mnt/d/Straberry_Perl/perl/site/bin:/mnt/d/Straberry_Perl/perl/bin:/mnt/d/python/Scripts/:/mnt/d/python:/mnt/d/putty/:/mnt/d/Xmanager/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/d/Maven/apache-maven-3.6.3-bin/apache-maven-3.6.3/bin:/mnt/d/python/Scripts/:/mnt/d/python/:/mnt/c/Users/96332/AppData/Local/Microsoft/WindowsApps:/mnt/d/software/pycharm/PyCharm Community Edition 2020.2.3/bin:/mnt/c/Program Files (x86)/MySQL/MySQL Server 5.6/bin:/mnt/c/Program Files/Bandizip/:/mnt/d/IntelliJ/IntelliJ IDEA 2020.3/bin:/mnt/c/Users/96332/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/96332/AppData/Roaming/npm:/mnt/d/VSCode/Microsoft VS Code/bin:/mnt/d/miktex/miktex/bin/x64/:/mnt/d/Straberry_Perl/perl/bin:/mnt/d/Maven/apache-maven-3.6.3-bin/apache-maven-3.6.3/bin:/home/fanshi/jdk/bin:/home/fanshi/.local/bin:/home/fanshi/.local/bin
+SHELL=/usr/bin/zsh
+HOSTTYPE=x86_64
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xae16f0], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xae16f0], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0xae16f0], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x915d10], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x915d10], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0xae16f0], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000010000000000000000000000, sa_flags=SA_RESTART
+SIGUSR2: [libjvm.so+0x915be0], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x916200], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: SIG_IGN, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: [libjvm.so+0x916200], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x916200], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=22.04
+DISTRIB_CODENAME=jammy
+DISTRIB_DESCRIPTION="Ubuntu 22.04.1 LTS"
+
+uname:Linux 4.4.0-19041-Microsoft #1237-Microsoft Sat Sep 11 14:32:00 PST 2021 x86_64
+libc:glibc 2.35 NPTL 2.35 
+rlimit: STACK 8192k, CORE 0k, NPROC 7823, NOFILE 65536, AS infinity
+load average:0.52 0.58 0.59
+
+/proc/meminfo:
+MemTotal:       16568820 kB
+MemFree:         3703360 kB
+Buffers:           34032 kB
+Cached:           188576 kB
+SwapCached:            0 kB
+Active:           167556 kB
+Inactive:         157876 kB
+Active(anon):     103104 kB
+Inactive(anon):    17440 kB
+Active(file):      64452 kB
+Inactive(file):   140436 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:      13107196 kB
+SwapFree:       12980184 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:        102824 kB
+Mapped:            71404 kB
+Shmem:             17720 kB
+Slab:              13868 kB
+SReclaimable:       6744 kB
+SUnreclaim:         7124 kB
+KernelStack:        2848 kB
+PageTables:         2524 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      515524 kB
+Committed_AS:    3450064 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       21296 kB
+VmallocChunk:      66044 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:      2048 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       12280 kB
+DirectMap4M:      897024 kB
+
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 12, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
+stepping	: 12
+microcode	: 0xffffffff
+cpu MHz		: 2112.000
+cache size	: 256 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm pni pclmulqdq dtes64 est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave osxsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt ibrs ibpb stibp ssbd
+bogomips	: 4224.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
+stepping	: 12
+microcode	: 0xffffffff
+cpu MHz		: 2112.000
+cache size	: 256 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm pni pclmulqdq dtes64 est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave osxsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt ibrs ibpb stibp ssbd
+bogomips	: 4224.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
+stepping	: 12
+microcode	: 0xffffffff
+cpu MHz		: 2112.000
+cache size	: 256 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm pni pclmulqdq dtes64 est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave osxsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt ibrs ibpb stibp ssbd
+bogomips	: 4224.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
+stepping	: 12
+microcode	: 0xffffffff
+cpu MHz		: 2112.000
+cache size	: 256 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm pni pclmulqdq dtes64 est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave osxsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt ibrs ibpb stibp ssbd
+bogomips	: 4224.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 4
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
+stepping	: 12
+microcode	: 0xffffffff
+cpu MHz		: 2112.000
+cache size	: 256 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm pni pclmulqdq dtes64 est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave osxsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt ibrs ibpb stibp ssbd
+bogomips	: 4224.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 5
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
+stepping	: 12
+microcode	: 0xffffffff
+cpu MHz		: 2112.000
+cache size	: 256 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm pni pclmulqdq dtes64 est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave osxsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt ibrs ibpb stibp ssbd
+bogomips	: 4224.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 6
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
+stepping	: 12
+microcode	: 0xffffffff
+cpu MHz		: 2112.000
+cache size	: 256 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm pni pclmulqdq dtes64 est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave osxsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt ibrs ibpb stibp ssbd
+bogomips	: 4224.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 7
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
+stepping	: 12
+microcode	: 0xffffffff
+cpu MHz		: 2112.000
+cache size	: 256 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm pni pclmulqdq dtes64 est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave osxsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt ibrs ibpb stibp ssbd
+bogomips	: 4224.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 16568820k(3703360k free), swap 13107196k(12980184k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.351-b10) for linux-amd64 JRE (1.8.0_351-b10), built on Sep 15 2022 02:56:51 by "java_re" with gcc 7.3.0
+
+time: Thu Dec  8 14:16:15 2022
+timezone: CET
+elapsed time: 7.131302 seconds (0d 0h 0m 7s)
+

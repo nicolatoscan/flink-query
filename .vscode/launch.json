@@ -1,0 +1,112 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Parallel",
+            "request": "launch",
+            "mainClass": "org.apache.flink.Parallel",
+            "projectName": "flink-query"
+        },
+        {
+            "type": "java",
+            "name": "Launch DataTimerEventGen",
+            "request": "launch",
+            "mainClass": "org.apache.flink.util.event_gens.DataTimerEventGen",
+            "projectName": "flink-query"
+        },
+        {
+            "type": "java",
+            "name": "Launch WindowWordCountJob",
+            "request": "launch",
+            "mainClass": "org.apache.flink.WindowWordCountJob",
+            "projectName": "flink-query"
+        },
+        {
+            "type": "java",
+            "name": "Launch StreamingJob",
+            "request": "launch",
+            "mainClass": "org.apache.flink.StreamingJob",
+            "projectName": "flink-query"
+        },
+        {
+            "type": "java",
+            "name": "Launch WindowWordCountJob",
+            "request": "launch",
+            "mainClass": "com.toscan.WindowWordCountJob",
+            "projectName": "flink-query"
+        },
+        {
+            "type": "java",
+            "name": "Launch StreamingJob",
+            "request": "launch",
+            "mainClass": "com.toscan.StreamingJob",
+            "projectName": "flink-query"
+        },
+        {
+            "type": "java",
+            "name": "Launch Kafka_reciever_sender",
+            "request": "launch",
+            "mainClass": "com.toscan.Kafka_reciever_sender",
+            "projectName": "flink-query"
+        },
+        {
+            "type": "java",
+            "name": "Launch JsonDataRead",
+            "request": "launch",
+            "mainClass": "com.toscan.util.io.JsonDataRead",
+            "projectName": "flink-query"
+        },
+        {
+            "type": "java",
+            "name": "Launch DataGenerator",
+            "request": "launch",
+            "mainClass": "com.toscan.generator.DataGenerator",
+            "projectName": "flink-query"
+        },
+        {
+            "type": "java",
+            "name": "Launch SocketWindowWordCount",
+            "request": "launch",
+            "mainClass": "com.toscan.SocketWindowWordCount",
+            "projectName": "flink-query"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "com.toscan.App",
+            "projectName": "flink-query"
+        },
+        {
+            "type": "java",
+            "name": "Launch JoinStream",
+            "request": "launch",
+            "mainClass": "com.toscan.JoinStream",
+            "projectName": "flink-query"
+        },
+        {
+            "type": "java",
+            "name": "Launch JoinText",
+            "request": "launch",
+            "mainClass": "com.toscan.JoinText",
+            "projectName": "flink-query"
+        },
+        {
+            "type": "java",
+            "name": "Launch Parallel",
+            "request": "launch",
+            "mainClass": "com.toscan.Parallel",
+            "projectName": "flink-query"
+        }
+    ]
+}
