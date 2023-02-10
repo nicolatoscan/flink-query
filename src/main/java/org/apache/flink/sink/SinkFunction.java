@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Properties;
+import java.util.Random;
 
 public class SinkFunction extends RichSinkFunction<FileDataEntry> {
     private static Logger l = LoggerFactory.getLogger(SinkFunction.class);
@@ -47,7 +48,11 @@ public class SinkFunction extends RichSinkFunction<FileDataEntry> {
     public void open(Configuration parameters) throws Exception {
         super.open(parameters);
 
-        writer = new FileWriter("/root/flink-query/metrics_logs/metrics.csv");
+        Random rand = new Random();
+
+        int int_random = rand.nextInt(500); 
+
+        writer = new FileWriter("/root/flink-query/metrics_logs/metrics_" + int_random + ".csv");
 
         // mqttPublishTask = new MQTTPublishTask();
         // mqttPublishTask.setup(l, p);
@@ -59,7 +64,7 @@ public class SinkFunction extends RichSinkFunction<FileDataEntry> {
         sinkMeter = getRuntimeContext()
                     .getMetricGroup()
                     .addGroup("MyMetrics")
-                    .meter("SinkMeter", new MeterView(1));
+                    .meter("SinkMeter", new MeterView(10));
         com.codahale.metrics.Histogram dropwizardHistogram = new com.codahale.metrics.Histogram(new SlidingWindowReservoir(dataNum));
         latencyHistogram = getRuntimeContext().getMetricGroup()
                 .addGroup("MyMetrics")
@@ -83,6 +88,7 @@ public class SinkFunction extends RichSinkFunction<FileDataEntry> {
 
     @Override
     public void invoke(FileDataEntry value, Context context) throws Exception {
+
         HashMap<String, String> map = new HashMap<>();
         // map.put(AbstractTask.DEFAULT_KEY, value.getObsValue());
         // mqttPublishTask.doTask(map);
@@ -93,7 +99,7 @@ public class SinkFunction extends RichSinkFunction<FileDataEntry> {
         if (value.getSourceInTimestamp() > 0) {
             latencyHistogram.update(Instant.now().toEpochMilli() - value.getSourceInTimestamp());
             try {
-                writer.write(value.getMsgId() + "," + value.getPayLoad() + "," + "," + value.getSourceInTimestamp() + "," + (Instant.now().toEpochMilli() - value.getSourceInTimestamp()));
+                writer.write(value.getMsgId() + "," + value.getPayLoad() + "," + value.getSourceInTimestamp() + "," + sinkCounter.getCount() + "," + sinkMeter.getRate() + "," + latencyHistogram.getStatistics().getMax() + ","  + latencyHistogram.getStatistics().getMean() + ","  + latencyHistogram.getStatistics().getMin() + ","  + latencyHistogram.getStatistics().getStdDev() + ","  + (Instant.now().toEpochMilli() - value.getSourceInTimestamp()) + "," + endExpGauge.getValue());
                 writer.write("\n");
             } catch (IOException e) {
                 e.printStackTrace();
