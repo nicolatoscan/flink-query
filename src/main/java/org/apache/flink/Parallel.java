@@ -2,36 +2,18 @@ package org.apache.flink;
 // package com.toscan;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
-import org.apache.flink.api.common.functions.MapFunction;
-import org.apache.flink.api.common.functions.RichFlatMapFunction;
-import org.apache.flink.api.common.functions.RichMapFunction;
 import org.apache.flink.api.common.restartstrategy.RestartStrategies;
-import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.api.java.utils.ParameterTool;
-import org.apache.flink.configuration.Configuration;
-import org.apache.flink.metrics.Metric;
-import org.apache.flink.metrics.MetricConfig;
-import org.apache.flink.metrics.MetricGroup;
-import org.apache.flink.metrics.reporter.MetricReporter;
-import org.apache.flink.metrics.reporter.Scheduled;
 import org.apache.flink.sink.SinkFunction;
 import org.apache.flink.streaming.api.CheckpointingMode;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-import org.apache.flink.streaming.api.windowing.assigners.TumblingProcessingTimeWindows;
-import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.util.Collector;
 
 import org.apache.flink.generator.FileDataEntry;
 import org.apache.flink.source.SourceFromFile;
 
 import org.apache.flink.metrics.*;
-import java.time.LocalDateTime;
-import java.time.Instant;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
 public class Parallel {
@@ -46,6 +28,9 @@ public class Parallel {
         int inputRate = 500;
         int numData = 200000;
 
+		// String server = "localhost:9092";
+		// String inputTopic = "testtopic";
+
         final ParameterTool params = ParameterTool.fromArgs(args);
        
     //   String inputFilePath = params.get("input");
@@ -55,22 +40,47 @@ public class Parallel {
 
         // data source
         SourceFromFile sourceFromFile = new SourceFromFile(inputFilePath, scalingFactor, inputRate, numData);
-        
+
+		
+		// kafka source
+		// KafkaSource<String> flinkKafkaConsumer = createStringConsumerForTopic(inputTopic, server);
+
+		// DataStream<FileDataEntry> dataStream = env.fromSource(flinkKafkaConsumer, WatermarkStrategy.noWatermarks(), "Kafka Source")
+		// .flatMap(new Splitter());
+
         // System.out.println("On port: " + 9998);
         DataStream<FileDataEntry> dataStream = env
             .addSource(sourceFromFile, "Source")
-			.setParallelism(1)
+			// .setParallelism(1)
             .flatMap(new Splitter())
 			.setParallelism(1);
             // .keyBy(value -> value.f1)
             // .window(TumblingProcessingTimeWindows.of(Time.seconds(5)))
             // .sum(1);
 
-        dataStream.addSink(new SinkFunction(p, numData)).name("sink").setParallelism(2);
+		System.out.println("Start!");
+        dataStream.addSink(new SinkFunction(p, numData)).name("sink").setParallelism(1);
         dataStream.print();
-
-        env.execute("Ingest and Parse");
+		
+		env.execute("parallel");
    }
+
+	// public static KafkaSource<String> createStringConsumerForTopic(String topic, String kafkaAddress) {
+	// 	Properties props = new Properties();
+	// 	props.setProperty("bootstrap.servers", kafkaAddress);
+	// 	props.setProperty("enable.auto.commit", "false");
+	// 	props.setProperty("auto.commit.interval.ms", "1000");
+	// 	props.setProperty("auto.offset.reset", "earlist");
+
+	// 	KafkaSource<String> consumer = KafkaSource
+	// 	.<String>builder()
+	// 	.setProperties(props)
+	// 	.setTopics(topic)
+	// 	.setValueOnlyDeserializer(new SimpleStringSchema())
+	// 	.build();
+
+	// 	return consumer;
+	// }
 
    private static final class Splitter implements FlatMapFunction<FileDataEntry, FileDataEntry> {
 
@@ -81,12 +91,14 @@ public class Parallel {
 		public void flatMap(FileDataEntry value, Collector<FileDataEntry> out) throws Exception {
 			// normalize and split the line
 			String word = value.getPayLoad();
+			// String word = "value";
 
 			System.out.println(word);
 			if (word.equals("kill")) {
 				throw new Exception("Killing the job");
 			}
 
+			// out.collect(new FileDataEntry("processed", "1111", Instant.now().toEpochMilli()));
 			if (word.charAt(0) != 'a') {
 				out.collect(new FileDataEntry(word.toUpperCase(), value.getMsgId(), value.getSourceInTimestamp()));
 			} else {
