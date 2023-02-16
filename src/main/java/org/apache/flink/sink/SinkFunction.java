@@ -19,6 +19,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.Instant;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
 
@@ -33,26 +34,48 @@ public class SinkFunction extends RichSinkFunction<FileDataEntry> {
     private Counter sinkCounter;
     private Meter sinkMeter;
     private Gauge endExpGauge;
+    private Gauge<Double> cpuGauge;
     private Histogram latencyHistogram;
+    // private Runtime runtime;
+
+
+    // parameters
     private int dataNum;
+    private String flag;
+    private String nameComponent;
+    private Boolean workerFail;
+
     private Boolean isExperimentEnding = false;
+    private Double cpuCurValue = 0.0;
+    private static final long MEGABYTE = 1024L * 1024L;
+
+    // private transient OperatingSystemMXBean osBean;
 
     // private MQTTPublishTask mqttPublishTask;
 
-    public SinkFunction(Properties p_, int dataNum) {
+    public SinkFunction(Properties p_, int dataNum, String flag, String nameComponent, Boolean workerFail) {
         p = p_;
         this.dataNum = dataNum;
+        this.flag = flag;
+        this.workerFail = workerFail;
+        this.nameComponent = nameComponent;
     }
 
     @Override
     public void open(Configuration parameters) throws Exception {
         super.open(parameters);
 
+        // osBean = ManagementFactory.getOperatingSystemMXBean();
+
         Random rand = new Random();
 
         int int_random = rand.nextInt(500); 
 
-        writer = new FileWriter("/root/flink-query/metrics_logs/metrics_" + int_random + ".csv");
+        if (this.workerFail) {
+            writer = new FileWriter("/root/flink-query/metrics_logs/" + this.nameComponent + "_" + this.flag + "_metrics_FT_" + int_random + ".csv");
+        } else {
+            writer = new FileWriter("/root/flink-query/metrics_logs/" + this.nameComponent + "_" + this.flag + "_metrics_NR_" + int_random + ".csv");
+        }
 
         // mqttPublishTask = new MQTTPublishTask();
         // mqttPublishTask.setup(l, p);
@@ -77,6 +100,27 @@ public class SinkFunction extends RichSinkFunction<FileDataEntry> {
                         return isExperimentEnding;
                     }
                 });
+        
+        Map<String, String> vars = getRuntimeContext().getMetricGroup().getAllVariables();
+        String identifier = vars.get("<host>") + ".taskmanager." + vars.get("<tm_id>") + "." + vars.get("<job_name>") + "." + vars.get("<task_name>") + "." + vars.get("<subtask_index>");        
+        cpuGauge = getRuntimeContext().getMetricGroup()
+                .gauge(getRuntimeContext().getMetricGroup().getMetricIdentifier(identifier+".Status.JVM.CPU"+".Load"), new Gauge<Double>(){
+                    @Override
+                    public Double getValue() {
+                        return cpuCurValue;
+                    }
+                });
+        System.out.println(cpuGauge.getValue());
+
+        System.out.println(getRuntimeContext().getHistogram(getRuntimeContext().getMetricGroup().getMetricIdentifier(identifier+".Status.JVM.CPU"+".Load")));
+
+        // System.out.println(getRuntimeContext().getMetricGroup().getIOMetricGroup().);
+
+        // runtime = Runtime.getRuntime();
+    }
+
+    public static long bytesToMegabytes(long bytes) {
+        return bytes / MEGABYTE;
     }
 
     @Override
@@ -95,11 +139,17 @@ public class SinkFunction extends RichSinkFunction<FileDataEntry> {
 
         sinkCounter.inc();
         sinkMeter.markEvent();
-        
+    
+        // runtime.gc();
+        // // Calculate the used memory
+        // long memory = bytesToMegabytes(runtime.totalMemory() - runtime.freeMemory());
+
         if (value.getSourceInTimestamp() > 0) {
             latencyHistogram.update(Instant.now().toEpochMilli() - value.getSourceInTimestamp());
             try {
-                writer.write(value.getMsgId() + "," + value.getPayLoad() + "," + value.getSourceInTimestamp() + "," + sinkCounter.getCount() + "," + sinkMeter.getRate() + "," + latencyHistogram.getStatistics().getMax() + ","  + latencyHistogram.getStatistics().getMean() + ","  + latencyHistogram.getStatistics().getMin() + ","  + latencyHistogram.getStatistics().getStdDev() + ","  + (Instant.now().toEpochMilli() - value.getSourceInTimestamp()) + "," + endExpGauge.getValue());
+                
+                writer.write(Instant.now().toEpochMilli() + "," + value.getMsgId() + "," + value.getPayLoad() + "," + value.getSourceInTimestamp() + "," + sinkCounter.getCount() + "," + sinkMeter.getRate());
+                // + "," + latencyHistogram.getStatistics().getMax() + ","  + latencyHistogram.getStatistics().getMean() + ","  + latencyHistogram.getStatistics().getMin() + ","  + latencyHistogram.getStatistics().getStdDev() + ","  + (Instant.now().toEpochMilli() - value.getSourceInTimestamp()) + "," + endExpGauge.getValue());
                 writer.write("\n");
             } catch (IOException e) {
                 e.printStackTrace();
@@ -109,4 +159,5 @@ public class SinkFunction extends RichSinkFunction<FileDataEntry> {
             isExperimentEnding = true;
         }
     }
+
 }

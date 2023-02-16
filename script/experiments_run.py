@@ -4,6 +4,7 @@ import argparse
 import time
 import socket
 import sys
+import psutil
 # from gevent import joinall
 
 from experiments_prop import *
@@ -76,6 +77,8 @@ def run_flink_job(isLocal, jar_path, parallel):
     print("")
     print("  +++++ started running the job at: " + time.strftime("%H.%M.%S", time.localtime()))
 
+    time.sleep(30)
+
     process = subprocess.Popen(flink_command.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()
 
@@ -95,9 +98,7 @@ def main():
     kill_task_slots_all()
     run_local(args.jar_name, job_alias, unique_exp_name, parallel)
 
-    time.sleep(20)
-
-    kill_task_slots(1)
+    # kill_task_slots(1)
 
 if __name__ == "__main__":
     main()

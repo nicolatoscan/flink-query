@@ -22,11 +22,11 @@ public class Parallel {
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, 5000));
-        env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
+        env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.AT_LEAST_ONCE);
 
         double scalingFactor = 2;
         int inputRate = 500;
-        int numData = 200000;
+        int numData = 2000000000;
 
 		// String server = "localhost:9092";
 		// String inputTopic = "testtopic";
@@ -41,7 +41,6 @@ public class Parallel {
         // data source
         SourceFromFile sourceFromFile = new SourceFromFile(inputFilePath, scalingFactor, inputRate, numData);
 
-		
 		// kafka source
 		// KafkaSource<String> flinkKafkaConsumer = createStringConsumerForTopic(inputTopic, server);
 
@@ -51,16 +50,16 @@ public class Parallel {
         // System.out.println("On port: " + 9998);
         DataStream<FileDataEntry> dataStream = env
             .addSource(sourceFromFile, "Source")
-			// .setParallelism(1)
+			.setParallelism(1)
             .flatMap(new Splitter())
-			.setParallelism(1);
+			.setParallelism(2);
             // .keyBy(value -> value.f1)
             // .window(TumblingProcessingTimeWindows.of(Time.seconds(5)))
             // .sum(1);
 
 		System.out.println("Start!");
-        dataStream.addSink(new SinkFunction(p, numData)).name("sink").setParallelism(1);
-        dataStream.print();
+        dataStream.addSink(new SinkFunction(p, numData, "ALO", "Sink", false)).name("sink").setParallelism(1);
+        // dataStream.print();
 		
 		env.execute("parallel");
    }
@@ -93,7 +92,7 @@ public class Parallel {
 			String word = value.getPayLoad();
 			// String word = "value";
 
-			System.out.println(word);
+			// System.out.println(word);
 			if (word.equals("kill")) {
 				throw new Exception("Killing the job");
 			}

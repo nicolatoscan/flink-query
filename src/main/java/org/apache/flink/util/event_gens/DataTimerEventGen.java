@@ -51,8 +51,8 @@ public class DataTimerEventGen {
                 }
                 TimerTask task = new EventGenTimerTask(dataReadList.get(i), tsIndex);
                 TimerTask task2 = new WorkKillerTimerTask(dataReadList.get(i), tsIndex);
-                timer.scheduleAtFixedRate(task, 0, period);
-                timer.schedule(task2, 20*1000);
+                timer.scheduleAtFixedRate(task, 0, 100);
+                // timer.schedule(task2, 20*1000);
                 // timer.scheduleAtFixedRate(task2, 0, period);
                 // System.out.println("+++++++++++++++");
             }
