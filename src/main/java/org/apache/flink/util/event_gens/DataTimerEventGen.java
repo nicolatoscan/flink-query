@@ -1,14 +1,12 @@
 package org.apache.flink.util.event_gens;
 
-import org.apache.flink.util.io.JsonDataRead;
-import org.apache.flink.util.listener.DataReadListener;
-
 import java.io.IOException;
-import java.time.Instant;
-import java.util.Date;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import org.apache.flink.util.io.JsonDataRead;
+import org.apache.flink.util.listener.DataReadListener;
+
 
 public class DataTimerEventGen {
 
@@ -51,8 +49,8 @@ public class DataTimerEventGen {
                 }
                 TimerTask task = new EventGenTimerTask(dataReadList.get(i), tsIndex);
                 TimerTask task2 = new WorkKillerTimerTask(dataReadList.get(i), tsIndex);
-                timer.scheduleAtFixedRate(task, 0, 100);
-                // timer.schedule(task2, 20*1000);
+                timer.scheduleAtFixedRate(task, 0, 1);
+                timer.schedule(task2, 20*1000);
                 // timer.scheduleAtFixedRate(task2, 0, period);
                 // System.out.println("+++++++++++++++");
             }

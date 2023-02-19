@@ -77,7 +77,7 @@ def run_flink_job(isLocal, jar_path, parallel):
     print("")
     print("  +++++ started running the job at: " + time.strftime("%H.%M.%S", time.localtime()))
 
-    time.sleep(30)
+    # time.sleep(30)
 
     process = subprocess.Popen(flink_command.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()

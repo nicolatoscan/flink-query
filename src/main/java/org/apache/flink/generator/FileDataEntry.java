@@ -50,5 +50,10 @@ public class FileDataEntry {
     public void setSourceInTimestamp(Long sourceInTimestamp) {
         this.sourceInTimestamp = sourceInTimestamp;
     }
+
+    public int getLength(){
+        // System.out.println(this.msgId.length() + this.getPayLoad().length());
+        return this.msgId.getBytes().length + this.payLoad.getBytes().length;
+    }
 }
 
