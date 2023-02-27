@@ -11,7 +11,7 @@ import org.apache.flink.util.listener.DataReadListener;
 public class DataTimerEventGen {
 
     // num of threads to read data
-    private final int numThreads = 1;
+    private final int numThreads = 4;
 
     private DataReadListener dataReadListener;
 

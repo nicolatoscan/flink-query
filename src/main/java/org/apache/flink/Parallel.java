@@ -23,9 +23,9 @@ public class Parallel {
    public static void main(String[] args) throws Exception {
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, 5000));
-		// env.setRestartStrategy(RestartStrategies.noRestart());
-        env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
+        // env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, 5000));
+		env.setRestartStrategy(RestartStrategies.noRestart());
+        // env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
 
         double scalingFactor = 2;
         int inputRate = 500;
@@ -41,7 +41,7 @@ public class Parallel {
 
         String inputFilePath = "./test1.csv";
 
-		TimeUnit.MILLISECONDS.sleep(30000);
+		TimeUnit.MILLISECONDS.sleep(40000);
 
         // data source
         SourceFromFile sourceFromFile = new SourceFromFile(inputFilePath, scalingFactor, inputRate, numData);
@@ -63,15 +63,15 @@ public class Parallel {
             // .window(TumblingProcessingTimeWindows.of(Time.seconds(5)))
             // .sum(1);
 
-		DataStream<FileDataEntry> mappedStream = flatmappedStream
-		.map(new Splitter_Revers())
-		.setParallelism(2);
+		// DataStream<FileDataEntry> mappedStream = flatmappedStream
+		// .map(new Splitter_Revers())
+		// .setParallelism(2);
 
 		// DataStream<FileDataEntry> joinedStream = flatmappedStream
 		// .join(mappedStream);
 
 		System.out.println("Start!");
-        mappedStream.addSink(new SinkFunction(p, numData, "EO", "Sink_2", true)).name("sink").setParallelism(1);
+        flatmappedStream.addSink(new SinkFunction(p, numData, "NO", "New_Sink10_1", false)).name("sink").setParallelism(1);
         // dataStream.print();
 		
 		env.execute("parallel");
@@ -106,9 +106,9 @@ public class Parallel {
 			// String word = "value";
 
 			// System.out.println(word);
-			if (word.equals("kill")) {
-				throw new Exception("Killing the job");
-			}
+			// if (word.equals("kill")) {
+			// 	throw new Exception("Killing the job");
+			// }
 
 			// out.collect(new FileDataEntry("processed", "1111", Instant.now().toEpochMilli()));
 			if (word.charAt(0) != 'a') {
