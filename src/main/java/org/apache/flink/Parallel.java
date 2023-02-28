@@ -25,7 +25,7 @@ public class Parallel {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, 5000));
 		// env.setRestartStrategy(RestartStrategies.noRestart());
-        env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
+        env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.AT_LEAST_ONCE);
 
         double scalingFactor = 2;
         int inputRate = 500;
@@ -71,7 +71,7 @@ public class Parallel {
 		// .join(mappedStream);
 
 		System.out.println("Start!");
-        flatmappedStream.addSink(new SinkFunction(p, numData, "EO", "New_Sink10_1", true)).name("sink").setParallelism(1);
+        flatmappedStream.addSink(new SinkFunction(p, numData, "ALO", "New_Sink10_1", true)).name("sink").setParallelism(1);
         // dataStream.print();
 		
 		env.execute("parallel");
