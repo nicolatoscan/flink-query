@@ -23,9 +23,9 @@ public class Parallel {
    public static void main(String[] args) throws Exception {
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        // env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, 5000));
-		env.setRestartStrategy(RestartStrategies.noRestart());
-        // env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
+        env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, 5000));
+		// env.setRestartStrategy(RestartStrategies.noRestart());
+        env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
 
         double scalingFactor = 2;
         int inputRate = 500;
@@ -71,7 +71,7 @@ public class Parallel {
 		// .join(mappedStream);
 
 		System.out.println("Start!");
-        flatmappedStream.addSink(new SinkFunction(p, numData, "NO", "New_Sink10_1", false)).name("sink").setParallelism(1);
+        flatmappedStream.addSink(new SinkFunction(p, numData, "EO", "New_Sink10_1", true)).name("sink").setParallelism(1);
         // dataStream.print();
 		
 		env.execute("parallel");
@@ -106,9 +106,9 @@ public class Parallel {
 			// String word = "value";
 
 			// System.out.println(word);
-			// if (word.equals("kill")) {
-			// 	throw new Exception("Killing the job");
-			// }
+			if (word.equals("kill")) {
+				throw new Exception("Killing the job");
+			}
 
 			// out.collect(new FileDataEntry("processed", "1111", Instant.now().toEpochMilli()));
 			if (word.charAt(0) != 'a') {
