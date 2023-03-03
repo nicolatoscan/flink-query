@@ -24,11 +24,15 @@
 1. Build the java project, get the `jar` of Parallel.java
 2. Once you get the `jar`, run the script
 
+```
   $ python3 scripts/experiments_run.py flink-query.jar --Parallelism 5
-  
+```
+
 3. Metrics of throughput and latency will be stored in the metrics_logs directory, then run the script
 
+```
   $ python3 scripts/data_processing.py
-  
+```
+
 4. Then you will get the processed `.csv` files
 5. For metrics of CPU and Memory Usage, you need to trace the java process id on the 
