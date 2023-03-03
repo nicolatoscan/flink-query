@@ -76,9 +76,9 @@ public class SinkFunction extends RichSinkFunction<FileDataEntry> {
 
         // /mnt/d/Knowledge_Base/flink-query
         if (this.workerFail) {
-            writer = new FileWriter("./metrics_logs/" + this.nameComponent + "_" + this.flag + "_metrics_FT_" + int_random + ".csv");
+            writer = new FileWriter("/mnt/d/Knowledge_Base/flink-query/metrics_logs/" + this.nameComponent + "_" + this.flag + "_metrics_FT_" + int_random + ".csv");
         } else {
-            writer = new FileWriter("./metrics_logs/" + this.nameComponent + "_" + this.flag + "_metrics_NR_" + int_random + ".csv");
+            writer = new FileWriter("/mnt/d/Knowledge_Base/flink-query/metrics_logs/" + this.nameComponent + "_" + this.flag + "_metrics_NR_" + int_random + ".csv");
         }
 
         // mqttPublishTask = new MQTTPublishTask();

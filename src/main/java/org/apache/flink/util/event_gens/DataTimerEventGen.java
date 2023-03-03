@@ -11,7 +11,7 @@ import org.apache.flink.util.listener.DataReadListener;
 public class DataTimerEventGen {
 
     // num of threads to read data
-    private final int numThreads = 4;
+    private final int numThreads = 1;
 
     private DataReadListener dataReadListener;
 
@@ -49,8 +49,8 @@ public class DataTimerEventGen {
                 }
                 TimerTask task = new EventGenTimerTask(dataReadList.get(i), tsIndex);
                 TimerTask task2 = new WorkKillerTimerTask(dataReadList.get(i), tsIndex);
-                timer.scheduleAtFixedRate(task, 0, 1);
-                timer.schedule(task2, 20*1000);
+                timer.scheduleAtFixedRate(task, 0, 5);
+                timer.schedule(task2, 30*1000);
                 // timer.scheduleAtFixedRate(task2, 0, period);
                 // System.out.println("+++++++++++++++");
             }
